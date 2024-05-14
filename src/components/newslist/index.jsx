@@ -17,7 +17,7 @@ const NewsList = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ຂ່າວ​ສານ ແລະ ປະ​ຊ​າ​ສຳ​ພັນ"} imgbread={imgbread} />
+            <BreadcrumbTwo title={"ຂ່າວ​ສານ"} imgbread={imgbread} />
             <Post />
             <Government />
           </main>

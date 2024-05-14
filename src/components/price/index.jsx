@@ -6,7 +6,7 @@ import PriceArea from "@/src/components/price/price-area";
 import Payment from "@/src/components/price/payment";
 import Government from "@/src/components/government/index2";
 import HeaderFour from "@/src/layout/headers/header-4";
-import imgbread from "@/public/images/navbar/Region.png"
+import imgbread from "@/public/images/navbar/Energy_Price.png"
 
 const Price = () => {
   return (

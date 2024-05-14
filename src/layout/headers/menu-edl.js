@@ -28,7 +28,7 @@ const menu_data = [
       id: 3,
       mega_menu: false,
       has_dropdown: true,
-      title: "​ຂ່າ​ວ​ສານ ແລະ ປະ​ຊາ​ສຳ​ພັນ",
+      title: "​ຂ່າ​ວ​ສານ-ປະ​ຊາ​ສຳ​ພັນ",
       link: "",
       active: "",
       sub_menus: [

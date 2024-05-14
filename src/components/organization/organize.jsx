@@ -7,7 +7,7 @@ import img from '@/public/images/organization/LaoOK1.png';
 const Organize = () => {
     return (
       <>
-        <div className="container-fluid mt-60 mb-60 text-center wow tpfadeUp">
+        <div className="container-fluid mt-50 mb-50 text-center wow tpfadeUp">
         <Image src={img} className="img-fluid" alt="theme-pure" />
         </div>
       </>

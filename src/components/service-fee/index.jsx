@@ -6,7 +6,7 @@ import Servicefee from "@/src/components/service-fee/servicefee";
 
 import Government from "@/src/components/government/index2";
 import HeaderFour from "@/src/layout/headers/header-4";
-import Auction from "@/public/images/navbar/Region.png";
+import imgbread from "@/public/images/navbar/Service_charge.png";
 
 
 const ServiceFee = () => {
@@ -17,7 +17,7 @@ const ServiceFee = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ຄ່າ​ບໍ​ລິ​ການ"} imgbread={Auction} />
+            <BreadcrumbTwo title={"ຄ່າ​ບໍ​ລິ​ການ"} imgbread={imgbread} />
             <Servicefee />
             <Government />
           </main>

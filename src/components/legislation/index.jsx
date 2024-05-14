@@ -6,7 +6,7 @@ import Legislation from "@/src/components/legislation/legislation";
 
 import Government from "@/src/components/government/index2";
 import HeaderFour from "@/src/layout/headers/header-4";
-import Auction from "@/public/images/navbar/Auction.png";
+import imgbread from "@/public/images/navbar/Form.png";
 
 
 const LegisLation = () => {
@@ -17,7 +17,7 @@ const LegisLation = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ນິ​ຕິ​ກຳ"} imgbread={Auction} />
+            <BreadcrumbTwo title={"ນິ​ຕິ​ກຳ"} imgbread={imgbread} />
             <Legislation />
             <Government />
           </main>
