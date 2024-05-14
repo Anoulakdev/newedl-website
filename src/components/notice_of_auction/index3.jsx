@@ -14,8 +14,8 @@ const cardData = [
     iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 23/01/2024 -29/01/2024",
-    date1: "29/01/2024",
+    date_start: "23/01/2024",
+    date_end: "29/01/2024",
   },
   {
     id: 2,
@@ -23,8 +23,8 @@ const cardData = [
     iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 09/01/2024 - 17/01/2024",
-    date1: "17/01/2024",
+    date_start: "09/01/2024",
+    date_end: "17/01/2024",
   },
   {
     id: 3,
@@ -32,8 +32,8 @@ const cardData = [
     iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 8/01/2024 - 15/02/2024",
-    date1: "08/01/2024",
+    date_start: "8/01/2024",
+    date_end: "15/02/2024",
   },
   {
     id: 4,
@@ -41,8 +41,8 @@ const cardData = [
     iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 04/01/2024 - 17/01/2024",
-    date1: "04/01/2024",
+    date_start: "04/01/2024",
+    date_end: "17/01/2024",
   },
   {
     id: 5,
@@ -50,8 +50,8 @@ const cardData = [
     iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 4/01/2024 - 12/01/2024",
-    date1: "04/01/2024",
+    date_start: "4/01/2024",
+    date_end: "12/01/2024",
   },
   {
     id: 6,
@@ -59,8 +59,8 @@ const cardData = [
     iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 26/12/2023 - 30/01/2024",
-    date1: "26/12/2023",
+    date_start: "26/12/2023",
+    date_end: "30/01/2024",
   },
 
   // Add more card data objects as needed
@@ -97,7 +97,7 @@ const Tables = () => {
                       background: "#e1e3e1",
                     }}
                   >
-                    ໜັງ​ສື​ເຊີນ
+                    ຫົວ​ຂໍ້
                   </th>
                   <th
                     style={{
@@ -106,7 +106,7 @@ const Tables = () => {
                       background: "#e1e3e1",
                     }}
                   >
-                    ​ເນື້ອ​ໃນ​ການ​ປະ​ມູນ
+                    ​ລາຍ​ລະ​ອຽດ​ເນື້ອ​ໃນ
                   </th>
                   <th
                     style={{
@@ -115,7 +115,16 @@ const Tables = () => {
                       background: "#e1e3e1",
                     }}
                   >
-                    ​ວັນ​ທີ​ປະ​ມູນ
+                    ​ວັນ​ທີ​​ເລີ່ມ​ປະ​ກາດ
+                  </th>
+                  <th
+                    style={{
+                      paddingTop: "45px",
+                      paddingBottom: "45px",
+                      background: "#e1e3e1",
+                    }}
+                  >
+                    ​ວັນ​ທີ​​ສິ້ນ​ສຸດ
                   </th>
                   <th
                     style={{
@@ -157,13 +166,21 @@ const Tables = () => {
                     >
                       {item.description}
                     </td>
-                    <td
+                    <td className="text-center"
                       style={{
                         paddingTop: "38px",
                         paddingBottom: "38px",
                       }}
                     >
-                      {item.date}
+                      {item.date_start}
+                    </td>
+                    <td className="text-center"
+                      style={{
+                        paddingTop: "38px",
+                        paddingBottom: "38px",
+                      }}
+                    >
+                      {item.date_end}
                     </td>
                     <td
                       className="text-center"

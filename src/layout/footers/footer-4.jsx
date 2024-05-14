@@ -31,13 +31,13 @@ const footer_content = {
   footer_lisks: [
     { name: "ຂ່າວ​ສານ", link: "/newslist" },
     { name: "ວາ​ລະ​ສານ", link: "/magazine" },
-    { name: "​ລາ​ຄາ​ໄຟ", link: "#" },
-    { name: "​ສ້ອມ​ແປງໝໍ້​ນັບ​ໄຟ", link: "#" },
+    { name: "ອັດ​ຕາ​ລາ​ຄາ​ໄຟ", link: "/price" },
+    { name: "ນິ​ຕິ​ກຳ", link: "/legislation" },
     { name: "​ແຈ້ງມອດ​ໄຟ", link: "/turnoff" },
-    { name: "ປ່ຽນ​ຖ່າຍ​ໝໍ້​ນັບ​ໄຟ", link: "#" },
-    { name: "​ແຈ້ງ​ປະ​ມູນ", link: "/notice-of-auction" },
+    { name: "ຄ່າ​ບໍ​ລິ​ການ", link: "service-fee" },
+    { name: "​ແຈ້ງການ​ປະ​ມູນ", link: "/notice-of-auction" },
     { name: "EV Charge", link: "https://e-service.edl.com.la" },
-    { name: "ສາ​ລະ​ໜ້າ​ຮູ້", link: "/confession" },
+    { name: "ສາ​ລະ​ໜ້າ​ຮູ້", link: "/knowledge" },
   ],
 };
 const { sub_title, policy_text, phone, email, location, footer_lisks } =
