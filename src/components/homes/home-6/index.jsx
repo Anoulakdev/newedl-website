@@ -22,12 +22,12 @@ const HomeFour = () => {
           <main className="fix">
             
             <Carousel />
-            {/* <BrandArea /> */}
+            <BrandArea />
             <News2 />
             <BlogArea />
             {/* <PriceArea /> */}
-            {/* <Payment /> */}
             <Knowledge />
+            <Payment />
             <ServiceArea />
             {/* <Activity /> */}
             <Government />

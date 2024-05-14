@@ -69,68 +69,61 @@ const cardData = [
 const Tables = () => {
   return (
     <>
-      <div className="container mt-50 mb-50 wow tpfadeUp">
+      <div className="container mt-30 mb-30 wow tpfadeUp">
         <div className="row">
           <div
-            className="table-responsive"
             style={{ overflowX: "auto", width: "100%" }}
           >
             <table
-              className="table table-hover table-bordered border-dark"
+              className="table table-hover"
               style={{ width: "100%", whiteSpace: "nowrap" }}
             >
               <thead>
-                <tr className="text-center fw-bold fs-5">
-                  <th
+                <tr className="text-center fw-bold fs-5 table-blue">
+                  <th className="text-white bg-primary"
                     style={{
-                      paddingTop: "45px",
-                      paddingBottom: "45px",
-                      background: "#e1e3e1",
+                      paddingTop: "40px",
+                      paddingBottom: "40px",
                     }}
                   >
                     ລ/ດ
                   </th>
-                  <th
+                  <th className="text-white bg-primary"
                     style={{
-                      paddingTop: "45px",
-                      paddingBottom: "45px",
-                      background: "#e1e3e1",
+                      paddingTop: "40px",
+                      paddingBottom: "40px",
                     }}
                   >
                     ຫົວ​ຂໍ້
                   </th>
-                  <th
+                  <th className="text-white bg-primary"
                     style={{
-                      paddingTop: "45px",
-                      paddingBottom: "45px",
-                      background: "#e1e3e1",
+                      paddingTop: "40px",
+                      paddingBottom: "40px",
                     }}
                   >
                     ​ລາຍ​ລະ​ອຽດ​ເນື້ອ​ໃນ
                   </th>
-                  <th
+                  <th className="text-white bg-primary"
                     style={{
-                      paddingTop: "45px",
-                      paddingBottom: "45px",
-                      background: "#e1e3e1",
+                      paddingTop: "40px",
+                      paddingBottom: "40px",
                     }}
                   >
                     ​ວັນ​ທີ​​ເລີ່ມ​ປະ​ກາດ
                   </th>
-                  <th
+                  <th className="text-white bg-primary"
                     style={{
-                      paddingTop: "45px",
-                      paddingBottom: "45px",
-                      background: "#e1e3e1",
+                      paddingTop: "40px",
+                      paddingBottom: "40px",
                     }}
                   >
                     ​ວັນ​ທີ​​ສິ້ນ​ສຸດ
                   </th>
-                  <th
+                  <th className="text-white bg-primary"
                     style={{
-                      paddingTop: "45px",
-                      paddingBottom: "45px",
-                      background: "#e1e3e1",
+                      paddingTop: "40px",
+                      paddingBottom: "40px",
                     }}
                   >
                     ​ດ​າວ​ໂຫລດ​ເອ​ກະ​ສານ
@@ -144,40 +137,40 @@ const Tables = () => {
                       className="text-center"
                       key={i}
                       style={{
-                        paddingTop: "38px",
-                        paddingBottom: "38px",
+                        paddingTop: "35px",
+                        paddingBottom: "35px",
                       }}
                     >
                       {item.id}
                     </td>
                     <td
                       style={{
-                        paddingTop: "38px",
-                        paddingBottom: "38px",
+                        paddingTop: "35px",
+                        paddingBottom: "35px",
                       }}
                     >
                       {item.title}
                     </td>
                     <td
                       style={{
-                        paddingTop: "38px",
-                        paddingBottom: "38px",
+                        paddingTop: "35px",
+                        paddingBottom: "35px",
                       }}
                     >
                       {item.description}
                     </td>
                     <td className="text-center"
                       style={{
-                        paddingTop: "38px",
-                        paddingBottom: "38px",
+                        paddingTop: "35px",
+                        paddingBottom: "35px",
                       }}
                     >
                       {item.date_start}
                     </td>
                     <td className="text-center"
                       style={{
-                        paddingTop: "38px",
-                        paddingBottom: "38px",
+                        paddingTop: "35px",
+                        paddingBottom: "35px",
                       }}
                     >
                       {item.date_end}
@@ -185,8 +178,8 @@ const Tables = () => {
                     <td
                       className="text-center"
                       style={{
-                        paddingTop: "38px",
-                        paddingBottom: "38px",
+                        paddingTop: "35px",
+                        paddingBottom: "35px",
                       }}
                     >
                       <Link href={item.imagePath} target="_blank">

@@ -43,39 +43,27 @@ const cardData = [
 
 const Tables = () => {
   return (
-    <>
+    
       <div className="container wow tpfadeUp">
         <div className="row mt-50 mb-50">
           <div>
             <table className="table table-hover">
               <thead>
-                <tr className="text-center fw-bold fs-5">
-                  <th className="text-white bg-primary"
-                    style={{
-                      width: "9%",
-                      paddingTop: "43px",
-                      paddingBottom: "42px",
-                    }}
+                <tr className="text-center fw-bold fs-5 table-primary">
+                  <th
+                    style={{width: '8%'}}
                   >
                     ລ/ດ
                   </th>
 
-                  <th className="text-white bg-primary"
-                    style={{
-                      width: "75%",
-                      paddingTop: "43px",
-                      paddingBottom: "42px",
-                    }}
+                  <th
+                    style={{width: '75%'}}
                   >
                     ​ຫົວ​ຂໍ້
                   </th>
 
-                  <th className="text-white bg-primary"
-                    style={{
-                      width: "16%",
-                      paddingTop: "43px",
-                      paddingBottom: "42px",
-                    }}
+                  <th
+                    style={{width: '17%'}}
                   >
                     ​ດ​າວ​ໂຫລດ​ເອ​ກະ​ສານ
                   </th>
@@ -87,28 +75,19 @@ const Tables = () => {
                     <td
                       className="text-center"
                       key={i}
-                      style={{
-                        paddingTop: "40px",
-                        paddingBottom: "30px",
-                      }}
+                      
                     >
                       {item.id}
                     </td>
                     <td
-                      style={{
-                        paddingTop: "40px",
-                        paddingBottom: "30px",
-                      }}
+                      
                     >
                       {item.title}
                     </td>
 
                     <td
                       className="text-center"
-                      style={{
-                        paddingTop: "40px",
-                        paddingBottom: "30px",
-                      }}
+                      
                     >
                       <Link href={item.pdfPath} target="_blank">
                         <button className="btn btn-primary">
@@ -173,7 +152,9 @@ const Tables = () => {
           </div>
         </div>
       </div>
-    </>
+
+      
+    
   );
 };
 

@@ -85,17 +85,17 @@ const BlogArea = () => {
               >
                 <div className="tp-blog-four-item p-relative fix" style={{ boxShadow: '0 2px 6px rgba(0, 0, 0, 0.6)', borderRadius: '30px' }}>
                   <div className="tp-blog-four-img fix">
-                    <Link href="#">
+                    
                       <Image src={item.img} alt="theme-pure" />
-                    </Link>
+                    
                   </div>
                   <div className="tp-blog-four-content-wrapper">
                     <div className="tp-blog-four-meta">
                       <span className="child-2 text-black">{item.date}</span>
                     </div>
                     <div className="tp-blog-four-info mb-4">
-                      <h4 className="fs-4 text-black">
-                        <Link href="#">{item.title}</Link>
+                      <h4 className="fs-4 text-black" style={{fontFamily: 'Noto Sans Lao'}}>
+                        {item.title}
                       </h4>
                     </div>
                     <div className="btn btn-primary">

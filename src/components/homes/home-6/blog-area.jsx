@@ -123,9 +123,9 @@ const BlogArea = () => {
               >
                 <div className="tp-blog-four-item p-relative fix" style={{ boxShadow: '0 2px 6px rgba(0, 0, 0, 0.6)', borderRadius: '30px', height: '500px' }}>
                   <div className="tp-blog-four-img fix">
-                    <Link href="#">
+                    
                       <Image src={news2} alt="theme-pure" />
-                    </Link>
+                    
                   </div>
                   <div className="tp-blog-four-content-wrapper">
                     <div className="tp-blog-four-meta">
