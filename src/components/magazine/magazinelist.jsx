@@ -246,7 +246,7 @@ const Portfolio = () => {
                 <div className="tp-blog-item wow tpfadeUp">
                   <div className="tp-blog-thumb fix rounded-4">
                     <Link href="#">
-                      <Image src={item.thumb_img} alt="theme-pure" style={{height: '410px'}} />
+                      <Image src={item.thumb_img} alt="theme-pure" style={{height: '360px'}} />
                     </Link>
                   </div>
                 </div>

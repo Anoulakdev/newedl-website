@@ -33,6 +33,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານໄຊສະອາດ,ເມືອງສາມັກຄີໄຊ ແຂວງອັດຕະປື",
       phone: "031 2115156-0",
       email: "Edl.attapue@hotmail.com ",
+      link: "https://edl.com.la/Attapeu.php",
     },
     {
       id: 2,
@@ -41,6 +42,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານນາທົ່ງ, ເມືອງຊໍາເໜືອ ແຂວງ ຫົວພັນ",
       phone: "064 31 2945",
       email: "Khampheuy_edl@yahoo.com ",
+      link: "https://edl.com.la/HuaPhan.php",
     },
     {
       id: 3,
@@ -49,6 +51,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານນາສ້າວ, ເມືອງໄຊ ແຂວງ ອຸດົມໄຊ. .",
       phone: "081 212 957",
       email: "Edl.oudomxay@hotmail.com ",
+      link: "https://edl.com.la/Oudomxay.php",
     },
     {
       id: 4,
@@ -57,6 +60,7 @@ const AllBranch = () => {
       description: "ບ້ານ ທ່າແຮ່. ເມືອງ ໄກສອນ ພົມວິຫານ. ",
       phone: "031 2115156-0",
       email: "Edl.attapue@hotmail.com ",
+      link: "https://edl.com.la/Savannakhet.php",
     },
     {
       id: 5,
@@ -65,6 +69,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ ຖະໜົນເລທີ 5B, ບ້ານ ພູຫົວຊ້າງ, ເມືອງ ອານຸວົງ",
       phone: "031 2115156-0",
       email: "Edl.attapue@hotmail.com ",
+      link: "https://edl.com.la/Xaisomboun.php",
     },
     {
       id: 6,
@@ -73,6 +78,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ ບ້ານໃຫຍ່ຫ້ວຍຊາຍໃຕ້ ເມືອງຫ້ວຍຊາຍ",
       phone: "084 212 007",
       email: "EDL_Bokeo@hotmail.com ",
+      link: "https://edl.com.la/Bokeo.php",
     },
     {
       id: 7,
@@ -81,6 +87,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານໂພນສະໜາມ,ເມືອງທ່າແຂກ ແຂວງ ຄຳມ່ວນ",
       phone: "051 212682",
       email: "EDL_KM@gmail.com ",
+      link: "https://edl.com.la/Khammouane.php",
     },
     {
       id: 8,
@@ -89,6 +96,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານ ໂພນແກ້ວ, ເມືອງຜົ້ງສາລີ",
       phone: "088-210215",
       email: "Edl.phongsaly@hotmail.com ",
+      link: "https://edl.com.la/Phongsali.php",
     },
     {
       id: 9,
@@ -97,6 +105,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານໂພນຄຳ, ເທດສະບານ ເມືອງລະມາມ",
       phone: "038 211 354",
       email: "Edl.xekong@hotmail.com ",
+      link: "https://edl.com.la/Sekong.php",
     },
     {
       id: 10,
@@ -104,7 +113,8 @@ const AllBranch = () => {
       heading: "ສາຂາແຂວງບໍລິຄຳໄຊ",
       description: "ຕັ້ງຢູ່ບ້ານ ຫົງໄຊ ແຂວງບໍລິຄຳໄຊ",
       phone: "054 280307",
-    email: "Edl.borlikhamxay@hotmail.com ",
+      email: "Edl.borlikhamxay@hotmail.com ",
+      link: "https://edl.com.la/Bolikhamsai.php",
     },
     {
       id: 11,
@@ -113,6 +123,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານ ວຽງທອງ, ຖະໜົນຫຼວງນໍ້າທາ, ເມືອງ ຫຼວງນໍ້າທາ",
       phone: "086-212093",
       email: "edllnt2006@gmail.com ",
+      link: "https://edl.com.la/LuangNamtha.php",
     },
     {
       id: 12,
@@ -121,6 +132,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານ ທ່ານາ ເມືອງໄຊຍະບູລີ ",
       phone: "074 211673",
       email: "edl_sayaboury@hotmail.com",
+      link: "https://edl.com.la/Sayabouly.php",
     },
     {
       id: 13,
@@ -129,6 +141,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານ ໂພນໝີ ໃຕ້ , ເມືອງ ວຽງຄໍາ  ",
       phone: "(023) 431015",
       email: "Edl.vientiane@hotmail.com ",
+      link: "https://edl.com.la/VientianePro.php",
     },
     {
       id: 14,
@@ -137,6 +150,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານ ໂນນສະຫວ່າງ ນະຄອນປາກເຊ",
       phone: "(031) 215 037",
       email: "Edl.champasack@hotmail.com ",
+      link: "https://edl.com.la/Champasak.php",
     },
 
     {
@@ -146,6 +160,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານໂຄມຂວາງ ຖະໜົນ13ເໜືອ",
       phone: "071 212 190",
       email: "edl_Luangprabang@hotmail.com",
+      link: "https://edl.com.la/LuangPrabang.php",
     },
     {
       id: 16,
@@ -154,6 +169,7 @@ const AllBranch = () => {
       description: "ຕັ້ງທີ່ບ້ານ ນາກົກໂພ ເທດສະບານ ",
       phone: "034 211127",
       email: "Edl.salavan@hotmail.com ",
+      link: "https://edl.com.la/Salavan.php",
     },
     {
       id: 17,
@@ -162,6 +178,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ ບ້ານໂພນສະອາດໃຕ້ ເມືອງແປກ",
       phone: "061 213545",
       email: "Edl.xiengkhoung@hotmail.com ",
+      link: "https://edl.com.la/XiengKhouang.php",
     },
     {
       id: 18,
@@ -170,6 +187,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານ ໜອງບຶກ ເມືອງສີໂຄດຕະບອງ",
       phone: "021 254121",
       email: "Edl.nakhoneluang1@hotmail.com",
+      link: "https://edl.com.la/vientiane1.php",
     },
     {
       id: 19,
@@ -178,6 +196,7 @@ const AllBranch = () => {
       description: "ຕັ້ງຢູ່ບ້ານ ໜອງບຶກ",
       phone: "031 2115156-0",
       email: "Edl.attapue@hotmail.com",
+      link: "https://edl.com.la/vientiane2.php",
     },
   ];
 
@@ -194,15 +213,14 @@ const AllBranch = () => {
               >
                 <div className="tp-blog-item">
                   <div className="tp-blog-thumb fix rounded-4">
-                    <Link href="#">
-                    <Image src={item.imageSrc} alt="theme-pure" />
+                    <Link href={item.link} target="_blank">
+                      <Image src={item.imageSrc} alt="theme-pure" />
                     </Link>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
         </div>
       </div>
     </>
