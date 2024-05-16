@@ -53,7 +53,7 @@ const PostboxArea = () => {
                           ເປີດຮັບວັນທີ 02/11/2023 - 04/11/2023
                         </p>
                         <Link href="/jobdetail" className="btn btn-primary">
-                          ​ສົ່ງ​ຟອມ​ສະ​ໝັກ
+                        ລາຍ​ລະ​ອຽດປະ​ກາດ​ຮັບ​ສະ​ໝັກ
                         </Link>
                       </div>
                     </div>
@@ -92,7 +92,7 @@ const PostboxArea = () => {
                           ເປີດຮັບວັນທີ 02/11/2023 - 04/11/2023
                         </p>
                         <Link href="/jobdetail" className="btn btn-primary">
-                          ​ສົ່ງ​ຟອມ​ສະ​ໝັກ
+                        ລາຍ​ລະ​ອຽດປະ​ກາດ​ຮັບ​ສະ​ໝັກ
                         </Link>
                       </div>
                     </div>
@@ -131,7 +131,7 @@ const PostboxArea = () => {
                           ເປີດຮັບວັນທີ 02/11/2023 - 04/11/2023
                         </p>
                         <Link href="/jobdetail" className="btn btn-primary">
-                          ​ສົ່ງ​ຟອມ​ສະ​ໝັກ
+                        ລາຍ​ລະ​ອຽດປະ​ກາດ​ຮັບ​ສະ​ໝັກ
                         </Link>
                       </div>
                     </div>

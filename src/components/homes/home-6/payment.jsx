@@ -33,13 +33,13 @@ const payment_method = [
     {
         id: 2,
         line_circle: 2,
-        cls: "d-none d-lg-block",
+        cls: "",
         img: payment_img_2,
     },
     {
         id: 3,
         line_circle: 3,
-        cls: "",
+        cls: "d-none d-lg-block",
         img: payment_img_3,
     },
     {
@@ -99,13 +99,13 @@ const payment_method = [
     {
         id: 13,
         line_circle: 13,
-        cls: "",
+        cls: "d-none d-lg-block",
         img: payment_img_13,
     }, 
     {
         id: 14,
         line_circle: 14,
-        cls: "d-none d-lg-block",
+        cls: "",
         img: payment_img_14,
     }, 
     {
