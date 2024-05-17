@@ -12,8 +12,8 @@ const Carousel = () => {
         className={className}
         onClick={onClick}
         style={{
-          right: "10px",
-          zIndex: 999,
+          right: "5px",
+          zIndex: 10,
           fontSize: "50px",
           backgroundColor: "darkgrey",
           display: "flex",
@@ -36,7 +36,7 @@ const Carousel = () => {
         onClick={onClick}
         style={{
           left: "5px",
-          zIndex: 999,
+          zIndex: 10,
           backgroundColor: "darkgrey",
           display: "flex",
           alignItems: "center",
