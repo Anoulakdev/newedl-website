@@ -18,7 +18,8 @@ const menu_data = [
       sub_menus: [
         { link: "/administrator", title: "ໂຄງ​ຮ່​າງ​ສະ​ພາ​ບໍ​ລິ​ຫານ" },
         { link: "/organization", title: "​ໂຄງ​ຮ່າງ​ຄະ​ນະ​ຜູ້​ບໍ​ລິ​ຫານ" },
-        { link: "/branch_organize", title: "​ສາ​ຂາ​ແຂວງ" },
+        { link: "/branch_organize", title: "​​ໂຄງ​ຮ່າງສາ​ຂາ​ແຂວງ" },
+        { link: "/organize", title: "​​ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງ" },
         { link: "/about", title: "ວິ​ໄສ​ທັດ ແລະ ພາ​ລະ​ກິດ" },
         { link: "/iso", title: "ມາດ​ຕະ​ຖານ ISO" },
       ],
