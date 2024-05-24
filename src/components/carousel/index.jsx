@@ -79,13 +79,13 @@ const Carousel = () => {
       imageUrl: "/images/carousel/4.jpg",
     },
 
-    {
-      imageUrl: "/images/carousel/5.jpg",
-    },
-    ,
-    {
-      imageUrl: "/images/carousel/6.jpg",
-    },
+    // {
+    //   imageUrl: "/images/carousel/5.jpg",
+    // },
+    // ,
+    // {
+    //   imageUrl: "/images/carousel/6.jpg",
+    // },
     {
       imageUrl: "/images/carousel/7.jpg",
     },

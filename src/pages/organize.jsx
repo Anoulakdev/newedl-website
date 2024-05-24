@@ -6,7 +6,7 @@ import Wrapper from "../layout/wrapper";
 const index = () => {
   return (
     <Wrapper>
-      <SEO pageTitle={"ໂຄງ​ຮ່າງຄະ​ນະ​ຜູ້​ບໍ​ລິ​ຫານ"} />
+      <SEO pageTitle={"ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງ"} />
       <Organize />
     </Wrapper>
   );

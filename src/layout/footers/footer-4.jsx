@@ -16,6 +16,7 @@ import play_logo from "@/public/images/playstore.png";
 import app_logo from "@/public/images/appstore.png";
 import facebook_logo from "@/public/images/facebook-icon.png";
 import youtube_logo from "@/public/images/youtube-icon.png";
+import tiktok_logo from "@/public/images/tiktok-icon.png";
 
 const footer_content = {
   sub_title: "SUBSCRIBE TO OUR NEWSLETTER",
@@ -102,6 +103,14 @@ const FooterFour = () => {
                         <Link href="https://www.youtube.com/@EDLChannelLaos" target="_blank">
                           <Image
                             src={youtube_logo}
+                            alt=""
+                            width={80}
+                            height={80}
+                          />
+                        </Link>
+                        <Link href="https://www.tiktok.com/@edllaos1?_r=1&_d=e6277fjjfd6j4e&sec_uid=MS4wLjABAAAAOQCSpWIVioW1PowBAIbDL2zchWYgNiuBtNg1omxyphX5PQ__DQv5wGOrwweBjeuI&share_author_id=7098626665651766299&sharer_language=th&source=h5_t&u_code=d1l047j3d8ahd2&ug_btm=b6880,b5836&sec_user_id=MS4wLjABAAAA5wno365wa-_QxG-CN9mUsYtTWRa8lzuCcXbrfPqHXlitcBYEi4PvKZ6zyaysGjkY&utm_source=whatsapp&social_share_type=5&utm_campaign=client_share&utm_medium=ios&tt_from=whatsapp&user_id=6594404152531664897&enable_checksum=1&share_link_id=65F9F575-28EE-4BE8-AD8C-BB1777CBBF6D&share_app_id=1180" target="_blank">
+                          <Image
+                            src={tiktok_logo}
                             alt=""
                             width={80}
                             height={80}

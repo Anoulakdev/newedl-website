@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import Mantenance from "@/public/images/services/Mantenance-2.png";
 import EV from "@/public/images/services/EV_Charger.png";
-import Auction from "@/public/images/services/Auction.png";
+import Solar from "@/public/images/services/solar.png";
 import Other from "@/public/images/services/other.png";
 
 
@@ -36,13 +36,13 @@ const  service_data = [
     {
         id: 3,
         
-        img: Auction,
-        title: "ແຈ້ງການປະມູນ",
+        img: Solar,
+        title: "Solar Rooftop",
         sub_title: "Cloud Backup",
         cls: "3",
         description: <>Lorem Ipsum is simply dummy text <br /> of the printing</>,
         delay: ".9s",
-        path : "/notice-of-auction",
+        path : "",
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ const  service_data = [
 const ServiceArea = () => {
     return (
         <>
-           <div className="tp-service-area p-relative pt-10 pb-30 grey-bg-3">
+           <div className="tp-service-area p-relative pt-50 pb-40 grey-bg-3">
                
                <div className="container">
                   <div className="row align-items-end mb-30">

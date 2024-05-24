@@ -40,21 +40,21 @@ const feature_data = [
     title: <>ກະ​ຊວງພະ​ລັງ​ງານ ແລະ ບໍ່​ແຮ່</>,
     link: "https://www.mem.gov.la/",
   },
-  {
-    id: 5,
-    color: "3",
-    img: gover5,
-    title: <>ທະ​ນາ​ຄານ​ໂລກ</>,
-    link: "https://www.worldbank.org/en/country/lao",
-  },
+  // {
+  //   id: 5,
+  //   color: "3",
+  //   img: gover5,
+  //   title: <>ທະ​ນາ​ຄານ​ໂລກ</>,
+  //   link: "https://www.worldbank.org/en/country/lao",
+  // },
 
-  {
-    id: 6,
-    color: "1",
-    img: gover6,
-    title: <>Hapua</>,
-    link: "https://hapua.org/main/",
-  },
+  // {
+  //   id: 6,
+  //   color: "1",
+  //   img: gover6,
+  //   title: <>Hapua</>,
+  //   link: "https://hapua.org/main/",
+  // },
 ];
 
 const FeatureArea = ({ style_integraton }) => {
@@ -66,12 +66,12 @@ const FeatureArea = ({ style_integraton }) => {
         <div className="container">
           <div className="row gx-0 tp-feature-five-wrapper-main">
             {feature_data.map((item, i) => (
-              <div key={i} className="col-xl-2 col-lg-6 col-md-6 col-6">
+              <div key={i} className="col-xl-3 col-lg-6 col-md-6 col-6">
                 <div className="tp-feature-five-wrapper wow tpfadeUp">
                   <Link href={item.link} target="_blank">
                     <div
                       className={`tp-feature-five-item tp-feature-five-item-${item.color} text-center rounded-4 m-2 shadow bg-body-tertiary`}
-                      style={{ height: "270px" }}
+                      style={{ height: "300px" }}
                     >
                       <div className="tp-feature-five-icon p-relative">
                         <Image src={item.img} alt="theme-pure" />
@@ -82,7 +82,7 @@ const FeatureArea = ({ style_integraton }) => {
                       <div className="tp-feature-five-content mb-3">
                         <h4
                           className="tp-feature-five-title-sm"
-                          style={{ fontFamily: "Noto Sans Lao", fontSize: "18px" }}
+                          style={{ fontFamily: "Noto Sans Lao", fontSize: "22px" }}
                         >
                           {item.title}
                         </h4>
