@@ -17,7 +17,7 @@ const Portfolio = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://uat-api.edl.com.la/api_v1/customer-svc/center/get"
+          `${process.env.NEXT_PUBLIC_API_URL}/customer-svc/center/get`
         );
         setData(response.data.data);
         setIsLoading(false);

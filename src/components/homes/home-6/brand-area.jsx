@@ -19,7 +19,7 @@ const BrandArea = () => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            "https://uat-api.edl.com.la/api_v1/customer-svc/notiDistrict/get"
+            `${process.env.NEXT_PUBLIC_API_URL}/customer-svc/notiDistrict/get`
           );
           setData(response.data.data);
         } catch (error) {

@@ -29,12 +29,13 @@ const PostboxArea = () => {
 
   const imageUrlBase =
     "https://uat-api.edl.com.la/api_v1/customer-svc/news/newsImage/";
+    
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://uat-api.edl.com.la/api_v1/customer-svc/news/newsType?news_type_id=0&fillter=DESC"
+           `${process.env.NEXT_PUBLIC_API_URL}/customer-svc/news/newsType?news_type_id=0&fillter=DESC`
         );
         setData(response.data.data);
         setIsLoading(false);

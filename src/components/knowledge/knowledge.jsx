@@ -133,7 +133,7 @@ const Portfolio = () => {
               >
                 <div className="tp-blog-item" style={{ height: "450px" }}>
                   <div className="tp-blog-thumb fix">
-                    <Link href="#">
+                    <Link href="/know_detail">
                       <Image src={item.img} alt="theme-pure" style={{ height: "300px" }} />
                     </Link>
                   </div>
@@ -146,7 +146,7 @@ const Portfolio = () => {
                     <div className="tp-blog-title-box">
                       <Link
                         className="tp-blog-title-sm"
-                        href="#"
+                        href="/know_detail"
                         style={{ fontFamily: "Noto Sans Lao" }}
                       >
                         {item.title}

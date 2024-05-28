@@ -22,7 +22,7 @@ export default function ContentNews() {
     const fetchDataById = async () => {
       try {
         const response = await axios.get(
-          `https://uat-api.edl.com.la/api_v1/customer-svc/news/getById?news_id=${news_id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/customer-svc/news/getById?news_id=${news_id}`
         );
         setPostData(response.data.data);
         setIsLoading(false);
