@@ -16,7 +16,7 @@ import play_logo from "@/public/images/playstore.png";
 import app_logo from "@/public/images/appstore.png";
 import facebook_logo from "@/public/images/facebook-icon.png";
 import youtube_logo from "@/public/images/youtube-icon.png";
-import tiktok_logo from "@/public/images/tiktok-icon.png";
+import tiktok_logo from "@/public/images/tiktok.png";
 
 const footer_content = {
   sub_title: "SUBSCRIBE TO OUR NEWSLETTER",
