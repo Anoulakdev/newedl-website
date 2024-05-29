@@ -39,6 +39,7 @@ const footer_content = {
     { name: "​ແຈ້ງການ​ປະ​ມູນ", link: "/notice-of-auction" },
     { name: "EV Charge", link: "https://e-service.edl.com.la" },
     { name: "ສາ​ລະ​ໜ້າ​ຮູ້", link: "/knowledge" },
+    { name: "ແຜນ​ຜັງ​ເວບ​ໄຊ", link: "/sitemap" },
   ],
 };
 const { sub_title, policy_text, phone, email, location, footer_lisks } =
