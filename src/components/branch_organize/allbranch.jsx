@@ -209,7 +209,7 @@ const AllBranch = () => {
               <div
                 key={i}
                 data-index={i}
-                className="col-xl-4 col-lg-4 col-md-4 col-6 mb-30 grid-item cat1 cat4 cat3 cat5"
+                className="col-xl-4 col-lg-4 col-md-4 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
               >
                 <div className="tp-blog-item">
                   <div className="tp-blog-thumb fix rounded-4">

@@ -129,12 +129,12 @@ const Portfolio = () => {
               <div
                 key={i}
                 data-index={i}
-                className="col-xl-3 col-lg-3 col-md-3 col-6 mb-30 grid-item cat1 cat4 cat3 cat5"
+                className="col-xl-3 col-lg-3 col-md-3 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
               >
-                <div className="tp-blog-item" style={{ height: "450px" }}>
+                <div className="tp-blog-item" style={{ height: "480px" }}>
                   <div className="tp-blog-thumb fix">
                     <Link href="/know_detail">
-                      <Image src={item.img} alt="theme-pure" style={{ height: "300px" }} />
+                      <Image src={item.img} alt="theme-pure" style={{ height: "340px" }} />
                     </Link>
                   </div>
                   <div className="tp-blog-content">

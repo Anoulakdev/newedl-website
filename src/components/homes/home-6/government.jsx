@@ -55,7 +55,6 @@ const feature_data = [
   //   title: <>Hapua</>,
   //   link: "https://hapua.org/main/",
   // },
-  
 ];
 
 const FeatureArea = ({ style_integraton }) => {
@@ -63,17 +62,27 @@ const FeatureArea = ({ style_integraton }) => {
     <>
       <div
         className={`tp-feature-area ${
-          style_integraton ? "pt-30" : "grey-bg-3 pt-40"
+          style_integraton ? "pt-30" : "grey-bg-3 pt-0"
         }`}
       >
         <div className="container">
+          <div className="row align-items-end mb-10">
+            <div className="col-xl-6 col-lg-6">
+              <div className="tp-service-section-four">
+                <h3 className="tp-section-title-4 text-black">
+                  ເວັບ​ໄຊ​ຕ່າງ​ໆ
+                </h3>
+              </div>
+            </div>
+          </div>
           <div className="row gx-0 tp-feature-five-wrapper-main">
             {feature_data.map((item, i) => (
-              <div key={i} className="col-xl-3 col-lg-6 col-md-6 col-6">
+              <div key={i} className="col-xl-3 col-lg-6 col-md-6 col-12">
                 <div className="tp-feature-five-wrapper wow tpfadeUp">
                   <Link href={item.link} target="_blank">
                     <div
-                      className={`tp-feature-five-item tp-feature-five-item-${item.color} text-center rounded-4 m-2 shadow bg-body-tertiary`} style={{ height: '300px'}}
+                      className={`tp-feature-five-item tp-feature-five-item-${item.color} text-center rounded-4 m-2 shadow bg-body-tertiary`}
+                      style={{ height: "300px" }}
                     >
                       <div className="tp-feature-five-icon p-relative">
                         <Image src={item.img} alt="theme-pure" />
@@ -84,7 +93,10 @@ const FeatureArea = ({ style_integraton }) => {
                       <div className="tp-feature-five-content mb-3">
                         <h4
                           className="tp-feature-five-title-sm"
-                          style={{ fontFamily: "Noto Sans Lao", fontSize: "22px" }}
+                          style={{
+                            fontFamily: "Noto Sans Lao",
+                            fontSize: "22px",
+                          }}
                         >
                           {item.title}
                         </h4>

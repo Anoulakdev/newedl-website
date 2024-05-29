@@ -44,9 +44,9 @@ const Portfolio = () => {
                     <div
                       key={item.center_id}
                       data-index={item.center_id}
-                      className="col-xl-3 col-lg-3 col-md-3 col-6 mb-30 grid-item cat1 cat4 cat3 cat5"
+                      className="col-xl-3 col-lg-3 col-md-3 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
                     >
-                      <div className="tp-blog-item" style={{ height: "410px" }}>
+                      <div className="tp-blog-item" style={{ height: "420px" }}>
                         <div className="tp-blog-thumb fix">
                           <Link
                             href={`https://maps.google.com/maps?q=${item.latitude}, ${item.longtitude}`}
@@ -57,7 +57,7 @@ const Portfolio = () => {
                               width={300}
                               height={168}
                               alt="theme-pure"
-                              style={{ height: "190px" }}
+                              style={{ height: "220px" }}
                             />
                           </Link>
                         </div>

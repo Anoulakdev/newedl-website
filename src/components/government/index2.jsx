@@ -66,7 +66,7 @@ const FeatureArea = ({ style_integraton }) => {
         <div className="container">
           <div className="row gx-0 tp-feature-five-wrapper-main">
             {feature_data.map((item, i) => (
-              <div key={i} className="col-xl-3 col-lg-6 col-md-6 col-6">
+              <div key={i} className="col-xl-3 col-lg-6 col-md-6 col-12">
                 <div className="tp-feature-five-wrapper wow tpfadeUp">
                   <Link href={item.link} target="_blank">
                     <div

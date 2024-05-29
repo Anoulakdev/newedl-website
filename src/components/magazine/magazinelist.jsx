@@ -241,12 +241,12 @@ const Portfolio = () => {
               <div
                 key={i}
                 data-index={i}
-                className="col-xl-3 col-lg-3 col-md-3 col-6 mb-30 grid-item cat1 cat4 cat3 cat5"
+                className="col-xl-3 col-lg-3 col-md-3 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
               >
                 <div className="tp-blog-item wow tpfadeUp">
                   <div className="tp-blog-thumb fix rounded-4">
                     <Link href="/magazine_detail">
-                      <Image src={item.thumb_img} alt="theme-pure" style={{height: '360px'}} />
+                      <Image src={item.thumb_img} alt="theme-pure" style={{height: '430px'}} />
                     </Link>
                   </div>
                 </div>
