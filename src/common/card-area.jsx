@@ -39,7 +39,7 @@ const CardArea = ({ style_service }) => {
               <div className="tp-card-title-box">
                 <h3 className="tp-section-title-2 pb-20" style={{ fontFamily: 'Noto Sans Lao', fontSize: '40px' }}>ວິໄສທັດ ໄຟຟ້າລາວ</h3>
                 <p className="text-dark fs-4" style={{ fontFamily: 'Noto Sans Lao' }}>
-                ໄຟ​ຟ້າ​ລາວ​ຈະ​ເປັນ​ລັດ​ວິ​ສາ​ຫະ​ກິດ​ທີ່​ຮັບ​ປະ​ກັນ​ທາງ​ດ້ານ​ຄວາມໝັ້ນ​ຄົງ​ດ້ານພະ​ລັງ​ງານ​ໃຫ້​ແກ່ ສ​ປ​ປ ລາວ ແລະ ປະ​ເທດ​ເພື່ອນ.
+                ໄຟ​ຟ້າ​ລາວ​ຈະ​ເປັນ​ລັດ​ວິ​ສາ​ຫະ​ກິດ​ທີ່​ຮັບ​ປະ​ກັນ​ທາງ​ດ້ານ​ຄວາມໝັ້ນ​ຄົງ​ດ້ານພະ​ລັງ​ງານ​ໃຫ້​ແກ່ ສ​ປ​ປ ລາວ ແລະ ປະ​ເທດ​ເພື່ອນບ້ານ.
                 </p>
                 <br />
                 <p className="text-danger fs-4" style={{ fontFamily: 'Noto Sans Lao' }}>(ຟ​ຟ​ລ ຈະ​ສ້າງ​ຄວາມ​ໝັ້ນ​ຄົງ​ດ້ານ​ພະ​ລັງ​ງານ​ເພື່ອ​ທຸກ​ໆ​ຄົນ)</p>

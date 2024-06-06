@@ -14,7 +14,7 @@ const index = () => {
   return (
     <>
     <SEO pageTitle={"Oops.! Page Not Found!"} />
-      <HeaderFour style_error={true} />
+      {/* <HeaderFour style_error={true} /> */}
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
@@ -36,7 +36,7 @@ const index = () => {
                         className="tp-btn-inner tp-btn-hover alt-color-black"
                         href="/"
                       >
-                        <span> Back To Home</span>
+                        <span>ກັບ​ໜ້າ​ຫຼັກ</span>
                         <b></b>
                       </Link>
                     </div>
@@ -45,7 +45,7 @@ const index = () => {
               </div>
             </div>
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </>

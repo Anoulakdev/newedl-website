@@ -19,7 +19,7 @@ const DownloadForm = () => {
           <main>
             <BreadcrumbTwo title={"ດາວ​ໂຫລດ​ແບບ​ຟອມ"} imgbread={imgbread} />
             <DownLoadForm />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

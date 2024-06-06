@@ -19,7 +19,7 @@ const LegisLation = () => {
           <main>
             <BreadcrumbTwo title={"ນິ​ຕິ​ກຳ"} imgbread={imgbread} />
             <Legislation />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

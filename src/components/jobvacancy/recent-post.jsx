@@ -32,7 +32,7 @@ const RecentPost = () => {
             className="sidebar__widget-title"
             style={{ fontFamily: "Noto Sans Lao", fontSize: "25px" }}
           >
-            ປ​ະ​ກາດ​ສະ​ໝັກວຽກ​ລ່າ​ສຸ​ດ
+            ປ​ະຫວັດ​ກາດ​ສະ​ໝັກວຽກ​
           </h3>
         </div>
         <div className="sidebar__widget-content">

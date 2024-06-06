@@ -19,7 +19,7 @@ const Price = () => {
             <BreadcrumbTwo title={"​ອັດ​ຕາ​ລາ​ຄາ​ໄຟ"} imgbread={imgbread} />
             <PriceArea />
             {/* <Payment /> */}
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

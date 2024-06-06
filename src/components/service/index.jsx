@@ -32,7 +32,7 @@ const Service = () => {
             {/* <TestimonialArea /> */}
             {/* <FaqArea style_service={true} /> */}
             {/* <CtaArea /> */}
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
           {/* <FooterTen /> */}

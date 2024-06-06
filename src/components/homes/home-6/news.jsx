@@ -11,11 +11,11 @@ import author_img_3 from "@/public/assets/img/blog/blog-avata-1.png";
 import author_img_4 from "@/public/assets/img/blog/blog-avata-3.png";
 import author_img_5 from "@/public/assets/img/blog/blog-avata-2.png";
 
-
 const setting = {
   slidesPerView: 1,
   effect: "fade",
-  // arrows:false,
+  speed: 500,
+
   breakpoints: {
     1200: {
       slidesPerView: 1,
@@ -149,31 +149,38 @@ const BlogGrid = () => {
 
   return (
     <>
-      <div className="blog-grid-area pt-30 grey-bg-3">
+      <div className="blog-grid-area pt-20 grey-bg-3">
         <div className="container">
           <div className="row align-items-end tp-blog-four-section-space">
             <div className="col-xl-6 col-lg-6">
-              <div className="tp-blog-four-section-box">
-                <h3 className="tp-section-title-4 text-black">
-                  ຂ່າວ​ເດັ່ນ
-                </h3>
+              <div className="tp-service-section-four">
+                <h3 className="tp-section-title-4 text-black">ຂ່າວ​ເດັ່ນ</h3>
               </div>
             </div>
-            <div
+            {/* <div
               className="col-xl-6 col-lg-6 wow tpfadeRight"
               data-wow-duration=".9s"
               data-wow-delay=".5s"
             >
               <div className="tp-blog-four-btn text-start text-lg-end">
-                <Link className="tp-btn-yellow-border text-black" href="/newslist">
+                <Link
+                  className="tp-btn-yellow-border text-black"
+                  href="/newslist"
+                >
                   ເບິ່ງ​ເພີ່ມ​ເຕີມ <i className="far fa-angle-right"></i>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="row">
-            <div className="col-12">
-              <div className="blog-grid-arrow p-relative" style={{ boxShadow: '0 2px 6px rgba(0, 0, 0, 0.6)', borderRadius: '30px' }}>
+            <div className="col-lg-12 wow tpfadeUp">
+              <div
+                className="blog-grid-arrow p-relative"
+                style={{
+                  boxShadow: "0 2px 6px rgba(0, 0, 0, 0.6)",
+                  borderRadius: "30px",
+                }}
+              >
                 <div className="grid-next d-none d-sm-block ms-1">
                   <button>
                     <i className="far fa-angle-left"></i>
@@ -186,7 +193,6 @@ const BlogGrid = () => {
                     >
                       <path
                         d="M4.99999 14C0 7.5 0.5 3.5 0 0L-0.000484467 99.5C-0.000415802 96.7234 1.00003 88 23 71.5C44.9999 55 32.5 37.1667 24 30.5C19.8333 27.1667 9.48375 19.8289 4.99999 14Z"
-                        // fill="#1117A0"
                         fill="white"
                       />
                     </svg>
@@ -204,7 +210,6 @@ const BlogGrid = () => {
                     >
                       <path
                         d="M30.3164 14C35.3164 7.5 34.8164 3.5 35.3164 0L35.3169 99.5C35.3168 96.7234 34.3164 88 12.3164 71.5C-9.68354 55 2.81642 37.1667 11.3164 30.5C15.4831 27.1667 25.8327 19.8289 30.3164 14Z"
-                        // fill="#1117A0"
                         fill="white"
                       />
                     </svg>
@@ -222,8 +227,7 @@ const BlogGrid = () => {
                         className="blog-grid-slider blog-grid-slider-bg blog-grid-slider-height"
                         style={{
                           backgroundImage: `url(${item.bg_img})`,
-                          backgroundPosition: 'center',
-
+                          backgroundPosition: "center",
                         }}
                       >
                         <div className="blog-grid-slider-wrapper">

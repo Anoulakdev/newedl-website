@@ -19,7 +19,7 @@ const ServiceFee = () => {
           <main>
             <BreadcrumbTwo title={"ຄ່າ​ບໍ​ລິ​ການ"} imgbread={imgbread} />
             <Servicefee />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

@@ -18,7 +18,7 @@ const Knowledge = () => {
           <main>
             <BreadcrumbTwo title={"​ສາ​ລະ​ໜ້າ​ຮູ້"} imgbread={imgbread} />
             <KnowLedge />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

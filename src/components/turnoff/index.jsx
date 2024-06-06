@@ -18,7 +18,7 @@ const TurnOff = () => {
           <main>
             <BreadcrumbTwo title={"ແຈ້ງມອດ​ໄຟ​"} imgbread={imgbread} />
             <Off />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

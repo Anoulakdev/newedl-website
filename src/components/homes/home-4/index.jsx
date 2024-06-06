@@ -45,7 +45,7 @@ const HomeFour = () => {
             <Activity />
             <Government />
             <ContactArea />
-            {/* <SecurityArea /> */}
+            <SecurityArea />
           </main>
           <FooterFour />
           {/* <Footer /> */}

@@ -17,7 +17,7 @@ const Branch = () => {
           <main>
             <BreadcrumbTwo title={"ສາ​ຂາແຂວງ"} imgbread={imgbread} />
             <AllBranch />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

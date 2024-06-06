@@ -12,6 +12,7 @@ const service_data = [
     id: 1,
 
     img: Mantenance,
+    color: "",
     title: "ສ້ອມແປງ",
     sub_title: "Cloud Backup",
     cls: "1",
@@ -27,6 +28,7 @@ const service_data = [
     id: 2,
 
     img: EV,
+    color: "2",
     title: "EV Charger",
     sub_title: "Cloud Backup",
     cls: "2",
@@ -42,6 +44,7 @@ const service_data = [
     id: 3,
 
     img: Solar,
+    color: "3",
     title: "Solar Rooftop",
     sub_title: "Cloud Backup",
     cls: "3",
@@ -57,6 +60,7 @@ const service_data = [
     id: 4,
 
     img: Other,
+    color: "4",
     title: "ບໍລິການອື່ນໆ",
     sub_title: "Cloud Backup",
     cls: "4",
@@ -99,12 +103,12 @@ const ServiceArea = () => {
                       target={item.link ? "_blank" : ""}
                     >
                       <div className="tp-service-4-icon">
-                        <Image src={item.img} alt="theme-pure" />
+                        <Image src={item.img} alt="theme-pure" style={{width: '120px'}} />
                       </div>
                       <div className="tp-service-4-content">
                         <h4
-                          className="tp-service-4-title text-black"
-                          style={{ fontFamily: "Noto Sans Lao" }}
+                          className="tp-service-4-title"
+                          style={{ fontFamily: "Noto Sans Lao"}}
                         >
                           {item.title}
                         </h4>

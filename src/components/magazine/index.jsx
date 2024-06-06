@@ -18,7 +18,7 @@ const Magazine = () => {
           <main>
             <BreadcrumbTwo title={"ວາ​ລະ​ສານ"} imgbread={imgbread} />
             <MagazineList />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

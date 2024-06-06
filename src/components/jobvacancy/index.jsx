@@ -18,7 +18,7 @@ const JobVacancy = () => {
           <main>
             <BreadcrumbTwo title={"ປະ​ກາດ​ຮັບ​ສະ​ໝັກ"} imgbread={imgbread}/>
             <Jobvacancy />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

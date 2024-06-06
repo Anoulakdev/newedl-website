@@ -18,7 +18,7 @@ const Administrator = () => {
           <main>
             <BreadcrumbTwo title={"ໂຄງ​ຮ່າງ​ສະ​ພາ​ບໍ​ລິ​ຫານ"} imgbread={imgbread} />
             <Administrators />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

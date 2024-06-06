@@ -18,7 +18,7 @@ const ServiceCenter = () => {
           <main>
             <BreadcrumbTwo title={"ສູນ​ບໍ​ລິ​ການ"} imgbread={imgbread} />
             <SCenter />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

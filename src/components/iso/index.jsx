@@ -18,7 +18,7 @@ const Iso = () => {
           <main>
             <BreadcrumbTwo title={"ມາດ​ຕະ​ຖານ ISO"} imgbread={imgbread} />
             <Isos />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

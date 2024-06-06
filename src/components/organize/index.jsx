@@ -18,7 +18,7 @@ const Orgazines = () => {
           <main>
             <BreadcrumbTwo title={"ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງ"} imgbread={imgbread} />
             <Organize />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

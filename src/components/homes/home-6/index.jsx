@@ -5,13 +5,15 @@ import React from "react";
 import BlogArea from "./blog-area";
 import BrandArea from "./brand-area";
 import ContactArea from "./contact-area";
-import ServiceArea from "./service-area";
+import SecurityArea from "./security-area";
+import ServiceArea from "./service-area1";
 import Carousel from "../../carousel";
 import Government from "./government";
 import Knowledge from "./knowledge";
 import Payment from "./payment";
 import Activity from "./activity";
 import News2 from "./news";
+import Announcement from "./announcement";
 
 const HomeFour = () => {
   return (
@@ -23,6 +25,7 @@ const HomeFour = () => {
             
             <Carousel />
             <BrandArea />
+            <Announcement />
             <News2 />
             {/* <BlogArea /> */}
             {/* <PriceArea /> */}
@@ -30,9 +33,9 @@ const HomeFour = () => {
             {/* <Payment /> */}
             <ServiceArea />
             {/* <Activity /> */}
-            <Government />
+            {/* <Government /> */}
+            <SecurityArea />
             <ContactArea />
-            
           </main>
           <FooterFour />
           

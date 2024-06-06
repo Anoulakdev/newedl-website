@@ -27,7 +27,7 @@ const BreadcrumbTwo = ({ title, innertitle, team_details, career_details, imgbre
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-xl-8 col-lg-7">
+            <div className="col-xl-8 col-lg-7 pb-30">
               <div className="breadcrumb__content">
                 <h3
                   ref={animeRef}
@@ -68,11 +68,11 @@ const BreadcrumbTwo = ({ title, innertitle, team_details, career_details, imgbre
                 </div>
               </div>
             </div>
-            <div className="col-xl-4 col-lg-5 col-lg-4 text-center text-md-end pb-30">
+            {/* <div className="col-xl-4 col-lg-5 col-lg-4 text-center text-md-end pb-30">
               <div className="breadcrumb__img p-relative text-start z-index">
                 <Image className="z-index-3" src={imgbread} alt="theme-pure" width={220} />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -138,7 +138,7 @@ const PostboxArea = () => {
                   </div>
                 </div>
 
-                <div className="basic-pagination">
+                {/* <div className="basic-pagination">
                   <nav>
                     <ul>
                       <li>
@@ -174,7 +174,7 @@ const PostboxArea = () => {
                       </li>
                     </ul>
                   </nav>
-                </div>
+                </div> */}
               </div>
             </div>
 

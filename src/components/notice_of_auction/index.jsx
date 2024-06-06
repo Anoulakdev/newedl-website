@@ -19,7 +19,7 @@ const NoticeOfAuction = () => {
           <main>
             <BreadcrumbTwo title={"ແຈ້ງການ​ປະ​ມູນ"} imgbread={Auction} />
             <Notice />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

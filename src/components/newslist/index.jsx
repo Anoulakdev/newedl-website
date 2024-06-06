@@ -19,7 +19,7 @@ const NewsList = () => {
           <main>
             <BreadcrumbTwo title={"ຂ່າວ​ສານ"} imgbread={imgbread} />
             <Post />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

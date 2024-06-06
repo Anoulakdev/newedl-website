@@ -11,7 +11,7 @@ import shape_1 from "../../../../public/assets/img/contact/shape-4-1.png"
 
 const contact_content = {
     sub_title: "CONTACT US",
-    title: "ປະ​ກອບ​ຄ​ຳ​ຄິ​ດ​ເຫັນ",
+    title: "ສົ່ງ​ຄ​ຳ​ຄິ​ດ​ເຫັນ",
     phone: "(+806)0008899",
     email: "contact@info.com",
     location: <>1811 Silverside Rd, Wilmington, DE 19810, USA</>,
@@ -59,17 +59,17 @@ const ContactArea = () => {
                               <Image src={shape_1} alt="theme-pure" />
                            </div>
                            <div className="row">
-                              {/* <div className="col-xl-6">
+                              <div className="col-xl-6">
                                  <div className="tp-contact-input mb-20">
-                                    <input type="text" placeholder="Full name"  required/>
+                                    <input type="text" placeholder="ຊື່ ແລະ ນາມ​ສະ​ກຸນ" className='fs-5'/>
                                  </div>
                               </div>
                               <div className="col-xl-6">
                                  <div className="tp-contact-input mb-20">
-                                    <input type="email" placeholder="Email address" required />
+                                    <input type="number" placeholder="ເບີ​ໂທ" className='fs-5'/>
                                  </div>
                               </div>
-                              <div className="col-xl-12">
+                              {/* <div className="col-xl-12">
                                  <div className="tp-contact-select">
                                     <div className="tp-select-icon"> 
                                        <NiceSelect
@@ -87,12 +87,12 @@ const ContactArea = () => {
                               </div> */}
                               <div className="col-xl-12">
                                  <div className="tp-contact-input mb-20">
-                                    <textarea placeholder="ປ້ອນ​ຄຳ​ຄິດ​ເຫັນ"></textarea>
+                                    <textarea placeholder="ປ້ອນ​ຄຳ​ຄິດ​ເຫັນ" className='fs-5'></textarea>
                                  </div>
                               </div>
                               <div className="col-xl-12">
                                  <div className="tp-contact-btn">
-                                    <button type="submit" className="tp-btn-yellow-lg yellow-bg w-100">ສົ່ງ</button>
+                                    <button type="submit" className="tp-btn-yellow-lg yellow-bg w-100 fs-4">ສົ່ງ</button>
                                  </div>
                               </div>
                            </div>

@@ -18,7 +18,7 @@ const Service = () => {
           <main>
             <BreadcrumbTwo title={"ໂຄງ​ຮ່າງຄະ​ນະ​ຜູ້​ບໍ​ລິ​ຫານ"} imgbread={imgbread} />
             <Organize />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>
