@@ -112,7 +112,7 @@ const SecurityArea = () => {
                 {security_data.map((item, i) => (
                   <div key={i} className="tp-security-main">
                     <Link href={item.link} target="_blank">
-                      <div className="tp-security-wrapper d-flex align-items-center justify-content-between bg-light shadow bg-body-tertiary mb-20">
+                      <div className="tp-security-wrapper d-flex align-items-center justify-content-between bg-light shadow bg-body-tertiary mb-25">
                         <div className="tp-security-item d-flex align-items-center">
                           <Image
                             src={item.img}

@@ -50,7 +50,7 @@ const CardArea = ({ style_service }) => {
         </div>
 
         <div className="container mt-50">
-        <div class="border border-5 rounded-4 p-5 fs-2 fw-bold text-dark text-center" style={{ backgroundColor: '#e0e0e0' }}>ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ​ເດີນ​ໜ້າ​ໄປ​ດ້ວຍ​ບາດ​ກ້າວ​ໃໝ່​ທີ່​ໝັ້ນ​ຄົງ <br /> (EDL, moving forward with Sustainable steps)</div>
+        <div class="border border-primary bg-primary border-5 rounded-4 p-5 fs-2 fw-bold text-white text-center" >ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ​ເດີນ​ໜ້າ​ໄປ​ດ້ວຍ​ບາດ​ກ້າວ​ໃໝ່​ທີ່​ໝັ້ນ​ຄົງ <br /> (EDL, moving forward with Sustainable steps)</div>
         </div>
       </div>
     </>

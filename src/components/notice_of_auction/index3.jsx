@@ -71,117 +71,34 @@ const Tables = () => {
     <>
       <div className="container mt-30 mb-30 wow tpfadeUp">
         <div className="row">
-          <div
-            style={{ overflowX: "auto", width: "100%" }}
-          >
+          <div style={{ overflowX: "auto", width: "100%" }}>
             <table
               className="table table-hover"
               style={{ width: "100%", whiteSpace: "nowrap" }}
             >
               <thead>
-                <tr className="text-center fw-bold fs-5 table-blue">
-                  <th className="text-white bg-primary"
-                    style={{
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
-                  >
-                    ລ/ດ
+                <tr className="text-center fw-bold fs-4 table-blue">
+                  <th className="text-white bg-primary py-4">ລ/ດ</th>
+                  <th className="text-white bg-primary py-4">
+                    ​ດ​າວ​ໂຫລດ
                   </th>
-                  <th className="text-white bg-primary"
-                    style={{
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
-                  >
-                    ຫົວ​ຂໍ້
-                  </th>
-                  <th className="text-white bg-primary"
-                    style={{
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
-                  >
+                  <th className="text-white bg-primary py-4">ຫົວ​ຂໍ້</th>
+                  <th className="text-white bg-primary py-4">
                     ​ລາຍ​ລະ​ອຽດ​ເນື້ອ​ໃນ
                   </th>
-                  <th className="text-white bg-primary"
-                    style={{
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
-                  >
+                  <th className="text-white bg-primary py-4">
                     ​ວັນ​ທີ​​ເລີ່ມ​ປະ​ກາດ
                   </th>
-                  <th className="text-white bg-primary"
-                    style={{
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
-                  >
-                    ​ວັນ​ທີ​​ສິ້ນ​ສຸດ
-                  </th>
-                  <th className="text-white bg-primary"
-                    style={{
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
-                  >
-                    ​ດ​າວ​ໂຫລດ​ເອ​ກະ​ສານ
-                  </th>
+                  <th className="text-white bg-primary py-4">​ວັນ​ທີ​​ສິ້ນ​ສຸດ</th>
                 </tr>
               </thead>
               <tbody>
                 {cardData.map((item, i) => (
-                  <tr className="fs-6">
-                    <td
-                      className="text-center"
-                      key={i}
-                      style={{
-                        paddingTop: "35px",
-                        paddingBottom: "35px",
-                      }}
-                    >
+                  <tr className="fs-5">
+                    <td className="text-center py-4" key={i}>
                       {item.id}
                     </td>
-                    <td
-                      style={{
-                        paddingTop: "35px",
-                        paddingBottom: "35px",
-                      }}
-                    >
-                      {item.title}
-                    </td>
-                    <td
-                      style={{
-                        paddingTop: "35px",
-                        paddingBottom: "35px",
-                      }}
-                    >
-                      {item.description}
-                    </td>
-                    <td className="text-center"
-                      style={{
-                        paddingTop: "35px",
-                        paddingBottom: "35px",
-                      }}
-                    >
-                      {item.date_start}
-                    </td>
-                    <td className="text-center"
-                      style={{
-                        paddingTop: "35px",
-                        paddingBottom: "35px",
-                      }}
-                    >
-                      {item.date_end}
-                    </td>
-                    <td
-                      className="text-center"
-                      style={{
-                        paddingTop: "35px",
-                        paddingBottom: "35px",
-                      }}
-                    >
+                    <td className="text-center py-4">
                       <Link href={item.imagePath} target="_blank">
                         <button className="btn btn-primary">
                           <svg
@@ -201,6 +118,10 @@ const Tables = () => {
                         </button>
                       </Link>
                     </td>
+                    <td className="py-4">{item.title}</td>
+                    <td className="py-4">{item.description}</td>
+                    <td className="text-center py-4">{item.date_start}</td>
+                    <td className="text-center py-4">{item.date_end}</td>
                   </tr>
                 ))}
               </tbody>

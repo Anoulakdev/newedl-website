@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import useMultipleAnime from "@/src/hooks/useMultipleAnime";
 
-import thumb_img_1 from "@/public/images/magazine/image001.jpeg";
+import thumb_img_1 from "@/public/images/magazine/image001.png";
 import thumb_img_2 from "@/public/images/magazine/image110.png";
 import thumb_img_3 from "@/public/images/magazine/image111.png";
 import thumb_img_4 from "@/public/images/magazine/image112.png";

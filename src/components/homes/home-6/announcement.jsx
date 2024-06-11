@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const cardData = [
+const cardData1 = [
   {
     id: 1,
     imagePath: "/images/notice_of_auction/3069.jpg",
@@ -30,9 +30,36 @@ const cardData = [
     date_start: "8/01/2024",
     date_end: "15/02/2024",
   },
-
-  // Add more card data objects as needed
 ];
+
+const cardData2 = [
+  {
+    id: 1,
+    pdfPath: "/pdf/service-fee/01.pdf",
+    title: "ຂໍ້​ຕົກ​ລົງ ການ​ຮັບ​ຊື້​ໄຟ ຈາດ​ພະ​ລັງ​ງານ​ແສງ​ຕາ​ເວັນ​ຢູ່​ເທິງ​ຫຼັງ​ຄາ​ທີ່​ຢູ່​ອາ​ໄສ (Solar Rooftop) ສຳ​ລັບ​ພາກ​ທີ່​ຢູ່​ອາ​ໄສ (ສະ​ບັບ ປີ 2024)",
+    date: "23/01/2024",
+  },
+  {
+    id: 2,
+    pdfPath: "/pdf/service-fee/02.pdf",
+    title: "ແຈ້ງ​ການ ການ​ຄິດ​ໄລ່ ລາ​ຄາ​ໝໍ້​ນັບ​ໄຟ ແລະ ອຸ​ປະ​ກອນ​ຕິດ​ຕັ້ງ​ຮ່ວມ​ທີ່​ບໍ​ລິ​ການ​ໃຫ້​ລູກ​ຄ້າ​ລາຍ​ໃຫ່​ຍ, ສະ​ຖາ​ນີ​ໄຟ​ຟ້າ, ແຫຼ່ງ​ຜະ​ລິດ ແລະ ພາກ​ເຂື່ອນ​ໄຟ​ຟ້າ​ໃນ​ຂອບ​ເຂດ​ທົ່ວ​ປະ​ເທດ (ສະ​ບັບ ປີ 2022)",
+    date: "12/04/2022",
+  },
+  {
+    id: 3,
+    pdfPath: "/pdf/service-fee/03.pdf",
+    title: "ແຈ້ງ​ການ ການ​ເກັບ​ຄ່າ​ບໍ​ລິ​ການ​ເກາະ​ຫ້ອຍ​ບັນ​ດາ​ສາຍ​ສື່​ສານ ແລະ ອຸ​ປະ​ກອນ​ຕ່າງ​ໆ ປະ​ຈຳ​ປີ 2023 ແລະ ປິ 2024 (ສະ​ບັບ​ຊົ່ວ​ຄາວ ປີ 2024)",
+    date: "12/02/2024",
+  },
+];
+
+function truncateText(text, wordLimit) {
+  const words = text.split(' ');
+  if (words.length <= wordLimit) {
+    return text;
+  }
+  return words.slice(0, wordLimit).join(' ') + '...';
+}
 
 const Announcement = () => {
   return (
@@ -56,13 +83,13 @@ const Announcement = () => {
                         className="tp-payment__title fw-bold"
                         style={{ fontFamily: "Noto Sans Lao" }}
                       >
-                        ແຈ້ງ​ປະ​ມູນ
+                        ແຈ້ງການ​ປະ​ມູນ
                       </h3>
-                      {cardData.map((item, i) => (
+                      {cardData1.map((item, i) => (
                         <div key={i}>
                           <Link href={item.imagePath} target="_blank">
                             <p className="text-black lh-1 fw-bold">
-                              {item.title}
+                            {truncateText(item.title, 4)}
                             </p>
                             <p className="text-black lh-1 fw-bold">
                               {item.date_start}
@@ -97,16 +124,18 @@ const Announcement = () => {
                         className="tp-payment__title fw-bold"
                         style={{ fontFamily: "Noto Sans Lao" }}
                       >
-                        ແຈ້ງ​ການ
+                        ແຈ້ງ​ການຕ່າງ​ໆ
                       </h3>
-                      {cardData.map((item, i) => (
-                        <div>
+                      {cardData2.map((item, i) => (
+                        <div key={i}>
+                          <Link href={item.pdfPath} target="_blank">
                           <p className="text-black lh-1 fw-bold">
-                            {item.title}
+                            {truncateText(item.title, 4)}
                           </p>
                           <p className="text-black lh-1 fw-bold">
-                            {item.date_start}
+                            {item.date}
                           </p>
+                          </Link>
                           <p className="text-black text-center lh-1 fw-bold">
                             --------------------------------------------
                           </p>
@@ -115,7 +144,7 @@ const Announcement = () => {
                     </div>
                     <div className="text-center">
                       <Link
-                        href=""
+                        href="/service-fee"
                         type="button"
                         className="btn btn-primary mt-2"
                       >

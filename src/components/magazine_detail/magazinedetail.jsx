@@ -7,7 +7,7 @@ export default function magazinedetail() {
         <iframe
           allowfullscreen="true"
           // src="https://heyzine.com/flip-book/724fae8541.html"
-          src="https://designrr.page/?id=359664&token=748970862&type=FP&h=5092"
+          src="https://designrr.page/?id=362050&token=1034138751&type=FP&h=6264"
           height="700"
           width="100%"
           frameborder="0"

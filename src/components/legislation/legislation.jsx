@@ -12,30 +12,40 @@ const cardData = [
     pdfPath: "/pdf/legislation/01.pdf",
     title:
       "ຂໍ້​ກຳ​ນົດ​ຂອງ​ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ ວ່າ​ດ້ວຍ ການ​ເກາະ​ຫ້ອຍ​ສາຍ​ໂທ​ລະ​ຄົມ ແລະ ອຸ​ປະ​ກອນ​ສື່​ສານ​ຕ່າງໆ ຮ່ວມ​ກັບ​ລະ​ບົບ​ຕາ​ຂ່າຍ​ໄຟ​ຟ້າ​",
+    No: "2921/ຟ​ຟ​ລ.ຫ​ຟ​ຟ​ລ",
+    date: "13/11/2023",
   },
   {
     id: 2,
     pdfPath: "/pdf/legislation/02.pdf",
     title:
       "ຂໍ້​ກຳ​ນົດ​ວ່າ​ດ້ວຍ ຂັ້ນ​ຕອນ​ການ​ດຳ​ເນີນ​ເອ​ກະ​ສານ​ວຽກ​ງານ​ການ​ເຈ​ລະ​ຈາ, ເຊັນ ແລະ ຈັດ​ຕັ້ງ​ປະ​ຕິ​ບັດ​ສັນ​ຍາ​ຊື້-ຂາຍ​ໄຟ​ຟ້າ ກັບ​ລູກ​ຄ້າ​ລາຍ​ກາງ ໃນ​ກຳ​ລັງ​ການ​ຊົມ​ໃຊ້​ໄຟ​ຟ້າ​ຕ່ຳ​ກວ່າ 5MVA ຫາ 315 kVA.(ສະ​ບັບ​ປີ 2023)",
+    No: "2728/ຟ​ຟ​ລ.ຝກ​ສ",
+    date: "24/10/2023",
   },
   {
     id: 3,
     pdfPath: "/pdf/legislation/03.pdf",
     title:
       "ຂໍ້​ກຳ​ນົດຂອງ​ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ ວ່າ​ດ້ວຍ ມາດ​ຕະ​ຖານ​ການ​ຕິດ​ຕັ້ງ ແລະ ການ​ເຊື່ອມ​ຕໍ່​ລະ​ບົບ​ຜະ​ລິດ​ພະ​ລັງ​ງານ​ໄຟ​ຟ້າ​ດ້ວຍ​ແສງ​ຕາ​ເວັນ ທີ່​ຕິດ​ຕັ້ງ​ຢູ່​ເທິງ​ຫຼັງ​ຄາ (Solar Rooftop)",
+    No: "0350/ຟ​ຟ​ລ.ຫ​ຟ​ຟ​ລ",
+    date: "29/01/2024",
   },
   {
     id: 4,
     pdfPath: "/pdf/legislation/04.pdf",
     title:
       "ຂໍ້​ແນະ​ນຳ ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ ຕໍ່​ກັບ​ຫຼັກ​ການ​ພິ​ຈາ​ລະ​ນາ​ຮັບ​ຊື້​ໄຟ​ຟ້າ​ຈາກ​ເອ​ກະ​ຊົນ (ສະ​ບັບ ປີ 2024)",
+    No: "0551/ຟ​ຟ​ລ.ຝ​ທກ-ກງ",
+    date: "13/02/2024",
   },
   {
     id: 5,
     pdfPath: "/pdf/legislation/05.pdf",
     title:
       "ຂໍ້​ແນະ​ນຳຂອງ​ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ ສຳ​ລັບ​ການ​ສະ​ໜອງ​ໄຟ​ຟ້າ ໃຫ້​ລູ​ກ​ຄ້າ​ລາຍ​ໃຫ່​ຍ ທີ່​ມິ​ກຳ​ລັງ​ຕິດ​ຕັ້ງ​ນັບ​ແຕ່ 5 MVA ຂຶ້ນ​ໄປ (ສະ​ບັບ​ປັ​ບ​ປຸງ ປີ 2023)",
+    No: "1518/ຟ​ຟ​ລ.ຫ​ຟ​ຟ​ລ",
+    date: "09/06/2023",
   },
 
   // Add more card data objects as needed
@@ -46,70 +56,37 @@ const Tables = () => {
     <>
       <div className="container wow tpfadeUp">
         <div className="row mt-50 mb-50">
-          <div>
-            <table className="table table-hover">
+          <div style={{ overflowX: "auto", width: "100%" }}>
+            <table
+              className="table table-hover"
+              style={{ width: "100%", whiteSpace: "nowrap" }}
+            >
               <thead>
-                <tr className="text-center fw-bold fs-5">
-                  <th className="text-white bg-primary"
-                    style={{
-                      width: "9%",
-                      paddingTop: "43px",
-                      paddingBottom: "42px",
-                    }}
+                <tr className="text-center fw-bold fs-4">
+                  <th
+                    className="text-white bg-primary py-4"
+                    style={{ width: "10%" }}
                   >
                     ລ/ດ
                   </th>
-
-                  <th className="text-white bg-primary"
-                    style={{
-                      width: "75%",
-                      paddingTop: "43px",
-                      paddingBottom: "42px",
-                    }}
+                  <th
+                    className="text-white bg-primary py-4"
+                    style={{ width: "10%" }}
                   >
-                    ​ຫົວ​ຂໍ້
+                    ​ດ​າວ​ໂຫລດ
                   </th>
-
-                  <th className="text-white bg-primary"
-                    style={{
-                      width: "16%",
-                      paddingTop: "43px",
-                      paddingBottom: "42px",
-                    }}
-                  >
-                    ​ດ​າວ​ໂຫລດ​ເອ​ກະ​ສານ
-                  </th>
+                  <th className="text-white bg-primary py-4">ເລກ​ທີ</th>
+                  <th className="text-white bg-primary py-4">​ຫົວ​ຂໍ້</th>
+                  <th className="text-white bg-primary py-4">​ລົງ​ວັນ​ທີ</th>
                 </tr>
               </thead>
               <tbody>
                 {cardData.map((item, i) => (
-                  <tr className="fs-6">
-                    <td
-                      className="text-center"
-                      key={i}
-                      style={{
-                        paddingTop: "40px",
-                        paddingBottom: "30px",
-                      }}
-                    >
+                  <tr className="fs-5">
+                    <td className="text-center py-4" key={i}>
                       {item.id}
                     </td>
-                    <td
-                      style={{
-                        paddingTop: "40px",
-                        paddingBottom: "30px",
-                      }}
-                    >
-                      {item.title}
-                    </td>
-
-                    <td
-                      className="text-center"
-                      style={{
-                        paddingTop: "40px",
-                        paddingBottom: "30px",
-                      }}
-                    >
+                    <td className="text-center py-4">
                       <Link href={item.pdfPath} target="_blank">
                         <button className="btn btn-primary">
                           <svg
@@ -129,6 +106,9 @@ const Tables = () => {
                         </button>
                       </Link>
                     </td>
+                    <td className="py-4">{item.No}</td>
+                    <td className="py-4">{item.title}</td>
+                    <td className="py-4">{item.date}</td>
                   </tr>
                 ))}
               </tbody>

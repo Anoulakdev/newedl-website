@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 import img1 from "@/public/images/iso/EDL_Quality_Policy1.jpg";
-import img2 from "@/public/images/iso/ISO9001_CERT_EDL_COVER.png";
+import img2 from "@/public/images/iso/logoiso.jpeg";
 
 const Organize = () => {
   return (
