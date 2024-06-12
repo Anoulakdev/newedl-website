@@ -213,7 +213,12 @@ const AllBranch = () => {
               >
                 <div className="tp-blog-item">
                   <div className="tp-blog-thumb fix rounded-4">
-                    <Link href={item.link} target="_blank">
+                    <Link
+                      href={{
+                        pathname: "/branch_detail",
+                        query: { branch_id: item.id },
+                      }}
+                    >
                       <Image src={item.imageSrc} alt="theme-pure" />
                     </Link>
                   </div>

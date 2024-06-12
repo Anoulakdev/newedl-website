@@ -10,29 +10,43 @@ const cardData = [
   {
     id: 1,
     pdfPath: "/pdf/service-fee/01.pdf",
-    title: "ຂໍ້​ຕົກ​ລົງ ການ​ຮັບ​ຊື້​ໄຟ ຈາດ​ພະ​ລັງ​ງານ​ແສງ​ຕາ​ເວັນ​ຢູ່​ເທິງ​ຫຼັງ​ຄາ​ທີ່​ຢູ່​ອາ​ໄສ (Solar Rooftop) ສຳ​ລັບ​ພາກ​ທີ່​ຢູ່​ອາ​ໄສ (ສະ​ບັບ ປີ 2024)​",
+    title:
+      "ຂໍ້​ຕົກ​ລົງ ການ​ຮັບ​ຊື້​ໄຟ ຈາດ​ພະ​ລັງ​ງານ​ແສງ​ຕາ​ເວັນ​ຢູ່​ເທິງ​ຫຼັງ​ຄາ​ທີ່​ຢູ່​ອາ​ໄສ (Solar Rooftop) ສຳ​ລັບ​ພາກ​ທີ່​ຢູ່​ອາ​ໄສ (ສະ​ບັບ ປີ 2024)",
+    No: "0160/ພບ",
+    date: "23/01/2024",
   },
   {
     id: 2,
     pdfPath: "/pdf/service-fee/02.pdf",
-    title: "ແຈ້ງ​ການ ການ​ຄິດ​ໄລ່ ລາ​ຄາ​ໝໍ້​ນັບ​ໄຟ ແລະ ອຸ​ປະ​ກອນ​ຕິດ​ຕັ້ງ​ຮ່ວມ​ທີ່​ບໍ​ລິ​ການ​ໃຫ້​ລູກ​ຄ້າ​ລາຍ​ໃຫ່​ຍ, ສະ​ຖາ​ນີ​ໄຟ​ຟ້າ, ແຫຼ່ງ​ຜະ​ລິດ ແລະ ພາກ​ເຂື່ອນ​ໄຟ​ຟ້າ​ໃນ​ຂອບ​ເຂດ​ທົ່ວ​ປະ​ເທດ (ສະ​ບັບ ປີ 2022)",
+    title:
+      "ແຈ້ງ​ການ ການ​ຄິດ​ໄລ່ ລາ​ຄາ​ໝໍ້​ນັບ​ໄຟ ແລະ ອຸ​ປະ​ກອນ​ຕິດ​ຕັ້ງ​ຮ່ວມ​ທີ່​ບໍ​ລິ​ການ​ໃຫ້​ລູກ​ຄ້າ​ລາຍ​ໃຫ່​ຍ, ສະ​ຖາ​ນີ​ໄຟ​ຟ້າ, ແຫຼ່ງ​ຜະ​ລິດ ແລະ ພາກ​ເຂື່ອນ​ໄຟ​ຟ້າ​ໃນ​ຂອບ​ເຂດ​ທົ່ວ​ປະ​ເທດ (ສະ​ບັບ ປີ 2022)",
+    No: "1702/ຟ​ຟ​ລ.ຝວ​ຜ",
+    date: "12/04/2024",
   },
   {
     id: 3,
     pdfPath: "/pdf/service-fee/03.pdf",
-    title: "ແຈ້ງ​ການ ການ​ເກັບ​ຄ່າ​ບໍ​ລິ​ການ​ເກາະ​ຫ້ອຍ​ບັນ​ດາ​ສາຍ​ສື່​ສານ ແລະ ອຸ​ປະ​ກອນ​ຕ່າງ​ໆ ປະ​ຈຳ​ປີ 2023 ແລະ ປິ 2024 (ສະ​ບັບ​ຊົ່ວ​ຄາວ ປີ 2024)",
+    title:
+      "ແຈ້ງ​ການ ການ​ເກັບ​ຄ່າ​ບໍ​ລິ​ການ​ເກາະ​ຫ້ອຍ​ບັນ​ດາ​ສາຍ​ສື່​ສານ ແລະ ອຸ​ປະ​ກອນ​ຕ່າງ​ໆ ປະ​ຈຳ​ປີ 2023 ແລະ ປິ 2024 (ສະ​ບັບ​ຊົ່ວ​ຄາວ ປີ 2024)",
+    No: "0499/ຟ​ຟ​ລ.ຝ​ທກ-ກງ",
+    date: "12/02/2024",
   },
   {
     id: 4,
     pdfPath: "/pdf/service-fee/04.pdf",
-    title: "ແຈ້ງ​ການ​ ການ​ປັບ​ປຸງ​ຄ່າ​ຈອງ​ໝໍ້​ນັບ​ໄຟ​ຕ່ຳ​ສຸດ ສຳ​ລັບ​ໝໍ້​ນັບ​ໄຟ​ທຸກ​ປະ​ເພດ (ສະ​ບັບ​ປັບ​ປຸງ ປີ 2023)",
+    title:
+      "ແຈ້ງ​ການ​ ການ​ປັບ​ປຸງ​ຄ່າ​ຈອງ​ໝໍ້​ນັບ​ໄຟ​ຕ່ຳ​ສຸດ ສຳ​ລັບ​ໝໍ້​ນັບ​ໄຟ​ທຸກ​ປະ​ເພດ (ສະ​ບັບ​ປັບ​ປຸງ ປີ 2023)",
+    No: "0154/ຟ​ຟ​ລ.ຫ​ຟ​ຟ​ລ",
+    date: "17/01/2023",
   },
   {
     id: 5,
     pdfPath: "/pdf/service-fee/05.pdf",
-    title: "ແຈ້ງ​ການ​ການ​ປັບ​ປຸງ​ລາ​ຄາ ຄ່າ​ບຳ​ລຸງ​ຮັກ​ສາ​ໝໍ້​ນັບ​ໄຟ ທຸກ​ປະ​ເພດ ນັ​ບ​ແຕ່​ປີ 2024-2029(ສະ​ບັບ​ປັບ​ປຸງ ປີ 2024)",
+    title:
+      "ແຈ້ງ​ການ​ການ​ປັບ​ປຸງ​ລາ​ຄາ ຄ່າ​ບຳ​ລຸງ​ຮັກ​ສາ​ໝໍ້​ນັບ​ໄຟ ທຸກ​ປະ​ເພດ ນັ​ບ​ແຕ່​ປີ 2024-2029(ສະ​ບັບ​ປັບ​ປຸງ ປີ 2024)",
+    No: "0823/ຟ​ຟ​ລ.ຝ​ທກ-ກງ",
+    date: "12/03/2024",
   },
-  
 
   // Add more card data objects as needed
 ];
@@ -42,71 +56,37 @@ const Tables = () => {
     <>
       <div className="container mt-40 mb-40 wow tpfadeUp">
         <div className="row">
-          <div
-            className="table-responsive"
-          >
+          <div style={{ overflowX: "auto", width: "100%" }}>
             <table
               className="table table-hover"
+              style={{ width: "100%", whiteSpace: "nowrap" }}
             >
               <thead>
-                <tr className="text-center fw-bold fs-5">
-                  <th className="text-white bg-primary"
-                    style={{ width: "9%",
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
+                <tr className="text-center fw-bold fs-4">
+                  <th
+                    className="text-white bg-primary py-4"
+                    style={{ width: "10%" }}
                   >
                     ລ/ດ
                   </th>
-                  
-                  <th className="text-white bg-primary"
-                    style={{ width: "75%",
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
+                  <th
+                    className="text-white bg-primary py-4"
+                    style={{ width: "10%" }}
                   >
-                    ​ຫົວ​ຂໍ້
+                    ​ດ​າວ​ໂຫລດ
                   </th>
-                  
-                  <th className="text-white bg-primary"
-                    style={{ width: "16%",
-                      paddingTop: "40px",
-                      paddingBottom: "40px",
-                    }}
-                  >
-                    ​ດ​າວ​ໂຫລດ​ເອ​ກະ​ສານ
-                  </th>
+                  <th className="text-white bg-primary py-4">ເລກ​ທີ</th>
+                  <th className="text-white bg-primary py-4">​ຫົວ​ຂໍ້</th>
+                  <th className="text-white bg-primary py-4">​ລົງ​ວັນ​ທີ</th>
                 </tr>
               </thead>
               <tbody>
                 {cardData.map((item, i) => (
-                  <tr className="fs-6">
-                    <td
-                      className="text-center"
-                      key={i}
-                      style={{
-                        paddingTop: "33px",
-                        paddingBottom: "33px",
-                      }}
-                    >
+                  <tr className="fs-5">
+                    <td className="text-center py-4" key={i}>
                       {item.id}
                     </td>
-                    <td
-                      style={{
-                        paddingTop: "33px",
-                        paddingBottom: "33px",
-                      }}
-                    >
-                      {item.title}
-                    </td>
-                    
-                    <td
-                      className="text-center"
-                      style={{
-                        paddingTop: "33px",
-                        paddingBottom: "33px",
-                      }}
-                    >
+                    <td className="text-center py-4">
                       <Link href={item.pdfPath} target="_blank">
                         <button className="btn btn-primary">
                           <svg
@@ -126,6 +106,9 @@ const Tables = () => {
                         </button>
                       </Link>
                     </td>
+                    <td className="py-4">{item.No}</td>
+                    <td className="py-4">{item.title}</td>
+                    <td className="py-4">{item.date}</td>
                   </tr>
                 ))}
               </tbody>
