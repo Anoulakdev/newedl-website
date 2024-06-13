@@ -95,9 +95,7 @@ const Announcement = () => {
                               {item.date_start}
                             </p>
                           </Link>
-                          <p className="text-black text-center lh-1 fw-bold">
-                            --------------------------------------------
-                          </p>
+                          <br />
                         </div>
                       ))}
                     </div>
@@ -136,9 +134,7 @@ const Announcement = () => {
                             {item.date}
                           </p>
                           </Link>
-                          <p className="text-black text-center lh-1 fw-bold">
-                            --------------------------------------------
-                          </p>
+                          <br />
                         </div>
                       ))}
                     </div>

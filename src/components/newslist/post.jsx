@@ -11,10 +11,6 @@ import moment from "moment";
 import Image from "next/image";
 import Rolling from "@/public/images/gif/Rolling.gif";
 
-// import img_1 from "../../../public/assets/img/blog/blog-list-1.jpg";
-// import img_2 from "../../../public/assets/img/blog/blog-list-3.jpg";
-// import thumb from "../../../public/assets/img/blog/blog-list-2.jpg";
-
 import news1 from "@/public/images/news/1.jpeg";
 // import news2 from "@/public/images/news/2.jpg";
 // import news3 from "@/public/images/news/3.jpg";

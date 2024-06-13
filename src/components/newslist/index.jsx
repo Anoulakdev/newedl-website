@@ -6,7 +6,7 @@ import Organize from "@/src/components/organization/organize";
 
 import Government from "@/src/components/government/index2";
 import HeaderFour from "@/src/layout/headers/header-4";
-import Post from "@/src/components/newslist/post";
+import Post from "@/src/components/newslist/post1";
 import imgbread from "@/public/images/navbar/News.png";
 
 const NewsList = () => {
