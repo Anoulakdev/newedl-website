@@ -88,7 +88,7 @@ export default function ContentNews() {
         <div className="row">
           {item.imgpath.map((path, index) => (
             <div class="p-2 col-lg-6 col-md-6">
-              <img key={index} src={path} alt={`Image ${index + 1}`} style={{width: '100%', height: '400px'}} />
+              <img key={index} src={path} alt={`Image ${index + 1}`} style={{width: '100%', height: '100%'}} />
             </div>
           ))}
         </div>
