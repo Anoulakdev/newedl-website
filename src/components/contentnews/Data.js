@@ -2,7 +2,7 @@ const Data = [
   {
     id: 1,
     textheading: <>ຝ່າຍຄຸ້ມຄອງລະບົບໄຟຟ້າພາກກາງ ມີຜົນສໍາເລັດຫຼາຍດ້ານ</>,
-    imgheading: "/images/news/2/1.jpg",
+    imgheading: "/images/news/2/8.jpg",
 
     text: (
       <>
@@ -47,7 +47,6 @@ const Data = [
       "/images/news/2/5.jpg",
       "/images/news/2/6.jpg",
       "/images/news/2/7.jpg",
-      "/images/news/2/8.jpg",
     ],
   },
   {

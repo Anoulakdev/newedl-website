@@ -17,7 +17,7 @@ const post_data = [
   {
     id: 1,
     textheading: <>ຝ່າຍຄຸ້ມຄອງລະບົບໄຟຟ້າພາກກາງ ມີຜົນສໍາເລັດຫຼາຍດ້ານ</>,
-    imgheading: "/images/news/2/1.jpg",
+    imgheading: "/images/news/2/8.jpg",
     postdate: "23-05-2024",
   },
   {
