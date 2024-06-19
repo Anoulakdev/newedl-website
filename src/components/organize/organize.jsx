@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-import img from "@/public/images/organization/edlchart.jpg";
+import img from "@/public/images/organization/EDLchart.jpg";
 
 const Organize = () => {
   return (
