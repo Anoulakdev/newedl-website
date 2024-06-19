@@ -36,7 +36,7 @@ const menu_data = [
         { link: "/newslist", title: "​ຂ່າ​ວ​ສານ" },
         { link: "/knowledge", title: "​ສາ​ລະ​ໜ້າ​ຮູ້" },
         { link: "/turnoff", title: "ແຈ້ງມອດ​ໄຟ" },
-        { link: "/announcement", title: "ແຈ້ງການ" },
+        // { link: "/announcement", title: "ແຈ້ງການ" },
         { link: "/magazine", title: "ວ​າ​ລະ​ສານ" },
         { link: "/jobvacancy", title: "​ປະ​ກາດ​ຮັບ​ສະ​ໝັກ" },
         

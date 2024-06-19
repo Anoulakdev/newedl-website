@@ -106,7 +106,7 @@ const Data = [
     id: 18,
     heading: "ສາຂານະຄອນຫລວງ1",
     cover: "",
-    organize: "/images/branch_organize/organize/Director(vientiane1).jpg",
+    organize: "/images/branch_organize/organize/Director(vientiane1).png",
   },
   {
     id: 19,
