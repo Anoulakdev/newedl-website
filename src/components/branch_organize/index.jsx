@@ -15,7 +15,7 @@ const Branch = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ສາ​ຂາແຂວງ"} imgbread={imgbread} />
+            <BreadcrumbTwo title={"ໂຄງ​ຮ່າງສາ​ຂາແຂວງ"} imgbread={imgbread} />
             <AllBranch />
             {/* <Government /> */}
           </main>

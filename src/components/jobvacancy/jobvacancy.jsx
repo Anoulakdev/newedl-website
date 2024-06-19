@@ -40,16 +40,16 @@ const PostboxArea = () => {
                     <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-8">
                       <div className="card-body">
                         <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                          ພະນັກງານພັດທະນາໂປຣແກຣມ
+                          ວິຊາການ IT Programmer (ພະນັກງານໄອທີພັດທະນາ Program)
                         </h5>
-                        <p className="text-dark fw-bold">
+                        <p className="text-dark fw-bold lh-1">
                           ສຳນັກງານໃຫຍ່ໄຟຟ້າລາວ-ນະຄອນຫຼວງວຽງຈັນ
                         </p>
-                        <p className="card-text">
+                        <p className="card-text lh-1">
                           ຝ່າຍເຕັກໂນໂລຊີການສື່ສານ ແລະ ຂໍ້ມູນຂ່າວສານ
                         </p>
-                        <p className="card-text">ພະແນກ Application</p>
-                        <p className="text-danger">
+                        <p className="card-text lh-1">ພະແນກ Application</p>
+                        <p className="text-danger lh-1">
                           ເປີດຮັບວັນທີ 02/11/2023 - 04/11/2023
                         </p>
                         <Link href="/jobdetail" className="btn btn-primary">
@@ -79,16 +79,16 @@ const PostboxArea = () => {
                     <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-8">
                       <div className="card-body">
                         <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                          ພະນັກງານພັດທະນາໂປຣແກຣມ
+                          ວິຊາການ IT Programmer (ພະນັກງານໄອທີພັດທະນາ Program)
                         </h5>
-                        <p className="text-dark fw-bold">
+                        <p className="text-dark fw-bold lh-1">
                           ສຳນັກງານໃຫຍ່ໄຟຟ້າລາວ-ນະຄອນຫຼວງວຽງຈັນ
                         </p>
-                        <p className="card-text">
+                        <p className="card-text lh-1">
                           ຝ່າຍເຕັກໂນໂລຊີການສື່ສານ ແລະ ຂໍ້ມູນຂ່າວສານ
                         </p>
-                        <p className="card-text">ພະແນກ Application</p>
-                        <p className="text-danger">
+                        <p className="card-text lh-1">ພະແນກ Application</p>
+                        <p className="text-danger lh-1">
                           ເປີດຮັບວັນທີ 02/11/2023 - 04/11/2023
                         </p>
                         <Link href="/jobdetail" className="btn btn-primary">
@@ -118,16 +118,16 @@ const PostboxArea = () => {
                     <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-8">
                       <div className="card-body">
                         <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                          ພະນັກງານພັດທະນາໂປຣແກຣມ
+                          ວິຊາການ IT Programmer (ພະນັກງານໄອທີພັດທະນາ Program)
                         </h5>
-                        <p className="text-dark fw-bold">
+                        <p className="text-dark fw-bold lh-1">
                           ສຳນັກງານໃຫຍ່ໄຟຟ້າລາວ-ນະຄອນຫຼວງວຽງຈັນ
                         </p>
-                        <p className="card-text">
+                        <p className="card-text lh-1">
                           ຝ່າຍເຕັກໂນໂລຊີການສື່ສານ ແລະ ຂໍ້ມູນຂ່າວສານ
                         </p>
-                        <p className="card-text">ພະແນກ Application</p>
-                        <p className="text-danger">
+                        <p className="card-text lh-1">ພະແນກ Application</p>
+                        <p className="text-danger lh-1">
                           ເປີດຮັບວັນທີ 02/11/2023 - 04/11/2023
                         </p>
                         <Link href="/jobdetail" className="btn btn-primary">

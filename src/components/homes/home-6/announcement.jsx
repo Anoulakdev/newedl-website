@@ -91,7 +91,7 @@ const Announcement = () => {
                             <p className="text-black lh-1 fw-bold">
                             {truncateText(item.title, 4)}
                             </p>
-                            <p className="text-black lh-1 fw-bold">
+                            <p className="text-secondary lh-1 fw-bold">
                               {item.date_start}
                             </p>
                           </Link>
@@ -130,7 +130,7 @@ const Announcement = () => {
                           <p className="text-black lh-1 fw-bold">
                             {truncateText(item.title, 4)}
                           </p>
-                          <p className="text-black lh-1 fw-bold">
+                          <p className="text-secondary lh-1 fw-bold">
                             {item.date}
                           </p>
                           </Link>

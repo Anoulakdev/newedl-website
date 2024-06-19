@@ -9,7 +9,6 @@ import SecurityArea from "./security-area";
 import ServiceArea from "./service-area1";
 import Carousel from "../../carousel";
 import Government from "./government";
-import Knowledge from "./knowledge";
 import Payment from "./payment";
 import Activity from "./activity";
 import News2 from "./news";
@@ -29,7 +28,6 @@ const HomeFour = () => {
             <News2 />
             {/* <BlogArea /> */}
             {/* <PriceArea /> */}
-            {/* <Knowledge /> */}
             {/* <Payment /> */}
             <ServiceArea />
             {/* <Activity /> */}

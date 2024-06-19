@@ -23,7 +23,7 @@ import img99 from "@/public/images/branch/image99.png";
 import img100 from "@/public/images/branch/image100.png";
 import img101 from "@/public/images/branch/image101.png";
 import img102 from "@/public/images/branch/image102.png";
-import imglocation from "@/public/images/icons-location.png";
+import imglocation from "@/public/images/map.png";
 
 const AllBranch = () => {
   const cardData = [

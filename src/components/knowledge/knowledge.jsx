@@ -2,122 +2,92 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-import know1 from "@/public/images/knowledge/know1.jpg";
-import know2 from "@/public/images/knowledge/know2.jpg";
-import know3 from "@/public/images/knowledge/know3.jpg";
-import know4 from "@/public/images/knowledge/know4.png";
-import know5 from "@/public/images/knowledge/know5.jpg";
-import know6 from "@/public/images/knowledge/know6.jpg";
-import know7 from "@/public/images/knowledge/know7.jpg";
-import know8 from "@/public/images/knowledge/know8.jpg";
-
-
 const know_data = [
-  // home 03
   {
     id: 1,
-    img: know1,
-    category: "Crm Software",
-    color: "1",
-    date: "28 April, 2023",
-    title: <>ວິ​ທີ​ປະ​ຢັດ​ໄຟ​ຟ້າ ໃນ​ຫ້ອງນອນ</>,
-
-    author_name: "Hilary Ouse",
-    job_title: "Founder & CEO Dulalix",
+    title: "2 ຂໍ້​ຫ້າມ 3 ຄວນ​ຮູ້ ເມື່ອ​ເກີດພາ​ຍຸ​ຟ້າ​ຜ່າ​ລົມ​ແຮງ",
+    img: "/images/knowledge/1.jpeg",
+    video: "",
+    Date: "28/4/2024",
   },
   {
     id: 2,
-    img: know3,
-    category: "Sales Tools",
-    color: "2",
-    date: "28 April, 2023",
-    title: <>ວິ​ທີ​ປະ​ຢັດ​ໄຟ​ຟ້າ ໃນ​ຫ້ອງຄົວ</>,
-
-    author_name: "Rudra Ghosh",
-    job_title: "Founder & CEO Dulalix",
+    title: "ຂໍ້​ປະ​ຕິ​ບັດ ການ​ນຳ​ໃຊ້ EV CHARGER",
+    img: "/images/knowledge/2.jpeg",
+    video: "",
+    Date: "28/4/2024",
   },
   {
     id: 3,
-    img: know2,
-    category: "Sales Management",
-    color: "3",
-    date: "28 April, 2023",
-    title: <>ໄຟ​ຟ້າ​ລັດ​ວົງ​ຈອນ</>,
-    description: (
-      <>How friends from college went on to build one powerful platform</>
-    ),
-
-    author_name: "Penny Tool",
-    job_title: "Founder & CEO Dulalix",
+    title: "6 ວິ​ທີ​ງ່າຍໆ ຢູ່​ບ້ານ​ແບບ​ໃດ​ໃຫ້​ປະ​ຢັດ​ໄຟ​ຟ້າ",
+    img: "/images/knowledge/3.jpeg",
+    video: "",
+    Date: "28/4/2024",
   },
   {
     id: 4,
-    img: know4,
-    category: "Sales Management",
-    color: "3",
-    date: "28 April, 2023",
-    title: <>Smart Meter ແມ່ນ​ຫ​ຍັງ</>,
-    description: (
-      <>How friends from college went on to build one powerful platform</>
-    ),
-
-    author_name: "Penny Tool",
-    job_title: "Founder & CEO Dulalix",
+    title: "2 ຂໍ້​ຄວນ​ລະ​ວັງ ເວ​ລາ​ຝົນ​ຕົກ​ນ້ຳ​ຖ້ວມ",
+    img: "/images/knowledge/4.jpeg",
+    video: "",
+    Date: "28/4/2024",
   },
   {
     id: 5,
-    img: know5,
-    category: "Sales Management",
-    color: "3",
-    date: "28 April, 2023",
-    title: <>ຂໍ້​ປະ​ຕິ​ບັດ ການ​ນຳ​ໃຊ້ EV CHARGER</>,
-    description: (
-      <>How friends from college went on to build one powerful platform</>
-    ),
-
-    author_name: "Penny Tool",
-    job_title: "Founder & CEO Dulalix",
+    title: "Solar Rooftop On-Grid",
+    img: "/images/knowledge/5.jpeg",
+    video: "",
+    Date: "28/4/2024",
   },
   {
     id: 6,
-    img: know6,
-    category: "Sales Management",
-    color: "3",
-    date: "28 April, 2023",
-    title: <>ວິ​ທີໃຊ້​ເຄື່ອງ​ໄຟ​ຟ້າ​ໃນ​ຍາມ​ ອາ​ກາດ​ຮ້ອນ</>,
-    description: (
-      <>How friends from college went on to build one powerful platform</>
-    ),
-
-    author_name: "Penny Tool",
-    job_title: "Founder & CEO Dulalix",
+    title: "6 ວິ​ທີ​ປ້ອງ​ກັນ​ ເຄື່ອງ​ໃຊ້​ໄຟ​ຟ້າ​ດູດ​ໃນ​ລະ​ດູ​ຝົນ",
+    img: "/images/knowledge/6.jpeg",
+    video: "",
+    Date: "28/4/2024",
   },
   {
     id: 7,
-    img: know7,
-    category: "Sales Management",
-    color: "3",
-    date: "28 April, 2023",
-    title: <>ຮັກ​ໂລກ ດ້ວຍ​ລົດ​ໄຟ​ຟ້າ</>,
-    description: (
-      <>How friends from college went on to build one powerful platform</>
-    ),
-
-    author_name: "Penny Tool",
-    job_title: "Founder & CEO Dulalix",
+    title: "ກວດ​ກາ​ລະ​ບົບ​ໄຟ​ຟ້າ​ໃນ​ເຮືອນ ເພື່ອ​ຄວາມ​ປອດ​ໄພ​ໃນ​ລະ​ດູ​ຝົນ",
+    img: "/images/knowledge/7.jpeg",
+    video: "",
+    Date: "28/4/2024",
   },
   {
     id: 8,
-    img: know8,
-    category: "Crm Software",
-    color: "1",
-    date: "28 April, 2023",
-    title: <>ຄຸນ​ປະ​ໂຫຍດ​ຂອງ Solar rooftop</>,
-
-    author_name: "Hilary Ouse",
-    job_title: "Founder & CEO Dulalix",
+    title:
+      "ຂອບ​ເຂດ​ແລວ​ສະ​ຫງວນ​ຂອງ​ສາຍ​ສົ່ງ​ໄຟ​ຟ້າ​ແຮງ​ສູງ 115kV, 230kV, 500kV",
+    img: "/images/knowledge/8.jpeg",
+    video: "",
+    Date: "28/4/2024",
+  },
+  {
+    id: 9,
+    title:
+      "5 ສາ​ເຫດ ເຮັດ​ໃຫ້​ສາຍ​ໄຟເຊື່ອມ​ຄຸນ​ນະ​ພາບ ແລະ ອາ​ຍຸ​ການ​ໃຊ້​ງານ​ສັ້ນ​ລົງ",
+    img: "/images/knowledge/9.jpeg",
+    video: "",
+    Date: "28/4/2024",
+  },
+  {
+    id: 10,
+    title: "ວິ​ທີ​ປະ​ຢັດ​ໄຟ​ຟ້າ ໃນ​ຫ້ອງ​ຄົວ",
+    img: "/images/knowledge/10.jpg",
+    video: "",
+    Date: "28/4/2024",
   },
 ];
+
+const truncateText = (text, maxLength) => {
+  if (text.length <= maxLength) return text;
+
+  const truncated = text.slice(0, maxLength);
+
+  const lastSpaceIndex = truncated.lastIndexOf(" ");
+
+  if (lastSpaceIndex === -1) return truncated + "...";
+
+  return truncated.slice(0, lastSpaceIndex) + "...";
+};
 
 const Portfolio = () => {
   return (
@@ -131,25 +101,37 @@ const Portfolio = () => {
                 data-index={i}
                 className="col-xl-3 col-lg-3 col-md-3 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
               >
-                <div className="tp-blog-item" style={{ height: "480px" }}>
+                <div className="tp-blog-item" style={{ height: "490px" }}>
                   <div className="tp-blog-thumb fix">
-                    <Link href="/know_detail">
-                      <Image src={item.img} alt="theme-pure" style={{ height: "340px" }} />
+                    <Link href={{
+                                pathname: "/know_detail",
+                                query: { know_id: item.id },
+                              }}>
+                      <Image
+                        src={item.img}
+                        alt="theme-pure"
+                        width={150}
+                        height={150}
+                        style={{ height: "330px" }}
+                      />
                     </Link>
                   </div>
                   <div className="tp-blog-content">
                     <div className="tp-blog-meta d-flex align-items-center">
                       <div>
-                        <span>{item.date}</span>
+                        <span>{item.Date}</span>
                       </div>
                     </div>
                     <div className="tp-blog-title-box">
                       <Link
                         className="tp-blog-title-sm"
-                        href="/know_detail"
+                        href={{
+                          pathname: "/know_detail",
+                          query: { know_id: item.id },
+                        }}
                         style={{ fontFamily: "Noto Sans Lao" }}
                       >
-                        {item.title}
+                        {truncateText(item.title, 44)}
                       </Link>
                     </div>
                   </div>
@@ -157,7 +139,7 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
-          <div className="basic-pagination text-center mt-5">
+          {/* <div className="basic-pagination text-center mt-5">
             <nav>
               <ul>
                 <li>
@@ -193,7 +175,7 @@ const Portfolio = () => {
                 </li>
               </ul>
             </nav>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

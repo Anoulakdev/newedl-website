@@ -18,7 +18,7 @@ const JobDetail = () => {
           <main>
             <BreadcrumbTwo title={"ລາຍ​ລະ​ອຽດປະ​ກາດ​ຮັບ​ສະ​ໝັກ"} imgbread={imgbread}/>
             <Jobdetail />
-            <Government />
+            {/* <Government /> */}
           </main>
           <FooterFour />
         </div>

@@ -77,24 +77,24 @@ const Tables = () => {
               style={{ width: "100%", whiteSpace: "nowrap" }}
             >
               <thead>
-                <tr className="text-center fw-bold fs-4 table-blue">
-                  <th className="text-white bg-primary py-4">ລ/ດ</th>
-                  <th className="text-white bg-primary py-4">
+                <tr className="text-center fw-bold fs-5">
+                  <th className="bg-secondary-subtle py-4">ລ/ດ</th>
+                  <th className="bg-secondary-subtle py-4">
                     ​ດ​າວ​ໂຫລດ
                   </th>
-                  <th className="text-white bg-primary py-4">ຫົວ​ຂໍ້</th>
-                  <th className="text-white bg-primary py-4">
+                  <th className="bg-secondary-subtle py-4">ຫົວ​ຂໍ້</th>
+                  <th className="bg-secondary-subtle py-4">
                     ​ລາຍ​ລະ​ອຽດ​ເນື້ອ​ໃນ
                   </th>
-                  <th className="text-white bg-primary py-4">
+                  <th className="bg-secondary-subtle py-4">
                     ​ວັນ​ທີ​​ເລີ່ມ​ປະ​ກາດ
                   </th>
-                  <th className="text-white bg-primary py-4">​ວັນ​ທີ​​ສິ້ນ​ສຸດ</th>
+                  <th className="bg-secondary-subtle py-4">​ວັນ​ທີ​​ສິ້ນ​ສຸດ</th>
                 </tr>
               </thead>
               <tbody>
                 {cardData.map((item, i) => (
-                  <tr className="fs-5">
+                  <tr className="fs-6">
                     <td className="text-center py-4" key={i}>
                       {item.id}
                     </td>
