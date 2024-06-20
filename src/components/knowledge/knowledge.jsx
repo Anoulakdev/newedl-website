@@ -107,11 +107,10 @@ const Portfolio = () => {
                                 pathname: "/know_detail",
                                 query: { know_id: item.id },
                               }}>
-                      <Image
+                      <img
                         src={item.img}
                         alt="theme-pure"
-                        width={150}
-                        height={150}
+                        width="100%"
                         style={{ height: "330px" }}
                       />
                     </Link>

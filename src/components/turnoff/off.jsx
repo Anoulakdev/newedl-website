@@ -10,7 +10,7 @@ import moment from "moment";
 
 import Image from "next/image";
 
-import imgoff from "@/public/images/turnoff/image-151.png";
+import imgoff from "@/public/images/turnoff/image15.png";
 import Rolling from "@/public/images/gif/Rolling.gif";
 
 const PostboxArea = () => {

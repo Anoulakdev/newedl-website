@@ -23,12 +23,11 @@ export default function Knowdetail() {
         </h1>
         <div className="text-center">
           <Link href={item.img} target="_blank">
-          <Image
+          <img
             src={item.img}
             className="img-fluid"
             alt="theme-pure"
-            width={750}
-            height={100}
+            width="80%"
           />
           </Link>
         </div>

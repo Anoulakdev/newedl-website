@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import imgoff from "@/public/images/turnoff/image-151.png";
+import imgoff from "@/public/images/turnoff/image15.png";
 import moment from "moment";
 
 

@@ -21,24 +21,29 @@ const Tables = () => {
     <>
       <div className="container mt-60 mb-60 wow tpfadeUp">
         <div className="row">
-          <h1 className="text-primary" style={{ fontFamily: "Noto Sans Lao", fontSize: "50px" }}>
+          <h1 style={{ fontFamily: "Noto Sans Lao", fontSize: "50px" }}>
             ລາຍ​ການ
           </h1>
         </div>
         <div className="row mt-30 ps-4">
-          
-            <nav>
-              <ul>
-                {cardData.map((menu_item, i) => (
-                  <li key={i} className="my-2">
-                    <Link className="fs-4" href={menu_item.pdfPath} target="_blank">
-                      {menu_item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          
+          <nav>
+            <ul>
+              {cardData.map((menu_item, i) => (
+                <li
+                  key={i}
+                  className="my-2 text-primary text-decoration-underline"
+                >
+                  <Link
+                    className="fs-4"
+                    href={menu_item.pdfPath}
+                    target="_blank"
+                  >
+                    {menu_item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </>

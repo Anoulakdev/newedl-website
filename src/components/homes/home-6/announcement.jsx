@@ -36,29 +36,32 @@ const cardData2 = [
   {
     id: 1,
     pdfPath: "/pdf/service-fee/01.pdf",
-    title: "ຂໍ້​ຕົກ​ລົງ ການ​ຮັບ​ຊື້​ໄຟ ຈາດ​ພະ​ລັງ​ງານ​ແສງ​ຕາ​ເວັນ​ຢູ່​ເທິງ​ຫຼັງ​ຄາ​ທີ່​ຢູ່​ອາ​ໄສ (Solar Rooftop) ສຳ​ລັບ​ພາກ​ທີ່​ຢູ່​ອາ​ໄສ (ສະ​ບັບ ປີ 2024)",
+    title:
+      "ຂໍ້​ຕົກ​ລົງ ການ​ຮັບ​ຊື້​ໄຟ ຈາດ​ພະ​ລັງ​ງານ​ແສງ​ຕາ​ເວັນ​ຢູ່​ເທິງ​ຫຼັງ​ຄາ​ທີ່​ຢູ່​ອາ​ໄສ (Solar Rooftop) ສຳ​ລັບ​ພາກ​ທີ່​ຢູ່​ອາ​ໄສ (ສະ​ບັບ ປີ 2024)",
     date: "23/01/2024",
   },
   {
     id: 2,
     pdfPath: "/pdf/service-fee/02.pdf",
-    title: "ແຈ້ງ​ການ ການ​ຄິດ​ໄລ່ ລາ​ຄາ​ໝໍ້​ນັບ​ໄຟ ແລະ ອຸ​ປະ​ກອນ​ຕິດ​ຕັ້ງ​ຮ່ວມ​ທີ່​ບໍ​ລິ​ການ​ໃຫ້​ລູກ​ຄ້າ​ລາຍ​ໃຫ່​ຍ, ສະ​ຖາ​ນີ​ໄຟ​ຟ້າ, ແຫຼ່ງ​ຜະ​ລິດ ແລະ ພາກ​ເຂື່ອນ​ໄຟ​ຟ້າ​ໃນ​ຂອບ​ເຂດ​ທົ່ວ​ປະ​ເທດ (ສະ​ບັບ ປີ 2022)",
+    title:
+      "ແຈ້ງ​ການ ການ​ຄິດ​ໄລ່ ລາ​ຄາ​ໝໍ້​ນັບ​ໄຟ ແລະ ອຸ​ປະ​ກອນ​ຕິດ​ຕັ້ງ​ຮ່ວມ​ທີ່​ບໍ​ລິ​ການ​ໃຫ້​ລູກ​ຄ້າ​ລາຍ​ໃຫ່​ຍ, ສະ​ຖາ​ນີ​ໄຟ​ຟ້າ, ແຫຼ່ງ​ຜະ​ລິດ ແລະ ພາກ​ເຂື່ອນ​ໄຟ​ຟ້າ​ໃນ​ຂອບ​ເຂດ​ທົ່ວ​ປະ​ເທດ (ສະ​ບັບ ປີ 2022)",
     date: "12/04/2022",
   },
   {
     id: 3,
     pdfPath: "/pdf/service-fee/03.pdf",
-    title: "ແຈ້ງ​ການ ການ​ເກັບ​ຄ່າ​ບໍ​ລິ​ການ​ເກາະ​ຫ້ອຍ​ບັນ​ດາ​ສາຍ​ສື່​ສານ ແລະ ອຸ​ປະ​ກອນ​ຕ່າງ​ໆ ປະ​ຈຳ​ປີ 2023 ແລະ ປິ 2024 (ສະ​ບັບ​ຊົ່ວ​ຄາວ ປີ 2024)",
+    title:
+      "ແຈ້ງ​ການ ການ​ເກັບ​ຄ່າ​ບໍ​ລິ​ການ​ເກາະ​ຫ້ອຍ​ບັນ​ດາ​ສາຍ​ສື່​ສານ ແລະ ອຸ​ປະ​ກອນ​ຕ່າງ​ໆ ປະ​ຈຳ​ປີ 2023 ແລະ ປິ 2024 (ສະ​ບັບ​ຊົ່ວ​ຄາວ ປີ 2024)",
     date: "12/02/2024",
   },
 ];
 
 function truncateText(text, wordLimit) {
-  const words = text.split(' ');
+  const words = text.split(" ");
   if (words.length <= wordLimit) {
     return text;
   }
-  return words.slice(0, wordLimit).join(' ') + '...';
+  return words.slice(0, wordLimit).join(" ") + "...";
 }
 
 const Announcement = () => {
@@ -86,19 +89,20 @@ const Announcement = () => {
                         ແຈ້ງການ​ປະ​ມູນ
                       </h3>
                       {cardData1.map((item, i) => (
-                        <div key={i}>
+                        <div key={i} className="mb-1">
                           <Link href={item.imagePath} target="_blank">
-                            <p className="text-black lh-1 fw-bold">
-                            {truncateText(item.title, 4)}
-                            </p>
-                            <p className="text-secondary lh-1 fw-bold">
+                            <div className="text-black fw-bold mb-1">
+                              {truncateText(item.title, 4)}
+                            </div>
+                            <div className="text-secondary fw-bold">
                               {item.date_start}
-                            </p>
+                            </div>
                           </Link>
                           <br />
                         </div>
                       ))}
                     </div>
+
                     <div className="text-center">
                       <Link
                         href="/notice-of-auction"
@@ -125,14 +129,14 @@ const Announcement = () => {
                         ແຈ້ງ​ການຕ່າງ​ໆ
                       </h3>
                       {cardData2.map((item, i) => (
-                        <div key={i}>
+                        <div key={i} className="mb-1">
                           <Link href={item.pdfPath} target="_blank">
-                          <p className="text-black lh-1 fw-bold">
-                            {truncateText(item.title, 4)}
-                          </p>
-                          <p className="text-secondary lh-1 fw-bold">
-                            {item.date}
-                          </p>
+                            <div className="text-black fw-bold mb-1">
+                              {truncateText(item.title, 4)}
+                            </div>
+                            <div className="text-secondary fw-bold">
+                              {item.date}
+                            </div>
                           </Link>
                           <br />
                         </div>

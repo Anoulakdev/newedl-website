@@ -1,85 +1,64 @@
 "use client";
-import VideoPopup from "@/src/modals/video-popup";
-import SearchIcon from "@/src/svg/search-icon";
 import Link from "next/link";
 import React, { useState } from "react";
 import Categories from "./categories";
 import RecentPost from "./recent-post";
 import Search from "./search";
-import Tags from "./tags";
+import moment from "moment";
 
-import img_1 from "@/public/images/notice_of_auction/Smartmeter.jpg";
-import img_2 from "@/public/images/notice_of_auction/0074.jpg";
-import img_3 from "@/public/images/notice_of_auction/107.jpg";
-import img_4 from "@/public/images/notice_of_auction/3286.jpg";
-import img_5 from "@/public/images/notice_of_auction/3080.jpg";
-import img_6 from "@/public/images/notice_of_auction/3069.jpg";
 import Image from "next/image";
+import imgnotice from "@/public/images/notice_of_auction/1.jpeg";
 
 // blog page data
 const cardData = [
   {
     id: 1,
-    imagePath: img_1,
-    iconPath: "images/vector14.svg",
+    imagePath: "/images/notice_of_auction/3069.jpg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 23/01/2024 -29/01/2024",
-    date1: "29/01/2024",
-    isGreen: true,
+    date_start: "23/01/2024",
+    date_end: "29/01/2024",
   },
   {
     id: 2,
-    imagePath: img_2,
-    iconPath: "images/vector14.svg",
+    imagePath: "/images/notice_of_auction/0074.jpg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 09/01/2024 - 17/01/2024",
-    date1: "17/01/2024",
-    isRed: true,
+    date_start: "09/01/2024",
+    date_end: "17/01/2024",
   },
   {
     id: 3,
-    imagePath: img_3,
-    iconPath: "images/vector14.svg",
+    imagePath: "/images/notice_of_auction/107.jpg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 8/01/2024 - 15/02/2024",
-    date1: "08/01/2024",
-    isYellow: true,
+    date_start: "8/01/2024",
+    date_end: "15/02/2024",
   },
   {
     id: 4,
-    imagePath: img_4,
-    iconPath: "images/vector14.svg",
+    imagePath: "/images/notice_of_auction/3286.jpg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 04/01/2024 - 17/01/2024",
-    date1: "04/01/2024",
-    isGreen: true,
+    date_start: "04/01/2024",
+    date_end: "17/01/2024",
   },
   {
     id: 5,
-    imagePath: img_5,
-    iconPath: "images/vector14.svg",
+    imagePath: "/images/notice_of_auction/3080.jpg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 4/01/2024 - 12/01/2024",
-    date1: "04/01/2024",
-    isGreen: true,
+    date_start: "4/01/2024",
+    date_end: "12/01/2024",
   },
   {
     id: 6,
-    imagePath: img_6,
-    iconPath: "images/vector14.svg",
+    imagePath: "/images/notice_of_auction/3069.jpg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-    date: "ລົງທະບຽນວັນທີ 26/12/2023 - 30/01/2024",
-    date1: "26/12/2023",
-    isGreen: true,
+    date_start: "26/12/2023",
+    date_end: "30/01/2024",
   },
-
-  // Add more card data objects as needed
 ];
 
 const PostboxArea = () => {
@@ -93,26 +72,35 @@ const PostboxArea = () => {
                 {cardData.map((item, i) => (
                   <div
                     key={i}
-                    data-index={i}
+                    className="card mb-3 d-flex"
                     style={{
                       boxShadow: "0 5px 12px rgba(0, 0, 0, 0.6)",
                       borderRadius: "20px",
                     }}
                   >
-                    <div className="tp-blog-item">
-                      <div className="tp-blog-thumb fix">
-                        {/* <Link href="#">
-                          <Image src={item.imagePath} alt="theme-pure"/>
-                        </Link> */}
-                        <Link href="#">
-                        <div className="tp-blog-thumb fix px-3 py-3">
-                        <h3 className="rc__post-title pt-10 pb-10 fs-2 fw-bold mb-3" style={{fontFamily: 'Noto Sans Lao'}}>{item.title}</h3>
-                        <p className="text-dark fs-5 fw-bold">{item.description}</p>
-                        <p className="mb-3">{item.date}</p>
-                        </div>
-                      </Link>
+                    <div className="row g-0">
+                      <div className="col-xxl-4 col-xl-4 col-lg-4 col-col-md-4 col-4">
+                        <Image
+                          src={imgnotice}
+                          className="rounded-start p-3"
+                          alt="theme-pure"
+                        />
                       </div>
-                      
+                      <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-8">
+                        <div className="card-body">
+                          <p>ເປີດ​ປະ​ມູນ​ວັນ​ທີ {item.date_start} - {item.date_end}</p>
+                          <h5 style={{ fontFamily: "Noto Sans Lao" }}>
+                            {item.title}
+                          </h5>
+                          <p className="text-dark fw-bold">
+                            {item.description}
+                          </p>
+                          <p className="card-text">
+                            ມອດໄຟເວລາ: {item.date_start} ໂມງ ຫາ {item.date_end}{" "}
+                            ໂມງ
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -161,8 +149,7 @@ const PostboxArea = () => {
               <div className="sidebar__wrapper">
                 <Search />
                 <RecentPost />
-                {/* <Categories /> */}
-                {/* <Tags />  */}
+                <Categories />
               </div>
             </div>
           </div>

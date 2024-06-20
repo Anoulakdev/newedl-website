@@ -1,168 +1,185 @@
 "use client";
-import VideoPopup from "@/src/modals/video-popup";
-import SearchIcon from "@/src/svg/search-icon";
 import Link from "next/link";
 import React, { useState } from "react";
+import moment from "moment";
 
 import Image from "next/image";
+import imgnotice from "@/public/images/notice_of_auction/1.jpeg";
 
 // blog page data
 const cardData = [
   {
     id: 1,
     imagePath: "/images/notice_of_auction/3069.jpg",
-    iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
     date_start: "23/01/2024",
     date_end: "29/01/2024",
+    status: "ເປິດ​ປະ​ມູນແລ້ວ",
+    statuscolor: "success",
   },
   {
     id: 2,
     imagePath: "/images/notice_of_auction/0074.jpg",
-    iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
     date_start: "09/01/2024",
     date_end: "17/01/2024",
+    status: "ເປິດ​ປະ​ມູນແລ້ວ",
+    statuscolor: "success",
   },
   {
     id: 3,
     imagePath: "/images/notice_of_auction/107.jpg",
-    iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
     date_start: "8/01/2024",
     date_end: "15/02/2024",
+    status: "ປິດ​ປະ​ມູນແລ້ວ",
+    statuscolor: "danger",
   },
   {
     id: 4,
     imagePath: "/images/notice_of_auction/3286.jpg",
-    iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
     date_start: "04/01/2024",
     date_end: "17/01/2024",
+    status: "ເປິດ​ປະ​ມູນແລ້ວ",
+    statuscolor: "success",
   },
   {
     id: 5,
     imagePath: "/images/notice_of_auction/3080.jpg",
-    iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
     date_start: "4/01/2024",
     date_end: "12/01/2024",
+    status: "ປິດ​ປະ​ມູນແລ້ວ",
+    statuscolor: "danger",
   },
   {
     id: 6,
     imagePath: "/images/notice_of_auction/3069.jpg",
-    iconPath: "images/vector14.svg",
     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
     date_start: "26/12/2023",
     date_end: "30/01/2024",
+    status: "ປິດ​ປະ​ມູນແລ້ວ",
+    statuscolor: "danger",
   },
-
-  // Add more card data objects as needed
 ];
 
-const Tables = () => {
+const PostboxArea = () => {
   return (
     <>
-      <div className="container mt-30 mb-30 wow tpfadeUp">
-        <div className="row">
-          <div style={{ overflowX: "auto", width: "100%" }}>
-            <table
-              className="table table-hover"
-              style={{ width: "100%", whiteSpace: "nowrap" }}
-            >
-              <thead>
-                <tr className="text-center fw-bold fs-5">
-                  <th className="bg-secondary-subtle py-4">ລ/ດ</th>
-                  <th className="bg-secondary-subtle py-4">
-                    ​ດ​າວ​ໂຫລດ
-                  </th>
-                  <th className="bg-secondary-subtle py-4">ຫົວ​ຂໍ້</th>
-                  <th className="bg-secondary-subtle py-4">
-                    ​ລາຍ​ລະ​ອຽດ​ເນື້ອ​ໃນ
-                  </th>
-                  <th className="bg-secondary-subtle py-4">
-                    ​ວັນ​ທີ​​ເລີ່ມ​ປະ​ກາດ
-                  </th>
-                  <th className="bg-secondary-subtle py-4">​ວັນ​ທີ​​ສິ້ນ​ສຸດ</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cardData.map((item, i) => (
-                  <tr className="fs-6">
-                    <td className="text-center py-4" key={i}>
-                      {item.id}
-                    </td>
-                    <td className="text-center py-4">
-                      <Link href={item.imagePath} target="_blank">
-                        <button className="btn btn-primary">
+      <div className="portfolio blog-grid-inner mb-30">
+        <div className="container">
+          <div className="row grid blog-grid-inner pt-50">
+            {cardData.map((item, i) => (
+              <div
+                key={i}
+                data-index={i}
+                className="col-xl-4 col-lg-4 col-md-4 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
+              >
+                <div className="tp-blog-item" style={{ height: "510px" }}>
+                  <div className="tp-blog-thumb fix">
+                    <Image src={imgnotice} alt="theme-pure" />
+                  </div>
+
+                  <div className="tp-blog-content">
+                    <div className="tp-blog-title-box">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-calendar-event-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5" />
+                        </svg>{" "}
+                        ເປີດ​ປະ​ມູນ​ວັນ​ທີ {item.date_start} - {item.date_end}
+                      </div>
+                      <div className="mt-3">
+                        <h5 style={{ fontFamily: "Noto Sans Lao" }}>
+                          {item.title}
+                        </h5>
+                        <hr />
+                      </div>
+                      <div className="text-black">
+                        ເວ​ລາ: 09:00 ໂມງ ຫາ 16:30 ໂມງ
+                      </div>
+                      <div className="text-black">
+                        ສ​ະ​ຖານ​ທີ່: ຫ້ອງ​ການ​ໄຟ​ຟ້າ​ລາວ, ຫ້ອງ​ປະ​ຊຸມ​ໃຫ່​ຍ​ຊັ້ນ
+                        8 ຫ້ອງ 801
+                      </div>
+                      <div className="d-flex justify-content-between mt-3">
+                        <p className={`text-${item.statuscolor}`}>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
+                            width="16"
+                            height="16"
                             fill="currentColor"
-                            class="bi bi-cloud-arrow-down"
+                            class="bi bi-hammer"
                             viewBox="0 0 16 16"
                           >
-                            <path
-                              fill-rule="evenodd"
-                              d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708z"
-                            />
-                            <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
-                          </svg>
+                            <path d="M9.972 2.508a.5.5 0 0 0-.16-.556l-.178-.129a5 5 0 0 0-2.076-.783C6.215.862 4.504 1.229 2.84 3.133H1.786a.5.5 0 0 0-.354.147L.146 4.567a.5.5 0 0 0 0 .706l2.571 2.579a.5.5 0 0 0 .708 0l1.286-1.29a.5.5 0 0 0 .146-.353V5.57l8.387 8.873A.5.5 0 0 0 14 14.5l1.5-1.5a.5.5 0 0 0 .017-.689l-9.129-8.63c.747-.456 1.772-.839 3.112-.839a.5.5 0 0 0 .472-.334" />
+                          </svg>{" "}
+                          {item.status}
+                        </p>
+                        <Link href={item.imagePath} target="_blank">
+                        <button
+                          type="button"
+                          className="btn btn-outline-primary btn-sm"
+                        >
+                          ດາວ​ໂຫລດ​ຟອ​ມ
                         </button>
-                      </Link>
-                    </td>
-                    <td className="py-4">{item.title}</td>
-                    <td className="py-4">{item.description}</td>
-                    <td className="text-center py-4">{item.date_start}</td>
-                    <td className="text-center py-4">{item.date_end}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="basic-pagination mt-2">
-            <nav>
-              <ul>
-                <li>
-                  <Link href="#">
-                    <i className="far fa-angle-left"></i>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="current" href="#">
-                    1
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">2</Link>
-                </li>
-                <li>
-                  <Link href="#">3</Link>
-                </li>
-                <li>
-                  <Link href="#">4</Link>
-                </li>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="basic-pagination text-center mt-5">
+              <nav>
+                <ul>
+                  <li>
+                    <Link href="#">
+                      <i className="far fa-angle-left"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="current" href="#">
+                      1
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#">2</Link>
+                  </li>
+                  <li>
+                    <Link href="#">3</Link>
+                  </li>
+                  <li>
+                    <Link href="#">4</Link>
+                  </li>
 
-                <li>
-                  <span>...</span>
-                </li>
-                <li>
-                  <Link href="#">7</Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <i className="far fa-angle-right"></i>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+                  <li>
+                    <span>...</span>
+                  </li>
+                  <li>
+                    <Link href="#">7</Link>
+                  </li>
+                  <li>
+                    <Link href="#">
+                      <i className="far fa-angle-right"></i>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -170,4 +187,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default PostboxArea;

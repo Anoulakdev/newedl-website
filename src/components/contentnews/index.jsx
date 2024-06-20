@@ -76,11 +76,10 @@ export default function ContentNews() {
           {item.textheading}
         </h1>
         <div className="mb-4">
-          <Image
+          <img
             src={item.imgheading}
             alt="theme-pure"
-            width={2000}
-            height={500}
+            width="100%"
           />
         </div>
 

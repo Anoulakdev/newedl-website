@@ -2,7 +2,7 @@ import BreadcrumbTwo from "@/src/common/breadcrumbs/breadcrumb-2";
 
 import FooterFour from "@/src/layout/footers/footer-4";
 import React from "react";
-import AllBranch from "@/src/components/branch_organize/allbranch";
+import AllBranch from "@/src/components/branch_organize/allbranch1";
 import Government from "@/src/components/government/index2";
 import HeaderFour from "@/src/layout/headers/header-4";
 import imgbread from "@/public/images/navbar/Region.png"

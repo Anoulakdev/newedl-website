@@ -76,7 +76,7 @@ const PostboxArea = () => {
                                 query: { news_id: item.id },
                               }}
                             >
-                              <Image src={item.imgheading} alt="theme-pure" width={2000} height={1000} />
+                              <img src={item.imgheading} alt="theme-pure" width="100%" />
                               {/* <Image src={`${imageUrlBase}${item.news_image}`} alt="theme-pure" width={200} height={200}/> */}
                             </Link>
                           </div>
