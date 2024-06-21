@@ -54,30 +54,26 @@ const cardData = [
 const Tables = () => {
   return (
     <>
-      <div className="container mt-40 mb-40 wow tpfadeUp">
-        <div className="row">
-          <div style={{ overflowX: "auto", width: "100%" }}>
-            <table
-              className="table table-hover"
-              style={{ width: "100%", whiteSpace: "nowrap" }}
-            >
+      <div className="container wow tpfadeUp">
+        <div className="row mt-60 mb-60">
+          <div className="col-lg-4 col-md-4 col-6 mb-20">
+            <h2 style={{ fontFamily: "Noto Sans Lao" }}>
+              ລາຍ​ການຄ່າ​ບໍ​ລິ​ການ
+            </h2>
+          </div>
+          <div>
+            <table className="table table-hover">
               <thead>
-                <tr className="text-center fw-bold fs-4">
-                  <th
-                    className="text-white bg-primary py-4"
-                    style={{ width: "10%" }}
-                  >
+                <tr className="text-center fw-bold fs-5">
+                  <th className="py-4" style={{ width: "10%" }}>
                     ລ/ດ
                   </th>
-                  <th
-                    className="text-white bg-primary py-4"
-                    style={{ width: "10%" }}
-                  >
+                  <th className="py-4">ເລກ​ທີ</th>
+                  <th className="py-4">​ຫົວ​ຂໍ້</th>
+                  <th className="py-4">​ລົງ​ວັນ​ທີ</th>
+                  <th className="py-4" style={{ width: "10%" }}>
                     ​ດ​າວ​ໂຫລດ
                   </th>
-                  <th className="text-white bg-primary py-4">ເລກ​ທີ</th>
-                  <th className="text-white bg-primary py-4">​ຫົວ​ຂໍ້</th>
-                  <th className="text-white bg-primary py-4">​ລົງ​ວັນ​ທີ</th>
                 </tr>
               </thead>
               <tbody>
@@ -86,6 +82,9 @@ const Tables = () => {
                     <td className="text-center py-4" key={i}>
                       {item.id}
                     </td>
+                    <td className="py-4">{item.No}</td>
+                    <td className="py-4">{item.title}</td>
+                    <td className="py-4">{item.date}</td>
                     <td className="text-center py-4">
                       <Link href={item.pdfPath} target="_blank">
                         <button className="btn btn-primary">
@@ -106,15 +105,12 @@ const Tables = () => {
                         </button>
                       </Link>
                     </td>
-                    <td className="py-4">{item.No}</td>
-                    <td className="py-4">{item.title}</td>
-                    <td className="py-4">{item.date}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <div className="basic-pagination mt-2">
+          {/* <div className="basic-pagination mt-2">
             <nav>
               <ul>
                 <li>
@@ -150,7 +146,7 @@ const Tables = () => {
                 </li>
               </ul>
             </nav>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

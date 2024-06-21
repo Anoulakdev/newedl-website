@@ -21,7 +21,7 @@ const Tables = () => {
     <>
       <div className="container mt-60 mb-60 wow tpfadeUp">
         <div className="row">
-          <h1 style={{ fontFamily: "Noto Sans Lao", fontSize: "50px" }}>
+          <h1 style={{ fontFamily: "Noto Sans Lao" }}>
             ລາຍ​ການ
           </h1>
         </div>

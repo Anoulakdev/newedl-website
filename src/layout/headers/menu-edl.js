@@ -71,17 +71,17 @@ const menu_data = [
       ],
     },
 
-    {
-      id: 6,
-      mega_menu: false,
-      has_dropdown: true,
-      title: "ບ​ໍ​ລິ​ການ",
-      link: "",
-      active: "",
-      sub_menus: [
+    // {
+    //   id: 6,
+    //   mega_menu: false,
+    //   has_dropdown: true,
+    //   title: "ບ​ໍ​ລິ​ການ",
+    //   link: "",
+    //   active: "",
+    //   sub_menus: [
         
-      ],
-    },
+    //   ],
+    // },
   
     {
       id: 7,
