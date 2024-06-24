@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import usePageTracking from '../hooks/usePageTracking';
 import "@/src/styles/index.scss";
 import Image from "next/image";
 import Spinner from "@/public/EDL_Logo.gif";
@@ -9,6 +10,7 @@ if (typeof window !== "undefined") {
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
+  usePageTracking();
 
   useEffect(() => {
     // Simulate a loading delay (you can replace this with actual logic)
