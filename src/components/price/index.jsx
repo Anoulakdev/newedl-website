@@ -2,7 +2,7 @@ import BreadcrumbTwo from "@/src/common/breadcrumbs/breadcrumb-2";
 
 import FooterFour from "@/src/layout/footers/footer-4";
 import React from "react";
-import PriceArea from "@/src/components/price/price-area";
+import PriceArea from "@/src/components/price/price-area1";
 import Payment from "@/src/components/price/payment";
 import Government from "@/src/components/government/index2";
 import HeaderFour from "@/src/layout/headers/header-4";

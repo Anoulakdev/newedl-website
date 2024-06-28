@@ -34,7 +34,7 @@ const Tabs = () => {
                 } fs-5 fw-bold`}
                 onClick={() => handleClick(0)}
               >
-                ຈຳ​ນວນ​ລູກ​ຄ້າ
+                ຈໍານວນຜູ້ຊົມໃຊ້
               </li>
               <li
                 className={`${styles.tab} ${
@@ -42,7 +42,31 @@ const Tabs = () => {
                 } fs-5 fw-bold`}
                 onClick={() => handleClick(1)}
               >
-                ​ການ​ຈຳ​ໜ່າຍ​ໄຟ​ຟ້າ​ພາຍ​ໃນ
+                ອັດຕາການເຂົ້າເຖິງໄຟ
+              </li>
+              <li
+                className={`${styles.tab} ${
+                  activeTab === 2 ? styles.active : ""
+                } fs-5 fw-bold`}
+                onClick={() => handleClick(2)}
+              >
+                ຂາຍໄຟພາຍໃນແຍກປະເພດ
+              </li>
+              <li
+                className={`${styles.tab} ${
+                  activeTab === 3 ? styles.active : ""
+                } fs-5 fw-bold`}
+                onClick={() => handleClick(3)}
+              >
+                Peak Load
+              </li>
+              <li
+                className={`${styles.tab} ${
+                  activeTab === 4 ? styles.active : ""
+                } fs-5 fw-bold`}
+                onClick={() => handleClick(4)}
+              >
+                ລາຄາສະເລ່ຍ
               </li>
             </ul>
           </div>
@@ -62,10 +86,13 @@ const Tabs = () => {
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img2} class="img-fluid" alt={img2} />
             </div>
-            <div className="fs-3 text-black fw-bold text-start mt-40 mb-10">
+          </div>
+
+          <div style={{ display: activeTab === 1 ? "block" : "none" }}>
+            <div className="text-center fs-3 text-black fw-bold mb-20">
               ການ​ເຂົ້າ​ເຖິງ​ໄຟ​ຟ້າ​ຂອງ​ຄົວ​ເຮືອນ (HouseHold)
             </div>
-            <div className="shadow-lg bg-body-tertiary rounded">
+            <div>
               <Image src={img3} class="img-fluid" alt={img3} />
             </div>
             <div className="fs-3 text-black fw-bold text-start mt-40 mb-10">
@@ -76,7 +103,7 @@ const Tabs = () => {
             </div>
           </div>
 
-          <div style={{ display: activeTab === 1 ? "block" : "none" }}>
+          <div style={{ display: activeTab === 2 ? "block" : "none" }}>
             <div className="text-center fs-3 text-black fw-bold mb-20">
               ການ​ຈຳ​ໜ່າຍ​ໄຟ​ຟ້າ​ພາຍ​ໃນ ສູງ​ສຸດ 4 ອັນ​ດັບ​ທຳ​ອິດ
             </div>
@@ -89,10 +116,12 @@ const Tabs = () => {
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img6} class="img-fluid" alt={img6} />
             </div>
-            <div className="fs-3 text-black fw-bold text-start mt-40 mb-10">
+          </div>
+          <div style={{ display: activeTab === 3 ? "block" : "none" }}>
+            <div className="text-center fs-3 text-black fw-bold mb-30">
               ສະ​ຖິ​ຕິ ຄວາມ​ຕ້ອງ​ການ​ຊົມ​ໃຊ້​ໄຟ​ຟ້າ Peak Load (MW)
             </div>
-            <div className="shadow-lg bg-body-tertiary rounded">
+            <div>
               <Image src={img7} class="img-fluid" alt={img7} />
             </div>
             <div className="fs-3 text-black fw-bold text-start mt-40 mb-10">
@@ -101,7 +130,9 @@ const Tabs = () => {
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img8} class="img-fluid" alt={img8} />
             </div>
-            <div className="fs-3 text-black fw-bold text-start mt-40 mb-10">
+          </div>
+          <div style={{ display: activeTab === 4 ? "block" : "none" }}>
+            <div className="text-center fs-3 text-black fw-bold mb-50">
               ສະ​ເລ່ຍ​ລາ​ຄາ​ຈຳ​ໜ່າຍ​ໄຟ​ຟ້າ​ພາຍ​ໃນ​ປະ​ເທດ kip/kWh
             </div>
             <div className="shadow-lg bg-body-tertiary rounded">

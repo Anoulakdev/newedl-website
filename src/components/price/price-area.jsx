@@ -13,7 +13,7 @@ import price4 from "@/public/images/edlprice/Asset4.png";
 const PriceArea = () => {
   return (
     <>
-      <div className="tp-price-area pt-40 pb-50 ">
+      <div className="tp-price-area pt-40 pb-50">
         <div className="container">
           <div className="row g-0 col-lg-6 col-md-6 wow tpfadeLeft">
             <ul
