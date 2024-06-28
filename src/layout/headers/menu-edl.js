@@ -22,6 +22,7 @@ const menu_data = [
         { link: "/organize", title: "​​ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງ" },
         { link: "/about", title: "ວິ​ໄສ​ທັດ ແລະ ພາ​ລະ​ກິດ" },
         { link: "/iso", title: "ມາດ​ຕະ​ຖານ ISO" },
+        { link: "/statistic", title: "ສະ​ຖິ​ຕິ" },
       ],
     },
     

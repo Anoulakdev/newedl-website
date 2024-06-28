@@ -2,13 +2,12 @@ import BreadcrumbTwo from "@/src/common/breadcrumbs/breadcrumb-2";
 
 import FooterFour from "@/src/layout/footers/footer-4";
 import React from "react";
-import Isos from "@/src/components/iso/iso";
+import Statistic from "@/src/components/statistic/statistic";
 
 import Government from "@/src/components/government/index2";
 import HeaderFour from "@/src/layout/headers/header-4";
-import imgbread from "@/public/images/navbar/ISO.png";
 
-const Iso = () => {
+const StaTistic = () => {
   return (
     <>
       {/* <HeaderTen /> */}
@@ -16,8 +15,8 @@ const Iso = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ມາດ​ຕະ​ຖານ ISO"} imgbread={imgbread} />
-            <Isos />
+            <BreadcrumbTwo title={"ສະ​ຖ​ິ​ຕິ"} />
+            <Statistic />
             {/* <Government /> */}
           </main>
           <FooterFour />
@@ -27,4 +26,4 @@ const Iso = () => {
   );
 };
 
-export default Iso;
+export default StaTistic;
