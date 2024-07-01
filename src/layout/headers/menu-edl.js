@@ -35,7 +35,7 @@ const menu_data = [
       active: "",
       sub_menus: [
         { link: "/newslist", title: "​ຂ່າ​ວ​ສານ" },
-        { link: "/knowledge", title: "​ສາ​ລະ​ໜ້າ​ຮູ້" },
+        { link: "/knowledge", title: "ຄວາມ​ຮູ້​ກ່ຽວ​ກັບ​ໄຟ​ຟ້າ" },
         { link: "/turnoff", title: "ແຈ້ງມອດ​ໄຟ" },
         // { link: "/announcement", title: "ແຈ້ງການ" },
         { link: "/magazine", title: "ວ​າ​ລະ​ສານ" },

@@ -16,7 +16,7 @@ const Knowledge = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"​ສາ​ລະ​ໜ້າ​ຮູ້"} imgbread={imgbread} />
+            <BreadcrumbTwo title={"ຄວາມ​ຮູ້​ກ່ຽວ​ກັບ​ໄຟ​ຟ້າ"} imgbread={imgbread} />
             <KnowLedge />
             {/* <Government /> */}
           </main>
