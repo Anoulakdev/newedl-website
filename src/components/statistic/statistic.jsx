@@ -31,7 +31,7 @@ const Tabs = () => {
               <li
                 className={`${styles.tab} ${
                   activeTab === 0 ? styles.active : ""
-                } fs-5 fw-bold`}
+                } fs-5 text-black`}
                 onClick={() => handleClick(0)}
               >
                 ຈໍານວນຜູ້ຊົມໃຊ້
@@ -39,7 +39,7 @@ const Tabs = () => {
               <li
                 className={`${styles.tab} ${
                   activeTab === 1 ? styles.active : ""
-                } fs-5 fw-bold`}
+                } fs-5 text-black`}
                 onClick={() => handleClick(1)}
               >
                 ອັດຕາການເຂົ້າເຖິງໄຟ
@@ -47,7 +47,7 @@ const Tabs = () => {
               <li
                 className={`${styles.tab} ${
                   activeTab === 2 ? styles.active : ""
-                } fs-5 fw-bold`}
+                } fs-5 text-black`}
                 onClick={() => handleClick(2)}
               >
                 ຂາຍໄຟພາຍໃນແຍກປະເພດ
@@ -55,19 +55,19 @@ const Tabs = () => {
               <li
                 className={`${styles.tab} ${
                   activeTab === 3 ? styles.active : ""
-                } fs-5 fw-bold`}
+                } fs-5 text-black`}
                 onClick={() => handleClick(3)}
               >
                 Peak Load
               </li>
-              <li
+              {/* <li
                 className={`${styles.tab} ${
                   activeTab === 4 ? styles.active : ""
-                } fs-5 fw-bold`}
+                } fs-5 text-black`}
                 onClick={() => handleClick(4)}
               >
                 ລາຄາສະເລ່ຍ
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -131,14 +131,14 @@ const Tabs = () => {
               <Image src={img8} class="img-fluid" alt={img8} />
             </div>
           </div>
-          <div style={{ display: activeTab === 4 ? "block" : "none" }}>
+          {/* <div style={{ display: activeTab === 4 ? "block" : "none" }}>
             <div className="text-center fs-3 text-black fw-bold mb-50">
               ສະ​ເລ່ຍ​ລາ​ຄາ​ຈຳ​ໜ່າຍ​ໄຟ​ຟ້າ​ພາຍ​ໃນ​ປະ​ເທດ kip/kWh
             </div>
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img9} class="img-fluid" alt={img9} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
