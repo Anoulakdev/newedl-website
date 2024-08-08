@@ -1,0 +1,83 @@
+import React, { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import useTitleAnimation from "@/src/hooks/useTitleAnimation";
+import useBreadcrumbTitleAnime from "@/src/hooks/useBreadcrumbTitleAnime";
+
+import shape_1  from "../../../public/assets/img/breadcrumb/breadcrumb-shape-1.png";
+import shape_2  from "../../../public/assets/img/breadcrumb/breadcrumb-shape-2.png";
+import shape_3  from "../../../public/assets/img/breadcrumb/breadcrumb-3.png";
+import shape_4  from "../../../public/assets/img/breadcrumb/breadcrumb-sub-1.png";
+ 
+
+
+const BreadcrumbTwo = ({ title, innertitle, team_details, career_details, imgbread }) => {
+  const { animeRef } = useBreadcrumbTitleAnime();
+  let subtitleRef = useRef(null)
+
+ useTitleAnimation(subtitleRef);
+  return (
+    <>
+      <div className="breadcrumb__area breadcrumb-height p-relative blue-bg">
+        <div className="breadcrumb__shape-1">
+          <Image src={shape_1} alt="theme-pure" />
+        </div>
+        <div className="breadcrumb__shape-2">
+          <Image src={shape_2} alt="theme-pure" />
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-8 col-lg-7 pb-30">
+              <div className="breadcrumb__content">
+                <h1
+                  ref={animeRef}
+                  className="tp-char-animation anime_text text-white" style={{ fontFamily: 'Noto Sans Lao' }}
+                >
+                  {title}
+                </h1>
+                <div ref={subtitleRef} className="breadcrumb__list tp-title-anim tp__title_anime">
+                  {/* <span className="child-one">
+                    <Link href="/">Home</Link>
+                  </span>
+                  <span className="dvdr">
+                    <i className="fal fa-angle-right"></i>
+                  </span>
+                  <span
+                    className={`${team_details && "child-one"} ${
+                      career_details && "child-one"
+                    }`}
+                  >
+                    {innertitle}
+                  </span> */}
+                  {team_details && (
+                    <>
+                      <span className="dvdr">
+                        <i className="fal fa-angle-right"></i>
+                      </span>
+                      <span>Imdat Cimsit</span>
+                    </>
+                  )}
+                  {career_details && (
+                    <>
+                      <span className="dvdr">
+                        <i className="fal fa-angle-right"></i>
+                      </span>
+                      <span>Team Member</span>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* <div className="col-xl-4 col-lg-5 col-lg-4 text-center text-md-end pb-30">
+              <div className="breadcrumb__img p-relative text-start z-index">
+                <Image className="z-index-3" src={imgbread} alt="theme-pure" width={220} />
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default BreadcrumbTwo;

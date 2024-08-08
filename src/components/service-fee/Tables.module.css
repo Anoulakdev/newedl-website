@@ -1,0 +1,11 @@
+@media (max-width: 576px) {
+    .scrollableTable {
+        width: 100%;
+        overflow-x: auto;
+      }
+      
+      .scrollableTable table {
+        width: 100%;
+        white-space: nowrap;
+      }
+}

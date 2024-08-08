@@ -1,0 +1,251 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
+
+const CareerDetailsArea = () => {
+  const [data, setData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const applyHandler = () => {
+    setIsOpen(true);
+  };
+
+  const jobsId = router?.query?.jobs_id;
+
+  console.log("Jobs===>", jobsId);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/jobs/getbyId?id=${jobsId}`
+        );
+        setData(response.data.data);
+        console.log(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const initialFormData = {
+    full_name: "",
+    email: "",
+    cv_file: "",
+    status: "A",
+    phone_number: "",
+    address: "",
+    note: "",
+    job: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData((prev) => ({ ...prev, cv_file: file }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Step 1: Upload the file
+      const fileData = new FormData();
+      fileData.append("file", formData.cv_file);
+
+      const uploadResponse = await axios.post(
+        "https://app-api.edl.com.la/api_v1/user-svc/uploads/single/jobs",
+        fileData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      const filename = uploadResponse.data.data;
+
+      // Step 2: Update formData with uploaded file's filename
+      const newFormData = { ...formData, cv_file: filename, job: jobsId };
+
+      console.log("Data sent:", newFormData);
+
+      // Step 3: Submit the form data
+      const response = await axios.post(
+        "https://app-api.edl.com.la/api_v1/user-svc/jobApplies/add",
+        newFormData
+      );
+      console.log("Response:", response.data);
+      toast.success("ສົ່ງ​ຟອມ​ສຳ​ເລັດ");
+      router.push("/jobvacancy");
+    } catch (error) {
+      toast.error("ສົ່ງ​ຟອມບໍ່​ສຳ​ເລັດ");
+    }
+  };
+
+  return (
+    <>
+      <div className="career-details-area career-border-bottom pt-110 pb-110">
+        <div className="container">
+          <div className="row align-content-start">
+            <div className="col-xl-7 col-lg-7">
+              <div className="career-details-wrapper">
+                <div className="career-details-title-box">
+                  <h4
+                    className="career-details-title lh-sm fw-bold"
+                    style={{ fontFamily: "Noto Sans Lao" }}
+                  >
+                    {data.title}
+                  </h4>
+                </div>
+                <div>{data.description}</div>
+              </div>
+            </div>
+            <div className="col-xl-5 col-lg-5 career-details-pin">
+              <div className="col-xxl-12">
+                <div className="postbox__apply-btn-border">
+                  <div id="my-btn" className="postbox__apply-btn-box">
+                    {!isOpen && (
+                      <button
+                        onClick={() => applyHandler()}
+                        className="submit-btn mb-50 w-100"
+                      >
+                        ປ້​ອນ​ຂໍ້​ມູນ​ສະ​ໝັກ​ວຽກ​
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+              {isOpen && (
+                <div id="show" className="career-details-hide-wrapper">
+                  <div className="career-details-apply-info-box pb-10">
+                    <div className="career-details-profile-box pb-20">
+                      <h4 className="career-details-title-xs">Profile</h4>
+                      {/* <p>Basic information about you</p> */}
+                    </div>
+                    <div className="postbox__comment-form">
+                      <form onSubmit={handleSubmit} className="box">
+                        <div className="row gx-20">
+                          <div className="col-12">
+                            <div className="postbox__comment-input mb-30">
+                              <input
+                                type="text"
+                                name="full_name"
+                                value={formData.full_name}
+                                onChange={handleChange}
+                                className="inputText"
+                                required
+                              />
+                              <span className="floating-label">
+                                ຊື່ ແລະ ນາມ​ສະ​ກຸນ
+                              </span>
+                            </div>
+                          </div>
+                          <div className="col-12">
+                            <div className="postbox__comment-input mb-30">
+                              <input
+                                type="text"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="inputText"
+                                required
+                              />
+                              <span className="floating-label">ອີ​ເມວ</span>
+                            </div>
+                          </div>
+                          <div className="col-12">
+                            <div className="postbox__comment-input mb-30">
+                              <input
+                                type="text"
+                                name="phone_number"
+                                value={formData.phone_number}
+                                onChange={handleChange}
+                                className="inputText"
+                                required
+                              />
+                              <span className="floating-label">ເບີ​ໂທ</span>
+                            </div>
+                          </div>
+                          <div className="col-12">
+                            <div className="postbox__comment-input mb-30">
+                              <input
+                                type="text"
+                                name="address"
+                                value={formData.address}
+                                onChange={handleChange}
+                                className="inputText"
+                                required
+                              />
+                              <span className="floating-label">ທີ່​ຢູ່</span>
+                            </div>
+                          </div>
+                          <div className="col-xxl-12">
+                            <div className="postbox__comment-input mb-30">
+                              <textarea
+                                name="note"
+                                value={formData.note}
+                                onChange={handleChange}
+                                className="textareaText"
+                                required
+                              ></textarea>
+                              <span className="floating-label-2">ເຫດ​ຜົນ</span>
+                            </div>
+                          </div>
+                          <div className="col-xxl-12">
+                            <div className="postbox__resume-title-box">
+                              <h5
+                                className="career-details-title-xs pb-15"
+                                style={{ fontFamily: "Noto Sans Lao" }}
+                              >
+                                ອັບ​ໂຫລດ resume ຫລື CV
+                              </h5>
+                            </div>
+                            <div className="postbox__resume mb-30">
+                              <label htmlFor="cv">
+                                <span>
+                                  <input
+                                    id="cv"
+                                    type="file"
+                                    name="cv_file"
+                                    onChange={handleFileChange}
+                                    required
+                                  />
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-xxl-12">
+                            <div className="postbox__btn-box mb-50">
+                              <button
+                                type="submit"
+                                className="submit-btn w-100 fs-5"
+                              >
+                                ສົ່ງ​ຟອມ​ສະ​ໝັກ
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default CareerDetailsArea;

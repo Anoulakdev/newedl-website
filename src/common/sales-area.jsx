@@ -1,0 +1,72 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import axios from "axios";
+
+import img69 from "@/public/images/about/image69.png";
+
+const SalesArea = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/vision/type/2`
+        );
+        setData(response.data.data);
+        console.log(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  return (
+    <>
+      <div className="tp-sales-area tp-sales-space">
+        <div className="container">
+          <div className="row">
+            <div
+              className="col-xl-6 col-lg-6 order-1 order-md-1 wow tpfadeLeft"
+              data-wow-duration=".9s"
+              data-wow-delay=".5s"
+            >
+              <div className="tp-sales-section-box pb-20">
+                <h3
+                  className="tp-section-title-3 pb-15 "
+                  style={{ fontFamily: "Noto Sans Lao", fontSize: "40px" }}
+                >
+                  {data.title}
+                </h3>
+                <p
+                  className="text-dark fs-4"
+                  style={{ fontFamily: "Noto Sans Lao" }}
+                >
+                  {data.description}
+                </p>
+              </div>
+            </div>
+            <div
+              className="col-xl-6 col-lg-6 order-0 order-md-2 wow tpfadeRight"
+              data-wow-duration=".9s"
+              data-wow-delay=".7s"
+            >
+              <div className="tp-sales-img-wrapper p-relative text-end">
+                <div>
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_API_URL}/visions/${data.image}`}
+                    alt="theme-pure"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SalesArea;

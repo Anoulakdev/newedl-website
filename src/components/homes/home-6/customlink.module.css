@@ -1,0 +1,11 @@
+.link {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: #ff6347; /* Change this to the color you want on hover */
+    text-decoration: none; /* Add any additional styles for hover state */
+  }
+  

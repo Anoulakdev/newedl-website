@@ -1,0 +1,82 @@
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import moment from "moment";
+import imgjob from "@/public/images/jobvacancy/image82job.png";
+
+const RecentPost = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/jobs/get`
+        );
+        setData(response.data.data);
+        console.log(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      <div className="sidebar__widget mb-40">
+        <div className="sidebar__widge-title-box">
+          <h3
+            className="sidebar__widget-title"
+            style={{ fontFamily: "Noto Sans Lao", fontSize: "25px" }}
+          >
+            ປ​ະຫວັດ​ການ​ສະ​ໝັກວຽກ​
+          </h3>
+        </div>
+        {data.length
+          ? data.map((item, i) => (
+              <div key={i} className="sidebar__widget-content">
+                <div className="sidebar__post rc__post">
+                  <Link
+                    href={{
+                      pathname: "/jobdetail",
+                      query: { jobs_id: item.id },
+                    }}
+                  >
+                    <div className="rc__post mb-20 d-flex">
+                      <div className="rc__post-thumb mr-20">
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_API_URL}/jobs/${item.image}`}
+                          alt="theme-pure"
+                          style={{ height: "100%" }}
+                        />
+                      </div>
+                      <div className="rc__post-content">
+                        <h3
+                          className="rc__post-title"
+                          style={{ fontFamily: "Noto Sans Lao" }}
+                        >
+                          {item.title}
+                        </h3>
+                        <div className="rc__meta">
+                          <span className="text-danger">
+                            ເປີດຮັບວັນທີ{" "}
+                            {moment(item.start_date).format("DD/MM/YYYY")} -{" "}
+                            {moment(item.end_date).format("DD/MM/YYYY")}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            ))
+          : null}
+      </div>
+    </>
+  );
+};
+
+export default RecentPost;
