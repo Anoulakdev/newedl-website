@@ -43,9 +43,10 @@ const SalesArea = () => {
                 <p
                   className="text-dark fs-4"
                   style={{ fontFamily: "Noto Sans Lao" }}
-                >
-                  {data.description}
-                </p>
+                  dangerouslySetInnerHTML={{
+                    __html: data.description,
+                  }}
+                ></p>
               </div>
             </div>
             <div

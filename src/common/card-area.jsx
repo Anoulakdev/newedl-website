@@ -59,9 +59,10 @@ const CardArea = () => {
                 <p
                   className="text-dark fs-4"
                   style={{ fontFamily: "Noto Sans Lao" }}
-                >
-                  {data.description}
-                </p>
+                  dangerouslySetInnerHTML={{
+                    __html: data.description
+                  }}
+                ></p>
               </div>
             </div>
           </div>
@@ -71,9 +72,10 @@ const CardArea = () => {
           <div
             class="border border-primary bg-primary-subtle
  border-3 rounded-4 p-5 fs-2 fw-bold text-black text-center"
-          >
-            {data.slogan}
-          </div>
+            dangerouslySetInnerHTML={{
+              __html: data.slogan
+            }}
+          ></div>
         </div>
       </div>
     </>

@@ -107,7 +107,11 @@ const CareerDetailsArea = () => {
                     {data.title}
                   </h4>
                 </div>
-                <div>{data.description}</div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.description,
+                  }}
+                ></div>
               </div>
             </div>
             <div className="col-xl-5 col-lg-5 career-details-pin">

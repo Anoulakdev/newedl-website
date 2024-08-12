@@ -44,9 +44,12 @@ export default function ContentNews() {
           />
         </div>
 
-        <div className="fs-5 text-black mb-4 text-break">
-          {data.news_content_la}
-        </div>
+        <div
+          className="fs-5 text-black mb-4 text-break"
+          dangerouslySetInnerHTML={{
+            __html: data.news_content_la,
+          }}
+        ></div>
         <div className="row">
           {data.news_images && data.news_images.length > 0
             ? data.news_images.map((path, index) => (
