@@ -3,30 +3,37 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import axios from "axios";
 import Data from "./Data";
 
-const getItemById = (id) => {
-  return Data.find((item) => item.id.toString() === id);
-};
-
 export default function Branch() {
+  const [data, setData] = useState([]);
   const router = useRouter();
-  const { branch_id } = router?.query;
+  const branch_id = router?.query?.branch_id;
 
-  // console.log("branch_id=>>",branch_id);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/branches/getbyId?bra_id=${branch_id}`
+        );
+        setData(response.data.data);
+        console.log(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  const item = getItemById(branch_id); // Get item with ID 1
-  console.log(item);
+    fetchData();
+  }, []);
 
   return (
     <>
       <div className="container-fluid px-0 mb-40">
         <div className="row">
-          <Image
-            src={item.cover}
+          <img
+            src={`${process.env.NEXT_PUBLIC_API_URL}/branches/${data.co_image}`}
             alt="theme-pure"
-            width={2000}
-            height={500}
             style={{ paddingTop: "82px" }}
           />
         </div>
@@ -42,16 +49,14 @@ export default function Branch() {
           className="text-center pt-50 pb-25"
           style={{ fontFamily: "Noto Sans Lao" }}
         >
-          ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ {item.heading}
+          ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ {data.bra_name}
         </h1>
         <hr />
 
-        <div className="pt-10">
-          <Image
-            src={item.organize}
+        <div className="pt-10 text-center">
+          <img
+            src={`${process.env.NEXT_PUBLIC_API_URL}/branches/${data.str_image}`}
             alt="theme-pure"
-            width={2000}
-            height={500}
           />
         </div>
       </div>
