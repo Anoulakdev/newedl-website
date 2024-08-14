@@ -36,8 +36,8 @@ const RecentPost = () => {
           </h3>
         </div>
         {data.length
-          ? data.map((item, i) => (
-              <div key={i} className="sidebar__widget-content">
+          ? data.slice(0, 5)?.map((item, i) => (
+              <div key={i} className="m-3">
                 <div className="sidebar__post rc__post">
                   <Link
                     href={{
@@ -45,12 +45,11 @@ const RecentPost = () => {
                       query: { jobs_id: item.id },
                     }}
                   >
-                    <div className="rc__post mb-20 d-flex">
+                    <div className="rc__post d-flex">
                       <div className="rc__post-thumb mr-20">
                         <img
                           src={`${process.env.NEXT_PUBLIC_API_URL}/jobs/${item.image}`}
                           alt="theme-pure"
-                          style={{ height: "100%" }}
                         />
                       </div>
                       <div className="rc__post-content">
