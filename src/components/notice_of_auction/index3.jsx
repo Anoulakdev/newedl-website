@@ -4,73 +4,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 
-import Image from "next/image";
-import imgnotice from "@/public/images/notice_of_auction/1.jpeg";
-
-// blog page data
-// const cardData = [
-//   {
-//     id: 1,
-//     imagePath: "/images/notice_of_auction/3069.jpg",
-//     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
-//     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-//     date_start: "23/01/2024",
-//     date_end: "29/01/2024",
-//     status: "ເປິດ​ປະ​ມູນແລ້ວ",
-//     statuscolor: "success",
-//   },
-//   {
-//     id: 2,
-//     imagePath: "/images/notice_of_auction/0074.jpg",
-//     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
-//     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-//     date_start: "09/01/2024",
-//     date_end: "17/01/2024",
-//     status: "ເປິດ​ປະ​ມູນແລ້ວ",
-//     statuscolor: "success",
-//   },
-//   {
-//     id: 3,
-//     imagePath: "/images/notice_of_auction/107.jpg",
-//     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
-//     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-//     date_start: "8/01/2024",
-//     date_end: "15/02/2024",
-//     status: "ປິດ​ປະ​ມູນແລ້ວ",
-//     statuscolor: "danger",
-//   },
-//   {
-//     id: 4,
-//     imagePath: "/images/notice_of_auction/3286.jpg",
-//     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
-//     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-//     date_start: "04/01/2024",
-//     date_end: "17/01/2024",
-//     status: "ເປິດ​ປະ​ມູນແລ້ວ",
-//     statuscolor: "success",
-//   },
-//   {
-//     id: 5,
-//     imagePath: "/images/notice_of_auction/3080.jpg",
-//     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
-//     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-//     date_start: "4/01/2024",
-//     date_end: "12/01/2024",
-//     status: "ປິດ​ປະ​ມູນແລ້ວ",
-//     statuscolor: "danger",
-//   },
-//   {
-//     id: 6,
-//     imagePath: "/images/notice_of_auction/3069.jpg",
-//     title: "ຫນັງສືເຊີນເຂົ້າຮ່ວມປະມູນ",
-//     description: "ລາຍລະອຽດການປະມູນຕ່າງໆແມ່ນອີງຕາມເອກະສານ ລຸ່ມນີ້",
-//     date_start: "26/12/2023",
-//     date_end: "30/01/2024",
-//     status: "ປິດ​ປະ​ມູນແລ້ວ",
-//     statuscolor: "danger",
-//   },
-// ];
-
 const PostboxArea = () => {
   const [data, setData] = useState([]);
 
@@ -134,7 +67,12 @@ const PostboxArea = () => {
                             <hr />
                           </div>
 
-                          <div className="text-black">{item.description}</div>
+                          <div
+                            className="text-black"
+                            dangerouslySetInnerHTML={{
+                              __html: item.description,
+                            }}
+                          ></div>
                           <div className="d-flex justify-content-between mt-4 mb-4">
                             <p
                               className={`text-${
