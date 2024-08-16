@@ -39,6 +39,27 @@ const Announcement = () => {
     fetchData();
   }, []);
 
+  const downloadFile = async (url) => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const blob = await response.blob();
+      const blobURL = window.URL.createObjectURL(blob);
+      const filename = url.split("/").pop();
+      const aTag = document.createElement("a");
+      aTag.href = blobURL;
+      aTag.setAttribute("download", filename);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+      window.URL.revokeObjectURL(blobURL); // Clean up the URL object after download
+    } catch (error) {
+      console.error("Error downloading file:", error);
+    }
+  };
+
   return (
     <>
       <div
@@ -65,15 +86,20 @@ const Announcement = () => {
                       {data1.length
                         ? data1.slice(0, 3)?.map((item1, i1) => (
                             <div key={i1} className="mb-1">
-                              <Link
-                                href={`${process.env.NEXT_PUBLIC_API_URL}/pads/${item1.file_url}`}
+                              <a
+                                onClick={(e) => {
+                                  e.preventDefault(); // Prevent the default anchor behavior
+                                  const url = `${process.env.NEXT_PUBLIC_API_URL}/pads/${item1.file_url}`;
+                                  downloadFile(url);
+                                }}
+                                href="#"
                                 className={styles.link}
-                                target="_blank"
                               >
                                 {truncateText(item1.title, 4)}
                                 <br />
                                 {moment(item1.start_date).format("DD-MM-YYYY")}
-                              </Link>
+                              </a>
+
                               <br />
                               <br />
                             </div>
@@ -109,15 +135,19 @@ const Announcement = () => {
                       {data2.length
                         ? data2.slice(0, 3)?.map((item2, i2) => (
                             <div key={i2} className="mb-1">
-                              <Link
-                                href={`${process.env.NEXT_PUBLIC_API_URL}/services/${item2.file_url}`}
+                              <a
+                                onClick={(e) => {
+                                  e.preventDefault(); // Prevent the default anchor behavior
+                                  const url = `${process.env.NEXT_PUBLIC_API_URL}/services/${item2.file_url}`;
+                                  downloadFile(url);
+                                }}
+                                href="#"
                                 className={styles.link}
-                                target="_blank"
                               >
                                 {truncateText(item2.title, 4)}
                                 <br />
-                                {moment(item2.posting_date).format("DD-MM-YYYY")}
-                              </Link>
+                                {moment(item2.start_date).format("DD-MM-YYYY")}
+                              </a>
                               <br />
                               <br />
                             </div>

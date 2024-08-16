@@ -23,6 +23,21 @@ const PostboxArea = () => {
     fetchData();
   }, []);
 
+  const downloadFile = (url) => {
+    fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobURL = window.URL.createObjectURL(new Blob([blob]));
+        const filename = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = blobURL;
+        aTag.setAttribute("download", filename);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      });
+  };
+
   return (
     <>
       <div className="portfolio blog-grid-inner mb-30">
@@ -93,17 +108,16 @@ const PostboxArea = () => {
                                 ? "ເປີດ​ປະ​ມູນແລ້ວ"
                                 : "​ປິດ​ປະ​ມູນ​ແລ້ວ"}
                             </p>
-                            <Link
-                              href={`${process.env.NEXT_PUBLIC_API_URL}/pads/${item.file_url}`}
-                              target="_blank"
+
+                            <button
+                              onClick={() => {
+                                const url = `${process.env.NEXT_PUBLIC_API_URL}/pads/${item.file_url}`;
+                                downloadFile(url);
+                              }}
+                              className="btn btn-outline-primary btn-sm"
                             >
-                              <button
-                                type="button"
-                                className="btn btn-outline-primary btn-sm"
-                              >
-                                ດາວ​ໂຫລດ​ຟອ​ມ
-                              </button>
-                            </Link>
+                              ດາວ​ໂຫລດ​ຟອ​ມ
+                            </button>
                           </div>
                         </div>
                       </div>
