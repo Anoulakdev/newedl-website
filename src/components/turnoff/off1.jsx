@@ -7,7 +7,9 @@ import RecentPost from "./recent-post";
 import Search from "./search";
 import axios from "axios";
 import moment from "moment";
+
 import Image from "next/image";
+
 import imgoff from "@/public/images/turnoff/image15.png";
 import Rolling from "@/public/images/gif/Rolling.gif";
 
@@ -15,7 +17,7 @@ const PostboxArea = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(5); // Set items per page
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,37 +35,18 @@ const PostboxArea = () => {
     fetchData();
   }, []);
 
+  // Calculate paginated data
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
+  // Calculate page numbers
   const totalPages = Math.ceil(data.length / itemsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-  const delta = 2; // Number of pages to show around the current page
-  const startPage = Math.max(1, currentPage - delta);
-  const endPage = Math.min(totalPages, currentPage + delta);
-
-  let visiblePages = [];
-  if (totalPages <= 2 * delta + 1) {
-    visiblePages = Array.from({ length: totalPages }, (_, i) => i + 1);
-  } else {
-    if (startPage > 1) {
-      visiblePages.push(1);
-      if (startPage > 2) visiblePages.push("...");
-    }
-    for (let i = startPage; i <= endPage; i++) {
-      visiblePages.push(i);
-    }
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) visiblePages.push("...");
-      visiblePages.push(totalPages);
-    }
-  }
-
+  // Handle page change
   const handlePageChange = (pageNumber) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
-    }
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -74,10 +57,10 @@ const PostboxArea = () => {
             <div className="col-xxl-8 col-xl-8 col-lg-8">
               {isLoading ? (
                 <div className="text-center pt-30">
-                  <Image src={Rolling} width={100} height={100} alt="Loading" />
+                  <Image src={Rolling} width={100} height={100} />
                 </div>
               ) : (
-                <div id="blog" className="postbox__wrapper pr-20 wow tpfadeUp">
+                <div id="blog" className="postbox__wrapper pr-20">
                   {currentItems.length ? (
                     currentItems.map((item, i) => (
                       <div
@@ -105,15 +88,15 @@ const PostboxArea = () => {
                                 {item.noti.sub_title}
                               </p>
                               <p className="card-text">
-                                ມອດໄຟເວລາ: {item.noti.start_time} ຫາ{" "}
-                                {item.noti.end_time}
+                                ມອດໄຟເວລາ: {item.noti.start_time} ຂອງ{" "}
+                                {item.noti.end_time} ຂອງ
                               </p>
                               <p className="text-danger">
                                 ວັນທີມອດໄຟ{" "}
                                 {moment(item.noti.start_date).format(
                                   "DD-MM-YYYY"
                                 )}{" "}
-                                ຫາ{" "}
+                                ຂອງ{" "}
                                 {moment(item.noti.end_date).format(
                                   "DD-MM-YYYY"
                                 )}
@@ -124,12 +107,7 @@ const PostboxArea = () => {
                       </div>
                     ))
                   ) : (
-                    <h2
-                      className="text-center mt-4"
-                      style={{ fontFamily: "Noto Sans Lao" }}
-                    >
-                      ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
-                    </h2>
+                    <p>No data available</p>
                   )}
 
                   <div className="basic-pagination">
@@ -137,35 +115,29 @@ const PostboxArea = () => {
                       <ul>
                         <li>
                           <Link
-                            href=""
+                            href="#"
                             onClick={() => handlePageChange(currentPage - 1)}
                             aria-disabled={currentPage === 1}
                           >
                             <i className="far fa-angle-left"></i>
                           </Link>
                         </li>
-                        {visiblePages.map((item, index) =>
-                          item === "..." ? (
-                            <li key={index}>
-                              <span>...</span>
-                            </li>
-                          ) : (
-                            <li key={item}>
-                              <Link
-                                href=""
-                                className={
-                                  currentPage === item ? "current" : ""
-                                }
-                                onClick={() => handlePageChange(item)}
-                              >
-                                {item}
-                              </Link>
-                            </li>
-                          )
-                        )}
+                        {pageNumbers.map((number) => (
+                          <li key={number}>
+                            <Link
+                              href="#"
+                              className={
+                                currentPage === number ? "current" : ""
+                              }
+                              onClick={() => handlePageChange(number)}
+                            >
+                              {number}
+                            </Link>
+                          </li>
+                        ))}
                         <li>
                           <Link
-                            href=""
+                            href="#"
                             onClick={() => handlePageChange(currentPage + 1)}
                             aria-disabled={currentPage === totalPages}
                           >
@@ -183,7 +155,7 @@ const PostboxArea = () => {
               <div className="sidebar__wrapper">
                 <Search />
                 <RecentPost />
-                {/* <Categories /> */}
+                <Categories />
               </div>
             </div>
           </div>

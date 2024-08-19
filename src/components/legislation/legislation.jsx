@@ -11,6 +11,8 @@ import styles from "../service-fee/Tables.module.css";
 const Tables = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(5);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +30,39 @@ const Tables = () => {
 
     fetchData();
   }, []);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
+  const delta = 2; // Number of pages to show around the current page
+  const startPage = Math.max(1, currentPage - delta);
+  const endPage = Math.min(totalPages, currentPage + delta);
+
+  let visiblePages = [];
+  if (totalPages <= 2 * delta + 1) {
+    visiblePages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  } else {
+    if (startPage > 1) {
+      visiblePages.push(1);
+      if (startPage > 2) visiblePages.push("...");
+    }
+    for (let i = startPage; i <= endPage; i++) {
+      visiblePages.push(i);
+    }
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) visiblePages.push("...");
+      visiblePages.push(totalPages);
+    }
+  }
+
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
 
   const downloadFile = (url) => {
     fetch(url)
@@ -73,11 +108,11 @@ const Tables = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.length
-                    ? data?.map((item, i) => (
-                        <tr className="fs-5">
-                          <td className="text-center py-4" key={i}>
-                            {i + 1}
+                  {currentItems.length
+                    ? currentItems.map((item, i) => (
+                        <tr className="fs-5" key={i}>
+                          <td className="text-center py-4">
+                            {indexOfFirstItem + i + 1}
                           </td>
                           <td className="py-4 text-center">{item.no}</td>
                           <td className="py-4">{item.title}</td>
@@ -117,43 +152,47 @@ const Tables = () => {
                 </tbody>
               </table>
             </div>
-            {/* <div className="basic-pagination mt-2">
-            <nav>
-              <ul>
-                <li>
-                  <Link href="#">
-                    <i className="far fa-angle-left"></i>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="current" href="#">
-                    1
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">2</Link>
-                </li>
-                <li>
-                  <Link href="#">3</Link>
-                </li>
-                <li>
-                  <Link href="#">4</Link>
-                </li>
-
-                <li>
-                  <span>...</span>
-                </li>
-                <li>
-                  <Link href="#">7</Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <i className="far fa-angle-right"></i>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div> */}
+            <div className="basic-pagination text-center mt-4">
+              <nav>
+                <ul>
+                  <li>
+                    <Link
+                      href=""
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      aria-disabled={currentPage === 1}
+                    >
+                      <i className="far fa-angle-left"></i>
+                    </Link>
+                  </li>
+                  {visiblePages.map((item, index) =>
+                    item === "..." ? (
+                      <li key={index}>
+                        <span>...</span>
+                      </li>
+                    ) : (
+                      <li key={item}>
+                        <Link
+                          href=""
+                          className={currentPage === item ? "current" : ""}
+                          onClick={() => handlePageChange(item)}
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    )
+                  )}
+                  <li>
+                    <Link
+                      href=""
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      aria-disabled={currentPage === totalPages}
+                    >
+                      <i className="far fa-angle-right"></i>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       )}
