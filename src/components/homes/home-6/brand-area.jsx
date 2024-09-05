@@ -19,7 +19,7 @@ const BrandArea = () => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `${process.env.NEXT_PUBLIC_API_URL_UAT}/user-svc/notiDistrict/get`
+            `${process.env.NEXT_PUBLIC_API_URL}/notiDistrict/get`
           );
           setData(response.data.data);
         } catch (error) {

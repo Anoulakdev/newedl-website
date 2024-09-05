@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['uat-api.edl.com.la', 'app-api.edl.com.la'],
+    domains: ['uat-api.edl.com.la', 'app-api.edl.com.la', 'edl-inside-api.edl.com.la'],
     remotePatterns: [
       {
         protocol: "https",

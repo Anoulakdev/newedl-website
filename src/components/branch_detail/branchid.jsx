@@ -15,7 +15,7 @@ export default function Branch() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/branches/getbyId?bra_id=${branch_id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/branches/getbyId?bra_id=${branch_id}`
         );
         setData(response.data.data);
         console.log(response);
@@ -32,7 +32,7 @@ export default function Branch() {
       <div className="container-fluid px-0 mb-40">
         <div className="row">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}/branches/${data.co_image}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/branches/${data.co_image}`}
             alt="theme-pure"
             style={{ paddingTop: "82px" }}
           />
@@ -55,7 +55,7 @@ export default function Branch() {
 
         <div className="pt-10 text-center">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}/branches/${data.str_image}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/branches/${data.str_image}`}
             alt="theme-pure"
           />
         </div>

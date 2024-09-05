@@ -14,7 +14,7 @@ const Organize = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/structure/type/3`
+          `${process.env.NEXT_PUBLIC_API_URL}/structure/type/3`
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -35,7 +35,7 @@ const Organize = () => {
       ) : (
         <div className="container-fluid mt-50 text-center wow tpfadeUp">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}/structures/${data.str_image}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/structures/${data.str_image}`}
             className="img-fluid"
             alt="theme-pure"
           />

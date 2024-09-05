@@ -21,7 +21,7 @@ const PostboxArea = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/news/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/news/get`
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -97,7 +97,7 @@ const PostboxArea = () => {
                             }}
                           >
                             <img
-                              src={`${process.env.NEXT_PUBLIC_API_URL}/news/${item.image}`}
+                              src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/news/${item.image}`}
                               alt="theme-pure"
                               width="100%"
                             />
@@ -105,11 +105,11 @@ const PostboxArea = () => {
                           </Link>
                         </div>
                         <div className="postbox__content px-3">
-                          <div className="postbox__meta">
+                          {/* <div className="postbox__meta">
                             <span>
                               {moment(item.posting_date).format("DD-MM-YYYY")}
                             </span>
-                          </div>
+                          </div> */}
                           <h3 className="postbox__title pb-4">
                             <Link
                               href={{

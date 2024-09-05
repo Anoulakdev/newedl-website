@@ -12,7 +12,7 @@ const RecentPost = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/jobs/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/jobs/get`
         );
         setData(response.data.data);
         console.log(response);
@@ -48,7 +48,7 @@ const RecentPost = () => {
                     <div className="rc__post d-flex">
                       <div className="rc__post-thumb mr-20">
                         <img
-                          src={`${process.env.NEXT_PUBLIC_API_URL}/jobs/${item.image}`}
+                          src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${item.image}`}
                           alt="theme-pure"
                         />
                       </div>

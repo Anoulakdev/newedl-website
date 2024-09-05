@@ -13,7 +13,7 @@ const CardArea = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/vision/type/1`
+          `${process.env.NEXT_PUBLIC_API_URL}/vision/type/1`
         );
         setData(response.data.data);
         console.log(response);
@@ -38,7 +38,7 @@ const CardArea = () => {
               <div className="tp-card-thumb-wrapper p-relative">
                 <div>
                   <img
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/visions/${data.image}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/visions/${data.image}`}
                     alt="theme-pure"
                   />
                 </div>

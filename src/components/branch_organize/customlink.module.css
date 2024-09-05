@@ -1,10 +1,10 @@
 .link {
     color: #2b6ed3;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     transition: color 0.3s ease;
   }
   
   .link:hover {
     color: #ff4747; /* Change this to the color you want on hover */
-    text-decoration: underline; /* Add any additional styles for hover state */
+    /* text-decoration: underline; */
   }

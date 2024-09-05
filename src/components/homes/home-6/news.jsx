@@ -46,7 +46,7 @@ const BlogGrid = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/news/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/news/get`
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -131,7 +131,7 @@ const BlogGrid = () => {
                             <div
                               className="blog-grid-slider blog-grid-slider-bg blog-grid-slider-height"
                               style={{
-                                backgroundImage: `url('${process.env.NEXT_PUBLIC_API_URL}/news/${item.image}')`,
+                                backgroundImage: `url('${process.env.NEXT_PUBLIC_API_URL_IMG}/news/${item.image}')`,
                                 backgroundPosition: "center",
                               }}
                             >

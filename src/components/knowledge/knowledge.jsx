@@ -25,7 +25,7 @@ const Portfolio = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/confessions/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/confessions/get`
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -100,7 +100,7 @@ const Portfolio = () => {
                           }}
                         >
                           <img
-                            src={`${process.env.NEXT_PUBLIC_API_URL}/confessions/${item.image}`}
+                            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/confessions/${item.image}`}
                             alt="theme-pure"
                             width="100%"
                             style={{ height: "330px" }}

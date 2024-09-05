@@ -12,7 +12,7 @@ const SalesArea = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/vision/type/2`
+          `${process.env.NEXT_PUBLIC_API_URL}/vision/type/2`
         );
         setData(response.data.data);
         console.log(response);
@@ -57,7 +57,7 @@ const SalesArea = () => {
               <div className="tp-sales-img-wrapper p-relative text-end">
                 <div>
                   <img
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/visions/${data.image}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/visions/${data.image}`}
                     alt="theme-pure"
                   />
                 </div>

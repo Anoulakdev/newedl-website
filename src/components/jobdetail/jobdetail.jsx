@@ -19,7 +19,7 @@ const CareerDetailsArea = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/jobs/getbyId?id=${jobsId}`
+          `${process.env.NEXT_PUBLIC_API_URL}/jobs/getbyId?id=${jobsId}`
         );
         setData(response.data.data);
         console.log(response);
@@ -63,7 +63,7 @@ const CareerDetailsArea = () => {
       fileData.append("file", formData.cv_file);
 
       const uploadResponse = await axios.post(
-        "https://app-api.edl.com.la/api_v1/user-svc/uploads/single/jobs",
+        `${process.env.NEXT_PUBLIC_API_URL}/uploads/single/jobs`,
         fileData,
         {
           headers: {
@@ -72,7 +72,7 @@ const CareerDetailsArea = () => {
         }
       );
 
-      const filename = uploadResponse.data.data;
+      const filename = uploadResponse.data.data.image;
 
       // Step 2: Update formData with uploaded file's filename
       const newFormData = { ...formData, cv_file: filename, job: jobsId };
@@ -81,7 +81,7 @@ const CareerDetailsArea = () => {
 
       // Step 3: Submit the form data
       const response = await axios.post(
-        "https://app-api.edl.com.la/api_v1/user-svc/jobApplies/add",
+        `${process.env.NEXT_PUBLIC_API_URL}/jobApplies/add`,
         newFormData
       );
       console.log("Response:", response.data);
@@ -94,7 +94,7 @@ const CareerDetailsArea = () => {
 
   return (
     <>
-      <div className="career-details-area career-border-bottom pt-110 pb-110">
+      <div className="career-details-area career-border-bottom pt-60 pb-60">
         <div className="container">
           <div className="row align-content-start">
             <div className="col-xl-7 col-lg-7">
@@ -115,135 +115,122 @@ const CareerDetailsArea = () => {
               </div>
             </div>
             <div className="col-xl-5 col-lg-5 career-details-pin">
-              <div className="col-xxl-12">
-                <div className="postbox__apply-btn-border">
-                  <div id="my-btn" className="postbox__apply-btn-box">
-                    {!isOpen && (
-                      <button
-                        onClick={() => applyHandler()}
-                        className="submit-btn mb-50 w-100"
-                      >
-                        ປ້​ອນ​ຂໍ້​ມູນ​ສະ​ໝັກ​ວຽກ​
-                      </button>
-                    )}
-                  </div>
+
+              <div className="career-details-apply-info-box pb-10">
+                <div className="career-details-profile-box pb-20">
+                  <h3  style={{fontFamily: 'Noto Sans Lao'}}>ປະ​ຫວັດ​ສະ​ໝັກ​ວຽກ</h3>
+                  {/* <p>Basic information about you</p> */}
+                </div>
+                <div className="postbox__comment-form">
+                  <form onSubmit={handleSubmit} className="box">
+                    <div className="row gx-20">
+                      <div className="col-12">
+                        <div className="postbox__comment-input mb-30">
+                          <input
+                            type="text"
+                            name="full_name"
+                            value={formData.full_name}
+                            onChange={handleChange}
+                            className="inputText"
+                            required
+                          />
+                          <span className="floating-label">
+                            ຊື່ ແລະ ນາມ​ສະ​ກຸນ
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="postbox__comment-input mb-30">
+                          <input
+                            type="text"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="inputText"
+                            required
+                          />
+                          <span className="floating-label">ອີ​ເມວ</span>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="postbox__comment-input mb-30">
+                          <input
+                            type="text"
+                            name="phone_number"
+                            value={formData.phone_number}
+                            onChange={handleChange}
+                            className="inputText"
+                            required
+                          />
+                          <span className="floating-label">ເບີ​ໂທ</span>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="postbox__comment-input mb-30">
+                          <input
+                            type="text"
+                            name="address"
+                            value={formData.address}
+                            onChange={handleChange}
+                            className="inputText"
+                            required
+                          />
+                          <span className="floating-label">ທີ່​ຢູ່</span>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="postbox__comment-input mb-30">
+                          <input
+                            type="text"
+                            name="note"
+                            value={formData.note}
+                            onChange={handleChange}
+                            className="inputText"
+                            required
+                          />
+                          <span className="floating-label">
+                            ຫົວ​ຂໍ້​ສະ​ໝັກ​ວຽກ
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-xxl-12">
+                        <div className="postbox__resume-title-box">
+                          <h5
+                            className="career-details-title-xs pb-15"
+                            style={{ fontFamily: "Noto Sans Lao" }}
+                          >
+                            ອັບ​ໂຫລດ ເອ​ກະ​ສານ​ແນະ​ນຳ​ຕົວ
+                          </h5>
+                        </div>
+                        <div className="postbox__resume mb-30">
+                          <label htmlFor="cv">
+                            <span>
+                            <h5 style={{fontFamily: 'Noto Sans Lao'}}>​ອັບ​ໂຫລ​ດເປັນ PDF</h5><br/>
+                              <input
+                                id="cv"
+                                type="file"
+                                name="cv_file"
+                                onChange={handleFileChange}
+                                required
+                              />
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="col-xxl-12">
+                        <div className="postbox__btn-box mb-50">
+                          <button
+                            type="submit"
+                            className="submit-btn w-100 fs-5"
+                          >
+                            ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-              {isOpen && (
-                <div id="show" className="career-details-hide-wrapper">
-                  <div className="career-details-apply-info-box pb-10">
-                    <div className="career-details-profile-box pb-20">
-                      <h4 className="career-details-title-xs">Profile</h4>
-                      {/* <p>Basic information about you</p> */}
-                    </div>
-                    <div className="postbox__comment-form">
-                      <form onSubmit={handleSubmit} className="box">
-                        <div className="row gx-20">
-                          <div className="col-12">
-                            <div className="postbox__comment-input mb-30">
-                              <input
-                                type="text"
-                                name="full_name"
-                                value={formData.full_name}
-                                onChange={handleChange}
-                                className="inputText"
-                                required
-                              />
-                              <span className="floating-label">
-                                ຊື່ ແລະ ນາມ​ສະ​ກຸນ
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="postbox__comment-input mb-30">
-                              <input
-                                type="text"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                className="inputText"
-                                required
-                              />
-                              <span className="floating-label">ອີ​ເມວ</span>
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="postbox__comment-input mb-30">
-                              <input
-                                type="text"
-                                name="phone_number"
-                                value={formData.phone_number}
-                                onChange={handleChange}
-                                className="inputText"
-                                required
-                              />
-                              <span className="floating-label">ເບີ​ໂທ</span>
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="postbox__comment-input mb-30">
-                              <input
-                                type="text"
-                                name="address"
-                                value={formData.address}
-                                onChange={handleChange}
-                                className="inputText"
-                                required
-                              />
-                              <span className="floating-label">ທີ່​ຢູ່</span>
-                            </div>
-                          </div>
-                          <div className="col-xxl-12">
-                            <div className="postbox__comment-input mb-30">
-                              <textarea
-                                name="note"
-                                value={formData.note}
-                                onChange={handleChange}
-                                className="textareaText"
-                                required
-                              ></textarea>
-                              <span className="floating-label-2">ເຫດ​ຜົນ</span>
-                            </div>
-                          </div>
-                          <div className="col-xxl-12">
-                            <div className="postbox__resume-title-box">
-                              <h5
-                                className="career-details-title-xs pb-15"
-                                style={{ fontFamily: "Noto Sans Lao" }}
-                              >
-                                ອັບ​ໂຫລດ resume ຫລື CV
-                              </h5>
-                            </div>
-                            <div className="postbox__resume mb-30">
-                              <label htmlFor="cv">
-                                <span>
-                                  <input
-                                    id="cv"
-                                    type="file"
-                                    name="cv_file"
-                                    onChange={handleFileChange}
-                                    required
-                                  />
-                                </span>
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-xxl-12">
-                            <div className="postbox__btn-box mb-50">
-                              <button
-                                type="submit"
-                                className="submit-btn w-100 fs-5"
-                              >
-                                ສົ່ງ​ຟອມ​ສະ​ໝັກ
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>

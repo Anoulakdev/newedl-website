@@ -13,7 +13,7 @@ const AllBranch = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/branches/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/branches/get`
         );
         setData(response.data.data);
         console.log(response);
@@ -43,7 +43,7 @@ const AllBranch = () => {
                     >
                       <div className="tp-blog-thumb fix">
                         <img
-                          src={`${process.env.NEXT_PUBLIC_API_URL}/branches/${item.bra_image}`}
+                          src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/branches/${item.bra_image}`}
                           alt="theme-pure"
                           style={{ height: "230px" }}
                         />

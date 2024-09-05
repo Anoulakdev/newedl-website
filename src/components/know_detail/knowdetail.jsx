@@ -15,7 +15,7 @@ export default function Knowdetail() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/confessions/byId?id=${know_id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/confessions/byId?id=${know_id}`
         );
         setData(response.data.data);
         console.log(response);
@@ -34,17 +34,14 @@ export default function Knowdetail() {
           {data.title}
         </h1>
         <div className="text-center">
-          <Link
-            href={`${process.env.NEXT_PUBLIC_API_URL}/confessions/${data.image}`}
-            target="_blank"
-          >
+          
             <img
-              src={`${process.env.NEXT_PUBLIC_API_URL}/confessions/${data.image}`}
+              src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/confessions/${data.image}`}
               className="img-fluid"
               alt="theme-pure"
               width="80%"
             />
-          </Link>
+          
         </div>
         {data.video_url ? (
           <div className="mt-40">

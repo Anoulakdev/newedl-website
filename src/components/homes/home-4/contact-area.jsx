@@ -33,7 +33,7 @@ const ContactArea = () => {
 
     try {
       const response = await axios.post(
-        "https://app-api.edl.com.la/api_v1/user-svc/feedbacks/add",
+        `${process.env.NEXT_PUBLIC_API_URL}/feedbacks/add`,
         formData,
         {
           headers: {

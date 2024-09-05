@@ -14,7 +14,7 @@ const Portfolio = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/magazines/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/magazines/get`
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -77,6 +77,7 @@ const Portfolio = () => {
                     data-index={i}
                     className="col-xl-3 col-lg-3 col-md-3 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
                   >
+                    <h5 className="text-center" style={{fontFamily: 'Noto Sans Lao'}}>{item.title}</h5>
                     <div className="tp-blog-item wow tpfadeUp">
                       <div className="tp-blog-thumb fix rounded-4">
                         <Link
@@ -86,7 +87,7 @@ const Portfolio = () => {
                           }}
                         >
                           <img
-                            src={`${process.env.NEXT_PUBLIC_API_URL}/magazines/${item.image}`}
+                            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
                             alt="theme-pure"
                             style={{ height: "430px" }}
                           />

@@ -105,22 +105,32 @@ const FooterFour = () => {
                   data-wow-delay=".3s"
                 >
                   <div className="tp-footer__widget footer-widget-4 footer-col-4-1">
-                    <div className="tp-footer__logo mb-10">
-                      <Link
+                    <div className="tp-footer__logo mb-15">
+                      {/* <Link
                         href="/"
                         className="d-flex tp-footer__widget-logo mb-10"
                       >
                         <Image src={edl_logo} alt="" width={60} height={60} />
-                        <span className="text-white fs-3 pt-1">
+                        <span className="text-white fs-4 pt-1">
                           ລັດວິສາຫະກິດໄຟຟ້າລາວ
                         </span>
-                      </Link>
+                      </Link> */}
+                      <span className="text-white fs-4 pt-1">
+                        ​ດາວ​ໂຫລດ EDL APP ໄດ້​ແລ້ວທີ່
+                      </span>
                     </div>
-                    <div className="d-flex tp-footer__widget-logo mb-10 ps-1">
-                      <Link href="#" className="me-2">
+                    <div className="d-flex tp-footer__widget-logo mb-15 ps-1">
+                      <Link
+                        href="https://play.google.com/store/apps/details?id=com.edl.edl_app"
+                        target="_blank"
+                        className="me-2"
+                      >
                         <Image src={play_logo} alt="" width={145} height={60} />
                       </Link>
-                      <Link href="#">
+                      <Link
+                        href="https://apps.apple.com/la/app/edl-app/id6648761593"
+                        target="_blank"
+                      >
                         <Image src={app_logo} alt="" width={145} height={60} />
                       </Link>
                     </div>
@@ -201,7 +211,7 @@ const FooterFour = () => {
                       <ul>
                         <li>
                           <PhoneThree />
-                          <Link href={`tel:${phone}`}>{phone}</Link>
+                          <Link href={`tel:+85621316133`}>{phone}</Link>
                         </li>
                         <li>
                           <EmailThree />
@@ -224,7 +234,8 @@ const FooterFour = () => {
                           <div className={`${styles.circle} me-2`}></div>
                           <div className="fs-5 text-white">
                             ກຳ​ລັງ​ອອນ​ລາຍ{" "}
-                            <span className="text-danger fw-bold">1</span> ທ່ານ
+                            <span className="text-danger fw-bold">1</span>{" "}
+                            ທ່ານ
                           </div>
                         </li>
                       </ul>

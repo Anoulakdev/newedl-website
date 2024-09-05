@@ -21,13 +21,13 @@ const Announcement = () => {
     const fetchData = async () => {
       try {
         const response1 = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/pads/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/pads/get`
         );
         setData1(response1.data.data);
         console.log(response1);
 
         const response2 = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/priceServices/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/priceServices/get`
         );
         setData2(response2.data.data);
         console.log(response2);
@@ -89,7 +89,7 @@ const Announcement = () => {
                               <a
                                 onClick={(e) => {
                                   e.preventDefault(); // Prevent the default anchor behavior
-                                  const url = `${process.env.NEXT_PUBLIC_API_URL}/pads/${item1.file_url}`;
+                                  const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item1.file_url}`;
                                   downloadFile(url);
                                 }}
                                 href="#"
@@ -138,7 +138,7 @@ const Announcement = () => {
                               <a
                                 onClick={(e) => {
                                   e.preventDefault(); // Prevent the default anchor behavior
-                                  const url = `${process.env.NEXT_PUBLIC_API_URL}/services/${item2.file_url}`;
+                                  const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/services/${item2.file_url}`;
                                   downloadFile(url);
                                 }}
                                 href="#"

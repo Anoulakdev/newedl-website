@@ -18,7 +18,7 @@ const Tables = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/policies/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/policies/get`
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -125,7 +125,7 @@ const Tables = () => {
                           <td className="text-center py-4">
                             <button
                               onClick={() => {
-                                const url = `${process.env.NEXT_PUBLIC_API_URL}/policies/${item.file_url}`;
+                                const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/policies/${item.file_url}`;
                                 downloadFile(url);
                               }}
                               className="btn btn-primary"

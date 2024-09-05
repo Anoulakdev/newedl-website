@@ -26,7 +26,7 @@ const Sitemap = () => {
                   <ul className="ps-5 my-2">
                     {menu_item.sub_menus.map((sub_menu, i) => (
                       <li key={i} className="my-2">
-                        <Link className="fs-5 text-primary text-decoration-underline" href={sub_menu.link}>
+                        <Link className="fs-5 text-primary" href={sub_menu.link}>
                           {sub_menu.title}
                         </Link>
                       </li>

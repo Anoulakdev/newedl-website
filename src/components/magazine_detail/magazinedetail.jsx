@@ -12,7 +12,7 @@ export default function magazinedetail() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/magazines/byId?id=${magazine_id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/magazines/byId?id=${magazine_id}`
         );
         setData(response.data.data);
         console.log(response);

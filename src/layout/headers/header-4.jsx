@@ -53,14 +53,14 @@ const HeaderFour = ({ style_error }) => {
                   )}
                 </div>
               </div>
-              <div className="col-xxl-8 col-xl-8 col-lg-2 d-none d-lg-block">
+              <div className="col-xxl-7 col-xl-7 col-lg-7 d-none d-lg-block">
                 <div className="header-bottom__main-menu header-bottom__main-menu-4">
                   <nav id="mobile-menu">
                     <NavMenu />
                   </nav>
                 </div>
               </div>
-              <div className="col-xxl-2 col-xl-2 col-lg-2 col-md-8 col-6">
+              <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-8 col-6">
                 <div className="header-bottom__right d-flex align-items-center justify-content-end">
                   <div
                     className={`header-bottom__action ${
@@ -69,13 +69,13 @@ const HeaderFour = ({ style_error }) => {
                   >
                     <Link
                       className="d-none d-lg-inline-block header-bottom__action-2 border-none me-3"
-                      href="#"
+                      href="/"
                     >
                       <Image src={lao} alt="" width={30} />
                     </Link>
                     <Link
                       className="d-none d-lg-inline-block header-bottom__action-2 border-none"
-                      href="#"
+                      href="/coming-soon"
                     >
                       <Image src={english} alt="" width={30} />
                     </Link>

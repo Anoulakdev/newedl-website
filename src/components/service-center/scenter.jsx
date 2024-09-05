@@ -12,14 +12,11 @@ const Portfolio = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
 
-  const imageUrlBase =
-    "https://uat-api.edl.com.la/api_v1/user-svc/center/ceneterImage/";
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL_UAT}/user-svc/center/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/center/get`
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -70,7 +67,13 @@ const Portfolio = () => {
         <div className="container">
           {isLoading ? (
             <div className="text-center pt-50">
-              <Image src={Rolling} width={100} height={100} />
+              <h3
+                className="text-center my-5"
+                style={{ fontFamily: "Noto Sans Lao" }}
+              >
+                ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
+              </h3>
+              {/* <Image src={Rolling} width={100} height={100} /> */}
             </div>
           ) : (
             <div className="row grid blog-grid-inner pt-50">
@@ -88,7 +91,7 @@ const Portfolio = () => {
                           target="_blank"
                         >
                           <Image
-                            src={`${imageUrlBase}${item.center_image}`}
+                            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/centers/${item.center_image}`}
                             width={300}
                             height={168}
                             alt="theme-pure"

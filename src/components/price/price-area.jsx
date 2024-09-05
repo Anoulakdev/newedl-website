@@ -10,7 +10,7 @@ const Tabs = () => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/prices/get`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/prices/get`);
         setPrices(response.data.data);
       } catch (error) {
         console.error("Error fetching prices:", error);
@@ -45,7 +45,7 @@ const Tabs = () => {
       <div className="row mt-50">
         {prices.map((price, index) => (
           <div key={index} style={{ display: activeTab === index ? "block" : "none" }}>
-            <img src={`${process.env.NEXT_PUBLIC_API_URL}/prices/${price.image}`} alt={price.title} className="img-fluid img-thumbnail" />
+            <img src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/prices/${price.image}`} alt={price.title} className="img-fluid img-thumbnail" />
           </div>
         ))}
       </div>

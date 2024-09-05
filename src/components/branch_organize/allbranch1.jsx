@@ -12,7 +12,7 @@ const AllBranch = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/branches/getDeptGroup`
+          `${process.env.NEXT_PUBLIC_API_URL}/branches/getDeptGroup`
         );
         setData(response.data.data);
         console.log(response);
@@ -64,7 +64,7 @@ const AllBranch = () => {
                     </div>
                   </div>
                 ))
-              : null}
+              : <h3 className="text-center my-5" style={{fontFamily: 'Noto Sans Lao'}}>ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ</h3>}
           </div>
         </div>
       </div>

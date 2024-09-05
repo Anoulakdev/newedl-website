@@ -21,7 +21,7 @@ const PostboxArea = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/jobs/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/jobs/get`
         );
         setData(response.data.data);
         console.log(response);
@@ -52,7 +52,7 @@ const PostboxArea = () => {
                         <div className="row g-0">
                           <div className="col-xxl-4 col-xl-4 col-lg-4 col-col-md-4 col-4">
                             <img
-                              src={`${process.env.NEXT_PUBLIC_API_URL}/jobs/${item.image}`}
+                              src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${item.image}`}
                               className="rounded-start p-3"
                               alt="theme-pure" style={{height: '100%'}}
                             />
@@ -84,7 +84,7 @@ const PostboxArea = () => {
                         </div>
                       </div>
                     ))
-                  : null}
+                  : <h3 className="text-center" style={{fontFamily: 'Noto Sans Lao'}}>ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ</h3>}
 
                 {/* <div className="basic-pagination">
                   <nav>

@@ -18,7 +18,7 @@ export default function ContentNews() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/news/getById?news_id=${news_id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/news/getById?news_id=${news_id}`
         );
         setData(response.data.data);
         console.log(response);
@@ -38,7 +38,7 @@ export default function ContentNews() {
         </h1>
         <div className="mb-4">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}/news/${data.image}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/news/${data.image}`}
             alt="theme-pure"
             width="100%"
           />
@@ -55,7 +55,7 @@ export default function ContentNews() {
             ? data.news_images.map((path, index) => (
                 <div key={index} className="p-2 col-lg-6 col-md-6">
                   <img
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/news/${path}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/news/${path}`}
                     alt={`Image ${index + 1}`}
                   />
                 </div>

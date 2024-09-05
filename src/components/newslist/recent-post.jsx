@@ -11,7 +11,7 @@ const RecentPost = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api_v1/user-svc/news/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/news/get`
         );
         setData(response.data.data);
         console.log(response);
@@ -47,7 +47,7 @@ const RecentPost = () => {
                         }}
                       >
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_API_URL}/news/${item.image}`}
+                          src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/news/${item.image}`}
                           alt="theme-pure"
                           width={200}
                           height={100}
@@ -65,9 +65,9 @@ const RecentPost = () => {
                           {item.news_title_la}
                         </Link>
                       </h3>
-                      <div className="rc__meta">
+                      {/* <div className="rc__meta">
                         <span>{moment(item.posting_date).format("DD-MM-YYYY")}</span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))

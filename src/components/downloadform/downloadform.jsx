@@ -11,7 +11,7 @@ const cardData = [
   {
     id: 1,
     pdfPath: "/pdf/downloadform/meter_install.pdf",
-    title: "ຟອມ​ຂໍ​ຕິດ​ຕັ້ງ​ໝໍ້​ນັບ​ໄຟ​ໃໝ່​",
+    title: "ແບບຟອມ ​ຂໍ​ຕິດ​ຕັ້ງ​ໝໍ້​ນັບ​ໄຟ ເຂົ້າ​ໃໝ່​",
   },
 
   // Add more card data objects as needed

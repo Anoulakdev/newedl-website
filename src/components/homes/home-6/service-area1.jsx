@@ -79,6 +79,7 @@ const ServiceArea = () => {
                       </div>
                       <div className="tp-service-2__text">
                         <h4 className="tp-service-2__title-sm fw-bold" style={{fontFamily: 'Noto Sans Lao'}}>{item.title}</h4>
+                        {item.link?"":<p>coming soon</p>}
                       </div>
                     </Link>
                   </div>
