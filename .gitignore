@@ -33,3 +33,5 @@ yarn-error.log*
 .vercel
 
 /src/utils/edlanalytics-16af6988df72.json
+
+/src/layout/footers/footer-4.jsx

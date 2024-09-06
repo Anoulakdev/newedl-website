@@ -85,7 +85,7 @@ const PostboxArea = () => {
                   data-index={i}
                   className="col-xl-4 col-lg-4 col-md-4 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
                 >
-                  <div className="tp-blog-item" style={{ height: "520px" }}>
+                  <div className="tp-blog-item">
                     <div className="tp-blog-thumb fix">
                       <img
                         src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item.image}`}
@@ -123,7 +123,7 @@ const PostboxArea = () => {
                             __html: item.description,
                           }}
                         ></div>
-                        <div className="d-flex justify-content-between mt-4 mb-4">
+                        <div className="d-flex justify-content-between mt-4">
                           <p
                             className={`text-${
                               item.status === "A" ? "success" : "danger"

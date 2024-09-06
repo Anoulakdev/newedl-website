@@ -67,13 +67,13 @@ const Portfolio = () => {
         <div className="container">
           {isLoading ? (
             <div className="text-center pt-50">
-              <h3
+              {/* <h3
                 className="text-center my-5"
                 style={{ fontFamily: "Noto Sans Lao" }}
               >
                 ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
-              </h3>
-              {/* <Image src={Rolling} width={100} height={100} /> */}
+              </h3> */}
+              <Image src={Rolling} width={100} height={100} />
             </div>
           ) : (
             <div className="row grid blog-grid-inner pt-50">
