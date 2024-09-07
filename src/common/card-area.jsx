@@ -27,8 +27,17 @@ const CardArea = () => {
 
   return (
     <>
-      <div className="tp-card-area tp-card-space pt-70">
+      <div className="tp-card-area tp-card-space pt-50">
         <div className="container">
+          <div className="col-md-10 mx-auto">
+            <div className="htmlslogan blue-bg pt-35 pb-20 rounded-4 text-center text-white mb-50">
+              <p dangerouslySetInnerHTML={{
+                __html: data.slogan,
+              }}>
+              </p>
+              {/* ລັດວິສາຫະກິດໄຟຟ້າລາວ ເດີ່ນໜ້າໄປດ້ວຍບາດກ້າວໃໝ່ທີ່ໝັ້ນຄົງ */}
+            </div>
+          </div>
           <div className="row">
             <div
               className="col-xl-6 col-lg-6 wow tpfadeLeft"
@@ -56,26 +65,17 @@ const CardArea = () => {
                 >
                   {data.title}
                 </h3>
-                <p
-                  className="text-dark fs-4"
-                  style={{ fontFamily: "Noto Sans Lao" }}
-                  dangerouslySetInnerHTML={{
-                    __html: data.description
-                  }}
-                ></p>
+
+                <div className="htmlvision">
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: data.description,
+                    }}
+                  ></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="container mt-50">
-          <div
-            class="border border-primary bg-primary-subtle
- border-3 rounded-4 p-5 fs-2 fw-bold text-black text-center"
-            dangerouslySetInnerHTML={{
-              __html: data.slogan
-            }}
-          ></div>
         </div>
       </div>
     </>

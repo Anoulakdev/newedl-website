@@ -64,12 +64,12 @@ const Tables = () => {
     }
   };
 
-  const downloadFile = (url) => {
+  const downloadFile = (url, filename) => {
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
         const blobURL = window.URL.createObjectURL(new Blob([blob]));
-        const filename = url.split("/").pop();
+        // const filename = url.split("/").pop();
         const aTag = document.createElement("a");
         aTag.href = blobURL;
         aTag.setAttribute("download", filename);
@@ -128,7 +128,8 @@ const Tables = () => {
                             <button
                               onClick={() => {
                                 const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/services/${item.file_url}`;
-                                downloadFile(url);
+                                const filename = `${item.title}.pdf`;
+                                downloadFile(url, filename);
                               }}
                               className="btn btn-primary"
                             >

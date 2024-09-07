@@ -6,6 +6,15 @@ import axios from "axios";
 
 import imglocation from "@/public/images/map.png";
 
+const truncateText = (text, maxLength) => {
+  if (text == null) return ""; // Return an empty string or some default value
+
+  if (typeof text !== "string") return "";
+
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength) + "...";
+};
+
 const AllBranch = () => {
   const [data, setData] = useState([]);
 
@@ -39,22 +48,25 @@ const AllBranch = () => {
                   >
                     <div
                       className="tp-blog-item wow tpfadeUp"
-                      style={{ height: "440px" }}
+                      style={{
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.6)",
+                        borderRadius: "20px",
+                      }}
                     >
                       <div className="tp-blog-thumb fix">
                         <img
                           src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/branches/${item.bra_image}`}
                           alt="theme-pure"
-                          style={{ height: "230px" }}
+                          style={{ height: "220px" }}
                         />
                       </div>
 
                       <div className="tp-blog-content">
-                        <div className="tp-blog-title-box">
+                        <div>
                           <h5 style={{ fontFamily: "Noto Sans Lao" }}>
                             {item.bra_name}
                           </h5>
-                          <p>{item.address}</p>
+                          <p>{truncateText(item.address, 85)}</p>
 
                           <div class="d-flex justify-content-between align-items-center">
                             <p>

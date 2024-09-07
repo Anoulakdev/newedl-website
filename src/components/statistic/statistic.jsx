@@ -128,7 +128,7 @@ const Tabs = () => {
               <Image src={img5} class="img-fluid" alt={img5} />
             </div>
             <div className="fs-3 text-black fw-bold text-start mt-30 mb-10">
-              ສະ​ຖິ​ຕິ ຈຳ​ນວນ​ຈຳ​ໜ່າຍ​ໄຟ​ຟ້າ​ພາຍ​ໃນ ແຍກ​ປະ​ເພດ (Gwh)
+              ສະ​ຖິ​ຕິ ຈຳ​ນວນ​ຈຳ​ໜ່າຍ​ໄຟ​ຟ້າ​ພາຍ​ໃນ ແຍກ​ປະ​ເພດ (GWh)
             </div>
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img6} class="img-fluid" alt={img6} />

@@ -77,9 +77,14 @@ const Portfolio = () => {
                     data-index={i}
                     className="col-xl-3 col-lg-3 col-md-3 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
                   >
-                    <h5 className="text-center" style={{fontFamily: 'Noto Sans Lao'}}>{item.title}</h5>
+                    <h5
+                      className="text-center mb-15"
+                      style={{ fontFamily: "Noto Sans Lao" }}
+                    >
+                      {item.title}
+                    </h5>
                     <div className="tp-blog-item wow tpfadeUp">
-                      <div className="tp-blog-thumb fix rounded-4">
+                      <div>
                         <Link
                           href={{
                             pathname: "/magazine_detail",
@@ -89,7 +94,6 @@ const Portfolio = () => {
                           <img
                             src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
                             alt="theme-pure"
-                            style={{ height: "430px" }}
                           />
                         </Link>
                       </div>

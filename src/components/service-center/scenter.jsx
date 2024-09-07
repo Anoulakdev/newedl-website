@@ -65,14 +65,8 @@ const Portfolio = () => {
     <>
       <div className="portfolio blog-grid-inner mb-30">
         <div className="container">
-          {isLoading ? (
+          {/* {isLoading ? (
             <div className="text-center pt-50">
-              {/* <h3
-                className="text-center my-5"
-                style={{ fontFamily: "Noto Sans Lao" }}
-              >
-                ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
-              </h3> */}
               <Image src={Rolling} width={100} height={100} />
             </div>
           ) : (
@@ -129,12 +123,12 @@ const Portfolio = () => {
                   </div>
                 ))
               ) : (
-                <h2
-                  className="text-center mt-4"
+                <h3
+                  className="text-center my-5"
                   style={{ fontFamily: "Noto Sans Lao" }}
                 >
                   ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
-                </h2>
+                </h3>
               )}
               <div className="basic-pagination text-center mt-5">
                 <nav>
@@ -178,7 +172,9 @@ const Portfolio = () => {
                 </nav>
               </div>
             </div>
-          )}
+          )} */}
+
+          <h1 className="text-center mt-90 mb-90" style={{fontFamily: 'Noto Sans Lao'}}>ກຳ​ລັງ​ພັດ​ທະ​ນາ</h1>
         </div>
       </div>
     </>

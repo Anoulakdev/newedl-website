@@ -90,7 +90,10 @@ const Portfolio = () => {
                   >
                     <div
                       className="tp-blog-item wow tpfadeUp"
-                      style={{ height: "490px" }}
+                      style={{ height: "500px",
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.6)",
+                        borderRadius: "20px",
+                      }}
                     >
                       <div className="tp-blog-thumb fix">
                         <Link

@@ -40,54 +40,54 @@ const footer_content = {
     { name: "ຄ່າ​ບໍ​ລິ​ການ", link: "service-fee" },
     { name: "​ແຈ້ງການ​ປະ​ມູນ", link: "/notice-of-auction" },
     { name: "EV Charge", link: "https://e-service.edl.com.la" },
-    { name: "ສາ​ລະ​ໜ້າ​ຮູ້", link: "/knowledge" },
-    { name: "ແຜນ​ຜັງ​ເວບ​ໄຊ", link: "/sitemap" },
+    { name: "ຄວາມ​ຮູ້​ກ່ຽວ​ກັບ​ໄຟ​ຟ້າ", link: "/knowledge" },
+    { name: "ແຜນ​ຜັງ​ເວັບ​ໄຊ", link: "/sitemap" },
   ],
 };
 const { sub_title, policy_text, phone, email, location, footer_lisks } =
   footer_content;
 
 const FooterFour = () => {
-  // const [reportData, setReportData] = useState(null);
-  // const [error, setError] = useState(null);
+  const [reportData, setReportData] = useState(null);
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       // Fetch data from the API using axios
-  //       const response = await axios.get("/api/realtimeReport");
-  //       setReportData(response.data);
-  //       console.log(response);
-  //       setError(null); // Clear any previous errors
-  //     } catch (error) {
-  //       setError(error.message);
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   }
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Fetch data from the API using axios
+        const response = await axios.get("/api/realtimeReport");
+        setReportData(response.data);
+        console.log(response);
+        setError(null); // Clear any previous errors
+      } catch (error) {
+        setError(error.message);
+        console.error("Error fetching data:", error);
+      }
+    }
 
-  //   // Call fetchData immediately and then every 3 seconds
-  //   fetchData();
-  //   const intervalId = setInterval(fetchData, 5000); // 3000 ms = 3 seconds
+    // Call fetchData immediately and then every 3 seconds
+    fetchData();
+    const intervalId = setInterval(fetchData, 5000); // 3000 ms = 3 seconds
 
-  //   // Clean up interval on component unmount
-  //   return () => clearInterval(intervalId);
-  // }, []);
+    // Clean up interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
 
-  // if (error) {
-  //   return <p>Error: {error}</p>;
-  // }
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
-  // let value = 0; // Default value if reportData is 0 or the structure is missing
+  let value = 0; // Default value if reportData is 0 or the structure is missing
 
-  // if (
-  //   reportData &&
-  //   reportData.rows &&
-  //   reportData.rows[0] &&
-  //   reportData.rows[0].metricValues &&
-  //   reportData.rows[0].metricValues[0]
-  // ) {
-  //   value = reportData.rows[0].metricValues[0].value;
-  // }
+  if (
+    reportData &&
+    reportData.rows &&
+    reportData.rows[0] &&
+    reportData.rows[0].metricValues &&
+    reportData.rows[0].metricValues[0]
+  ) {
+    value = reportData.rows[0].metricValues[0].value;
+  }
 
   return (
     <>
@@ -116,7 +116,7 @@ const FooterFour = () => {
                         </span>
                       </Link> */}
                       <span className="text-white fs-4 pt-1">
-                        ​ດາວ​ໂຫລດ EDL APP ໄດ້​ແລ້ວທີ່
+                        ​ດາວ​ໂຫຼດ EDL APP ໄດ້​ແລ້ວທີ່
                       </span>
                     </div>
                     <div className="d-flex tp-footer__widget-logo mb-15 ps-1">
@@ -234,7 +234,7 @@ const FooterFour = () => {
                           <div className={`${styles.circle} me-2`}></div>
                           <div className="fs-5 text-white">
                             ກຳ​ລັງ​ອອນ​ລາຍ{" "}
-                            <span className="text-danger fw-bold">1</span>{" "}
+                            <span className="text-danger fw-bold">{value}</span>{" "}
                             ທ່ານ
                           </div>
                         </li>

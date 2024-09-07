@@ -39,7 +39,7 @@ const Announcement = () => {
     fetchData();
   }, []);
 
-  const downloadFile = async (url) => {
+  const downloadFile = async (url, filename) => {
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -47,7 +47,7 @@ const Announcement = () => {
       }
       const blob = await response.blob();
       const blobURL = window.URL.createObjectURL(blob);
-      const filename = url.split("/").pop();
+      // const filename = url.split("/").pop();
       const aTag = document.createElement("a");
       aTag.href = blobURL;
       aTag.setAttribute("download", filename);
@@ -90,7 +90,8 @@ const Announcement = () => {
                                 onClick={(e) => {
                                   e.preventDefault(); // Prevent the default anchor behavior
                                   const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item1.file_url}`;
-                                  downloadFile(url);
+                                  const filename = `${item1.title}.pdf`;
+                                  downloadFile(url, filename);
                                 }}
                                 href="#"
                                 className={styles.link}
@@ -113,7 +114,7 @@ const Announcement = () => {
                         type="button"
                         className="btn btn-primary mt-2"
                       >
-                        More
+                        ເພີ່ມ​ເຕີມ
                       </Link>
                     </div>
                   </div>
@@ -139,7 +140,8 @@ const Announcement = () => {
                                 onClick={(e) => {
                                   e.preventDefault(); // Prevent the default anchor behavior
                                   const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/services/${item2.file_url}`;
-                                  downloadFile(url);
+                                  const filename = `${item2.title}.pdf`;
+                                  downloadFile(url, filename);
                                 }}
                                 href="#"
                                 className={styles.link}
@@ -160,7 +162,7 @@ const Announcement = () => {
                         type="button"
                         className="btn btn-primary mt-2"
                       >
-                        More
+                        ເພີ່ມ​ເຕີມ
                       </Link>
                     </div>
                   </div>

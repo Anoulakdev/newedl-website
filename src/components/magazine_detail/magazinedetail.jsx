@@ -23,11 +23,13 @@ export default function magazinedetail() {
 
     fetchData();
   }, []);
-  
 
   return (
     <>
       <div className="container pt-120 pb-50">
+        <h1 className="mb-4" style={{ fontFamily: "Noto Sans Lao" }}>
+          {data.title}
+        </h1>
         <iframe
           allowfullscreen="true"
           src={data.file_url}

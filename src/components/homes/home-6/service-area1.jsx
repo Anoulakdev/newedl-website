@@ -72,14 +72,15 @@ const ServiceArea = () => {
                   <div className="tp-service-2__item d-flex justify-content-between flex-column">
                     <Link
                       href={item.link ? item.link : ""}
-                      target={item.link ? "_blank" : ""}
+                      target={item.link ? "_blank" : undefined}
+                      onClick={item.link ? undefined : (e) => e.preventDefault()}
                     >
                       <div className="tp-service-2__icon">
                         <Image src={item.img} alt="theme-pure" style={{width: '120px'}} />
                       </div>
                       <div className="tp-service-2__text">
                         <h4 className="tp-service-2__title-sm fw-bold" style={{fontFamily: 'Noto Sans Lao'}}>{item.title}</h4>
-                        {item.link?"":<p>coming soon</p>}
+                        {item.link?"":<p>ກຳ​ລັງ​ພັດ​ທະ​ນາ</p>}
                       </div>
                     </Link>
                   </div>

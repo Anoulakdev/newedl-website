@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import axios from "axios";
 
-import img69 from "@/public/images/about/image69.png";
 
 const SalesArea = () => {
   const [data, setData] = useState([]);
@@ -33,24 +32,24 @@ const SalesArea = () => {
               data-wow-duration=".9s"
               data-wow-delay=".5s"
             >
-              <div className="tp-sales-section-box pb-20">
+              <div className="tp-sales-section-box">
                 <h3
                   className="tp-section-title-3 pb-15 "
                   style={{ fontFamily: "Noto Sans Lao", fontSize: "40px" }}
                 >
                   {data.title}
                 </h3>
-                <p
-                  className="text-dark fs-4"
-                  style={{ fontFamily: "Noto Sans Lao" }}
-                  dangerouslySetInnerHTML={{
-                    __html: data.description,
-                  }}
-                ></p>
+                <div className="htmlvision">
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: data.description,
+                    }}
+                  ></p>
+                </div>
               </div>
             </div>
             <div
-              className="col-xl-6 col-lg-6 order-0 order-md-2 wow tpfadeRight"
+              className="col-xl-6 col-lg-6 order-0 order-md-2 wow tpfadeRight mt-15"
               data-wow-duration=".9s"
               data-wow-delay=".7s"
             >

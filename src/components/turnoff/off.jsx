@@ -16,6 +16,7 @@ const PostboxArea = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,9 +36,15 @@ const PostboxArea = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  // Filtered data based on the search term
+  const filteredData = data.filter((item) =>
+    item.noti.title_head.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   const delta = 2; // Number of pages to show around the current page
   const startPage = Math.max(1, currentPage - delta);
@@ -64,6 +71,12 @@ const PostboxArea = () => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
+  };
+
+  // Function to handle the search term update
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    setCurrentPage(1); // Reset to the first page on new search
   };
 
   return (
@@ -181,7 +194,7 @@ const PostboxArea = () => {
 
             <div className="col-xxl-4 col-xl-4 col-lg-4">
               <div className="sidebar__wrapper">
-                <Search />
+                <Search onSearch={handleSearch} />
                 <RecentPost />
                 {/* <Categories /> */}
               </div>

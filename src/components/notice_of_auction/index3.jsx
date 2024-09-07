@@ -4,6 +4,15 @@ import Link from "next/link";
 import axios from "axios";
 import moment from "moment";
 
+const truncateText = (text, maxLength) => {
+  if (text == null) return ""; // Return an empty string or some default value
+
+  if (typeof text !== "string") return "";
+
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength) + "...";
+};
+
 const PostboxArea = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,12 +67,12 @@ const PostboxArea = () => {
     }
   };
 
-  const downloadFile = (url) => {
+  const downloadFile = (url, filename) => {
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
         const blobURL = window.URL.createObjectURL(new Blob([blob]));
-        const filename = url.split("/").pop();
+        // const filename = url.split("/").pop();
         const aTag = document.createElement("a");
         aTag.href = blobURL;
         aTag.setAttribute("download", filename);
@@ -85,7 +94,13 @@ const PostboxArea = () => {
                   data-index={i}
                   className="col-xl-4 col-lg-4 col-md-4 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
                 >
-                  <div className="tp-blog-item">
+                  <div
+                    className="tp-blog-item"
+                    style={{
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.6)",
+                      borderRadius: "20px",
+                    }}
+                  >
                     <div className="tp-blog-thumb fix">
                       <img
                         src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item.image}`}
@@ -94,14 +109,14 @@ const PostboxArea = () => {
                     </div>
 
                     <div className="tp-blog-content">
-                      <div className="tp-blog-title-box">
+                      <div>
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
                             height="16"
                             fill="currentColor"
-                            class="bi bi-calendar-event-fill"
+                            className="bi bi-calendar-event-fill"
                             viewBox="0 0 16 16"
                           >
                             <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5" />
@@ -112,7 +127,8 @@ const PostboxArea = () => {
                         </div>
                         <div className="mt-3">
                           <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                            {item.title}
+                          {truncateText(item.title, 39)}
+                            
                           </h5>
                           <hr />
                         </div>
@@ -123,11 +139,11 @@ const PostboxArea = () => {
                             __html: item.description,
                           }}
                         ></div>
-                        <div className="d-flex justify-content-between mt-4">
+                        <div className="d-flex justify-content-between align-items-center">
                           <p
                             className={`text-${
                               item.status === "A" ? "success" : "danger"
-                            }`}
+                            } d-flex align-items-center`}
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -147,11 +163,12 @@ const PostboxArea = () => {
                           <button
                             onClick={() => {
                               const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item.file_url}`;
-                              downloadFile(url);
+                              const filename = `${item.title}.pdf`;
+                              downloadFile(url, filename);
                             }}
                             className="btn btn-outline-primary btn-sm"
                           >
-                            ດາວ​ໂຫລດເອ​ກະ​ສານ
+                            ດາວ​ໂຫຼດແຈ້ງ​ການ
                           </button>
                         </div>
                       </div>

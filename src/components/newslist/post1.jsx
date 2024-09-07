@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Categories from "./categories";
 import RecentPost from "./recent-post";
-import Search from "./search";
-import Tags from "./tags";
+import Search from "./search"; // Importing Search component
 import axios from "axios";
 import moment from "moment";
 import Image from "next/image";
@@ -16,6 +15,7 @@ const PostboxArea = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
+  const [searchTerm, setSearchTerm] = useState(""); // State to store search input
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,9 +36,15 @@ const PostboxArea = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  // Filtered data based on the search term
+  const filteredData = data.filter((item) =>
+    item.news_title_la.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   const delta = 2; // Number of pages to show around the current page
   const startPage = Math.max(1, currentPage - delta);
@@ -65,6 +71,12 @@ const PostboxArea = () => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
+  };
+
+  // Function to handle the search term update
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    setCurrentPage(1); // Reset to the first page on new search
   };
 
   return (
@@ -101,15 +113,9 @@ const PostboxArea = () => {
                               alt="theme-pure"
                               width="100%"
                             />
-                            {/* <Image src={`${imageUrlBase}${item.news_image}`} alt="theme-pure" width={200} height={200}/> */}
                           </Link>
                         </div>
                         <div className="postbox__content px-3">
-                          {/* <div className="postbox__meta">
-                            <span>
-                              {moment(item.posting_date).format("DD-MM-YYYY")}
-                            </span>
-                          </div> */}
                           <h3 className="postbox__title pb-4">
                             <Link
                               href={{
@@ -181,7 +187,8 @@ const PostboxArea = () => {
 
             <div className="col-xxl-4 col-xl-4 col-lg-4">
               <div className="sidebar__wrapper">
-                <Search />
+                {/* Pass handleSearch as a prop to the Search component */}
+                <Search onSearch={handleSearch} />
                 <RecentPost />
                 {/* <Categories /> */}
                 {/* <Tags />  */}
