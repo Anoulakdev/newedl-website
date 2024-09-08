@@ -92,7 +92,7 @@ const PostboxArea = () => {
                 <div
                   key={i}
                   data-index={i}
-                  className="col-xl-4 col-lg-4 col-md-4 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
+                  className="col-xl-4 col-lg-6 col-md-6 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
                 >
                   <div
                     className="tp-blog-item"
@@ -101,7 +101,10 @@ const PostboxArea = () => {
                       borderRadius: "20px",
                     }}
                   >
-                    <div className="tp-blog-thumb fix">
+                    <div
+                      className="tp-blog-thumb fix"
+                      style={{ height: "515px" }}
+                    >
                       <img
                         src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item.image}`}
                         alt="theme-pure"
@@ -126,15 +129,14 @@ const PostboxArea = () => {
                           {moment(item.end_date).format("DD/MM/YYYY")}
                         </div>
                         <div className="mt-3">
-                          <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                          {truncateText(item.title, 39)}
-                            
+                          <h5 style={{ fontFamily: "Noto Sans Lao", height: '35px' }}>
+                            {truncateText(item.title, 39)}
                           </h5>
                           <hr />
                         </div>
 
                         <div
-                          className="text-black"
+                          className="text-black" style={{height: '50px'}}
                           dangerouslySetInnerHTML={{
                             __html: item.description,
                           }}
@@ -142,7 +144,11 @@ const PostboxArea = () => {
                         <div className="d-flex justify-content-between align-items-center">
                           <p
                             className={`text-${
-                              item.status === "A" ? "success" : "danger"
+                              moment().isBefore(item.start_date)
+                                ? "warning"
+                                : moment().isSameOrAfter(item.end_date)
+                                ? "danger"
+                                : "success"
                             } d-flex align-items-center`}
                           >
                             <svg
@@ -150,26 +156,30 @@ const PostboxArea = () => {
                               width="16"
                               height="16"
                               fill="currentColor"
-                              class="bi bi-hammer"
+                              className="bi bi-hammer me-2"
                               viewBox="0 0 16 16"
                             >
                               <path d="M9.972 2.508a.5.5 0 0 0-.16-.556l-.178-.129a5 5 0 0 0-2.076-.783C6.215.862 4.504 1.229 2.84 3.133H1.786a.5.5 0 0 0-.354.147L.146 4.567a.5.5 0 0 0 0 .706l2.571 2.579a.5.5 0 0 0 .708 0l1.286-1.29a.5.5 0 0 0 .146-.353V5.57l8.387 8.873A.5.5 0 0 0 14 14.5l1.5-1.5a.5.5 0 0 0 .017-.689l-9.129-8.63c.747-.456 1.772-.839 3.112-.839a.5.5 0 0 0 .472-.334" />
                             </svg>{" "}
-                            {item.status === "A"
-                              ? "ເປີດ​ຂາຍ​ຊອງ​ປະ​ມູນ"
-                              : "​ປິດ​ຂາຍ​ຊອງ​ປະ​ມູນ"}
+                            {moment().isBefore(item.start_date)
+                              ? "ລໍ​ຖ້າ​ເປີດຂາຍ​ຊອງ​ປະ​ມູນ"
+                              : moment().isSameOrAfter(item.end_date)
+                              ? "ປິດ​ຂາຍ​ຊອງ​ປະ​ມູນ"
+                              : "ເປີດ​ຂາຍ​ຊອງ​ປະ​ມູນ"}
                           </p>
 
-                          <button
-                            onClick={() => {
-                              const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item.file_url}`;
-                              const filename = `${item.title}.pdf`;
-                              downloadFile(url, filename);
-                            }}
-                            className="btn btn-outline-primary btn-sm"
-                          >
-                            ດາວ​ໂຫຼດແຈ້ງ​ການ
-                          </button>
+                          {moment().isBefore(item.end_date) && moment().isSameOrAfter(item.start_date) && (
+                            <button
+                              onClick={() => {
+                                const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item.file_url}`;
+                                const filename = `${item.title}.pdf`;
+                                downloadFile(url, filename);
+                              }}
+                              className="btn btn-outline-primary btn-sm"
+                            >
+                              ດາວ​ໂຫຼດແຈ້ງ​ການ
+                            </button>
+                          )}
                         </div>
                       </div>
                     </div>

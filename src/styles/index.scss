@@ -47,3 +47,25 @@
     color: black;
   }
 }
+
+@media (max-width: 576px) {
+  .img-responsive-left,
+  .img-responsive-right {
+    width: 50px !important;
+  }
+
+  .setfontbranch {
+    font-size: 2px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 577px) {
+  .img-responsive-left,
+  .img-responsive-right {
+    width: 50px !important;
+  }
+
+  .setfontbranch {
+    font-size: 2px;
+  }
+}

@@ -44,7 +44,7 @@ const AllBranch = () => {
                   <div
                     key={i}
                     data-index={i}
-                    className="col-xl-4 col-lg-4 col-md-4 mb-30 grid-item cat1 cat4 cat3 cat5"
+                    className="col-xl-4 col-lg-6 col-md-6 mb-30 grid-item cat1 cat4 cat3 cat5"
                   >
                     <div
                       className="tp-blog-item wow tpfadeUp"
@@ -66,7 +66,7 @@ const AllBranch = () => {
                           <h5 style={{ fontFamily: "Noto Sans Lao" }}>
                             {item.bra_name}
                           </h5>
-                          <p>{truncateText(item.address, 85)}</p>
+                          <p>{truncateText(item.address, 73)}</p>
 
                           <div class="d-flex justify-content-between align-items-center">
                             <p>

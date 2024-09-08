@@ -105,7 +105,7 @@ const Tables = () => {
                       ​ລົງ​ວັນ​ທີ
                     </th>
                     <th className="py-4" style={{ width: "10%" }}>
-                      ​ດ​າວ​ໂຫລດ
+                      ​ດ​າວ​ໂຫຼດ
                     </th>
                   </tr>
                 </thead>

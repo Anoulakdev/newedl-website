@@ -10,7 +10,7 @@ const Sitemap = () => {
           className="text-center"
           style={{ fontFamily: "Noto Sans Lao", fontSize: "50px" }}
         >
-          ແຜນ​ຜັງ​ເວບ​ໄຊ
+          ແຜນ​ຜັງ​ເວັບ​ໄຊ
         </h1>
         <h2 className="text-center">Sitemap</h2>
       </div>

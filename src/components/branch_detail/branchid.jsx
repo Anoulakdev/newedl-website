@@ -45,14 +45,14 @@ export default function Branch() {
           className="me-2 img-responsive-left"
           src={imgleft}
           alt="left"
-          width={200}
+          width={150}
         />
-        <h1 style={{ fontFamily: "Noto Sans Lao" }}>{data.bra_name}</h1>
+        <div className="fs-1 text-black fw-bold setfontbranch" style={{ fontFamily: "Noto Sans Lao" }}>{data.bra_name}</div>
         <Image
           className="ms-2 img-responsive-right"
           src={imgright}
           alt="right"
-          width={200}
+          width={150}
         />
       </div>
       <div
@@ -99,7 +99,7 @@ export default function Branch() {
         </h2>
         <p className="fs-5 text-black">{data.address}</p>
 
-        <div class="d-flex justify-content-start">
+        <div class="row">
           <p className="fs-5 text-black me-3">
             <svg
               width={17}

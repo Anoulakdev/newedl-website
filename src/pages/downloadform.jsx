@@ -6,7 +6,7 @@ import Wrapper from "../layout/wrapper";
 const index = () => {
   return (
     <Wrapper>
-      <SEO pageTitle={"ດາວ​ໂຫລດ​ແບບ​ຟອມ"} />
+      <SEO pageTitle={"ດາວ​ໂຫຼດ​ແບບ​ຟອມ"} />
       <DownloadForm />
     </Wrapper>
   );

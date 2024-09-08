@@ -19,7 +19,7 @@ const menu_data = [
         { link: "/administrator", title: "ໂຄງ​ຮ່​າງ​ສະ​ພາ​ບໍ​ລິ​ຫານ" },
         { link: "/organization", title: "​ໂຄງ​ຮ່າງ​ຄະ​ນະ​ຜູ້​ບໍ​ລິ​ຫານ" },
         { link: "/branch_organize", title: "​​ໂຄງ​ຮ່າງສາ​ຂາ​ແຂວງ" },
-        { link: "/organize", title: "​​ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງ" },
+        { link: "/organize", title: "​​ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງລວມ" },
         { link: "/about", title: "ວິ​ໄສ​ທັດ ແລະ ພາ​ລະ​ກິດ" },
         { link: "/iso", title: "ມາດ​ຕະ​ຖານ ISO" },
         { link: "/statistic", title: "ສະ​ຖິ​ຕິ" },
@@ -68,7 +68,7 @@ const menu_data = [
         { link: "/legislation", title: "​ນິ​ຕິ​ກຳ" },
         { link: "/service-fee", title: "​ຄ່າ​ບໍ​ລິ​ການ" },
         { link: "/price", title: "​ອັດ​ຕາ​ລາ​ຄາ​ໄຟ" },
-        { link: "/downloadform", title: "ດາວ​ໂຫລດ​ແບບ​ຟອມ" },
+        { link: "/downloadform", title: "ດາວ​ໂຫຼດ​ແບບ​ຟອມ" },
       ],
     },
 

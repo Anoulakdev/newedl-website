@@ -17,7 +17,7 @@ const DownloadForm = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ດາວ​ໂຫລດ​ແບບ​ຟອມ"} imgbread={imgbread} />
+            <BreadcrumbTwo title={"ດາວ​ໂຫຼດ​ແບບ​ຟອມ"} imgbread={imgbread} />
             <DownLoadForm />
             {/* <Government /> */}
           </main>

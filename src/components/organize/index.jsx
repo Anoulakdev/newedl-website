@@ -16,7 +16,7 @@ const Orgazines = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງ"} imgbread={imgbread} />
+            <BreadcrumbTwo title={"ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງລ​ວມ"} imgbread={imgbread} />
             <Organize />
             {/* <Government /> */}
           </main>
