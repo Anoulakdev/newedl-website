@@ -106,15 +106,7 @@ const FooterFour = () => {
                 >
                   <div className="tp-footer__widget footer-widget-4 footer-col-4-1">
                     <div className="tp-footer__logo mb-15">
-                      {/* <Link
-                        href="/"
-                        className="d-flex tp-footer__widget-logo mb-10"
-                      >
-                        <Image src={edl_logo} alt="" width={60} height={60} />
-                        <span className="text-white fs-4 pt-1">
-                          ລັດວິສາຫະກິດໄຟຟ້າລາວ
-                        </span>
-                      </Link> */}
+                      
                       <span className="text-white fs-4 pt-1">
                         ​ດາວ​ໂຫຼດ EDL APP ໄດ້​ແລ້ວທີ່
                       </span>
@@ -133,6 +125,13 @@ const FooterFour = () => {
                       >
                         <Image src={app_logo} alt="" width={145} height={60} />
                       </Link>
+                    </div>
+
+                    <div className="tp-footer__logo mb-15 mt-30">
+                      
+                      <span className="text-white fs-5 pt-1">
+                      ຕິດຕາມຂໍ້ມູນຂ່າວສານຜ່ານຊ່ອງທາງ
+                      </span>
                     </div>
 
                     <div className="d-flex tp-footer__social mb-10 ps-1">

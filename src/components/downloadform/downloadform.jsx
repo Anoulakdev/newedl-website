@@ -41,7 +41,7 @@ const Tables = () => {
           <nav>
             <ul>
               {cardData.map((menu_item, i) => (
-                <div key={i} className={`${styles.link} fs-5 fw-bold my-3`}>
+                <div key={i} className={`${styles.link} fs-5 my-3`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"

@@ -106,6 +106,12 @@ const ContactArea = () => {
                           name="phone_number"
                           value={formData.phone_number}
                           onChange={handleChange}
+                          maxLength="15"
+                          onInput={(e) => {
+                            if (e.target.value.length > 15) {
+                              e.target.value = e.target.value.slice(0, 15); // Trim the input to 15 digits
+                            }
+                          }}
                         />
                       </div>
                     </div>

@@ -25,17 +25,31 @@ const CardArea = () => {
     fetchData();
   }, []);
 
+  function splitSentences(text) {
+    const firstSentenceEnd =
+      text?.indexOf("02 ໜ້າທີ່ຫຼັກຄື:</p>") + "02 ໜ້າທີ່ຫຼັກຄື:</p>".length;
+    const firstSentence = text?.substring(0, firstSentenceEnd).trim();
+    const secondSentence = text?.substring(firstSentenceEnd).trim();
+
+    return {
+      firstSentence,
+      secondSentence,
+    };
+  }
+
+  const result = splitSentences(data.description);
+
   return (
     <>
       <div className="tp-card-area tp-card-space pt-50">
         <div className="container">
           <div className="col-md-10 mx-auto">
-            <div className="htmlslogan blue-bg pt-35 pb-20 rounded-4 text-center text-white mb-50">
-              <p dangerouslySetInnerHTML={{
-                __html: data.slogan,
-              }}>
-              </p>
-              {/* ລັດວິສາຫະກິດໄຟຟ້າລາວ ເດີ່ນໜ້າໄປດ້ວຍບາດກ້າວໃໝ່ທີ່ໝັ້ນຄົງ */}
+            <div className="htmlslogan blue-bg pt-40 rounded-4 text-center text-white mb-60">
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: data.slogan,
+                }}
+              ></p>
             </div>
           </div>
           <div className="row">
@@ -66,10 +80,17 @@ const CardArea = () => {
                   {data.title}
                 </h3>
 
+                <div className="firstSentence">
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: result?.firstSentence,
+                    }}
+                  ></p>
+                </div>
                 <div className="htmlvision">
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: data.description,
+                      __html: result?.secondSentence,
                     }}
                   ></p>
                 </div>

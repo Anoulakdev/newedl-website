@@ -56,7 +56,7 @@ const AllBranch = () => {
                           }}
                         >
                           <div
-                            className={`${styles.link} fs-5 fw-bold py-3 flex items-center`}
+                            className={`${styles.link} fs-5 py-3 flex items-center`}
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
