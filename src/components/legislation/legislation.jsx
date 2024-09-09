@@ -87,7 +87,7 @@ const Tables = () => {
       ) : (
         <div className="container wow tpfadeUp">
           <div className="row mt-60 mb-60">
-            <div className="col-lg-4 col-md-4 col-6 mb-20">
+            <div className="col-lg-4 col-md-4 col-12 mb-20">
               <h2 style={{ fontFamily: "Noto Sans Lao" }}>ລາຍ​ການນິ​ຕິ​ກຳ</h2>
             </div>
             <div className={styles.scrollableTable}>
@@ -97,7 +97,9 @@ const Tables = () => {
                     <th className="py-4" style={{ width: "10%" }}>
                       ລ/ດ
                     </th>
-                    <th className="py-4" style={{ width: "10%" }}>ເລກ​ທີ</th>
+                    <th className="py-4" style={{ width: "10%" }}>
+                      ເລກ​ທີ
+                    </th>
                     <th className="py-4">​ຫົວ​ຂໍ້</th>
                     <th className="py-4" style={{ width: "15%" }}>
                       ​​ວັນ​ທີ
@@ -114,7 +116,12 @@ const Tables = () => {
                         <td className="text-center py-4">
                           {indexOfFirstItem + i + 1}
                         </td>
-                        <td className="py-4 text-center" style={{ width: "10%" }}>{item.no}</td>
+                        <td
+                          className="py-4 text-center"
+                          style={{ width: "10%" }}
+                        >
+                          {item.no}
+                        </td>
                         <td className="py-4">{item.title}</td>
                         <td
                           className="py-4 text-center"
@@ -146,6 +153,45 @@ const Tables = () => {
                               <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
                             </svg>
                           </button>
+
+                          {/* <button
+                            type="button"
+                            className="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target={`#modal-${i}`}
+                          >
+                            View PDF
+                          </button>
+
+                          <div
+                            className="modal fade"
+                            id={`modal-${i}`}
+                            tabIndex="-1"
+                            aria-labelledby={`modal-label-${i}`}
+                            aria-hidden="true"
+                          >
+                            <div className="modal-dialog modal-xl">
+                              <div className="modal-content">
+                                <div className="modal-body">
+                                  <object
+                                    data={`${process.env.NEXT_PUBLIC_API_URL_IMG}/policies/${item.file_url}`}
+                                    type="application/pdf"
+                                    width="100%"
+                                    height="700px"
+                                  >
+                                    <p>
+                                      Alternative text - include a link{" "}
+                                      <a
+                                        href={`${process.env.NEXT_PUBLIC_API_URL_IMG}/policies/${item.file_url}`}
+                                      >
+                                        to the PDF!
+                                      </a>
+                                    </p>
+                                  </object>
+                                </div>
+                              </div>
+                            </div>
+                          </div> */}
                         </td>
                       </tr>
                     ))

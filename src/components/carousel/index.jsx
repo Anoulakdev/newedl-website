@@ -65,8 +65,11 @@ const Carousel = () => {
   };
 
   const sliderContent = [
+    // {
+    //   imageUrl: "/images/carousel/1.jpg",
+    // },
     {
-      imageUrl: "/images/carousel/1.jpg",
+      imageUrl: "/images/carousel/8.jpg",
     },
     {
       imageUrl: "/images/carousel/2.png",
@@ -86,18 +89,15 @@ const Carousel = () => {
     // {
     //   imageUrl: "/images/carousel/6.jpg",
     // },
-    {
-      imageUrl: "/images/carousel/7.jpg",
-    },
-    {
-      imageUrl: "/images/carousel/8.jpg",
-    },
-    {
-      imageUrl: "/images/carousel/9.jpg",
-    },
-    {
-      imageUrl: "/images/carousel/10.jpg",
-    },
+    // {
+    //   imageUrl: "/images/carousel/7.jpg",
+    // },
+    // {
+    //   imageUrl: "/images/carousel/9.jpg",
+    // },
+    // {
+    //   imageUrl: "/images/carousel/10.jpg",
+    // },
 
     // Add more slides as needed
   ];
