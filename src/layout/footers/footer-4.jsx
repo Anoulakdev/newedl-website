@@ -39,7 +39,11 @@ const footer_content = {
     { name: "​ແຈ້ງມອດ​ໄຟ", link: "/turnoff" },
     { name: "ຄ່າ​ບໍ​ລິ​ການ", link: "service-fee" },
     { name: "​ແຈ້ງການ​ປະ​ມູນ", link: "/notice-of-auction" },
-    { name: "EV Charge", link: "https://e-service.edl.com.la", target: "_blank" },
+    {
+      name: "EV Charge",
+      link: "https://e-service.edl.com.la",
+      target: "_blank",
+    },
     { name: "ຄວາມ​ຮູ້​ກ່ຽວ​ກັບ​ໄຟ​ຟ້າ", link: "/knowledge" },
     { name: "ແຜນ​ຜັງ​ເວັບ​ໄຊ", link: "/sitemap" },
     { name: "EDL MAIL", link: "https://mail.edl.com.la/", target: "_blank" },
@@ -216,12 +220,10 @@ const FooterFour = () => {
                           <PhoneThree />
                           <Link href={`tel:+85621316133`}>{phone}</Link>
                         </li>
-                        {/* <li>
+                        <li>
                           <EmailThree />
-                          <Link href="https://mail.edl.com.la/" target="_blank">
-                            {email}
-                          </Link>
-                        </li> */}
+                          <Link href={`mailto:${email}`}>{email}</Link>
+                        </li>
                         <li>
                           <LocationTwo />{" "}
                           <Link
