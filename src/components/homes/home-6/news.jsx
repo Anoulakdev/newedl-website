@@ -46,7 +46,12 @@ const BlogGrid = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/news/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/news/get`,
+          {
+            headers: {
+              "Content-Type": "application/json", // Set Content-Type header
+            },
+          }
         );
         setData(response.data.data);
         setIsLoading(false);

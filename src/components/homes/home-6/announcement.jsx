@@ -21,13 +21,23 @@ const Announcement = () => {
     const fetchData = async () => {
       try {
         const response1 = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/pads/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/pads/get`,
+          {
+            headers: {
+              "Content-Type": "application/json", // Set Content-Type header
+            },
+          }
         );
         setData1(response1.data.data);
         console.log(response1);
 
         const response2 = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/priceServices/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/priceServices/get`,
+          {
+            headers: {
+              "Content-Type": "application/json", // Set Content-Type header
+            },
+          }
         );
         setData2(response2.data.data);
         console.log(response2);
@@ -75,9 +85,9 @@ const Announcement = () => {
                     className={`px-5 py-3 tp-payment__bg-color-3 tpfadeLeft p-relative z-index wow `}
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
-                    style={{height: '330px'}}
+                    style={{ height: "330px" }}
                   >
-                    <div style={{height:'245px'}}>
+                    <div style={{ height: "245px" }}>
                       <h3
                         className="tp-payment__title fw-bold"
                         style={{ fontFamily: "Noto Sans Lao" }}
@@ -133,9 +143,9 @@ const Announcement = () => {
                     className={`px-5 py-3 tp-payment__bg-color-3 tpfadeRight p-relative z-index wow `}
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
-                    style={{height: '330px'}}
+                    style={{ height: "330px" }}
                   >
-                    <div style={{height:'245px'}}>
+                    <div style={{ height: "245px" }}>
                       <h3
                         className="tp-payment__title fw-bold"
                         style={{ fontFamily: "Noto Sans Lao" }}

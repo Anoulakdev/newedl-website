@@ -22,7 +22,12 @@ const AllBranch = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/branches/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/branches/get`,
+          {
+            headers: {
+              "Content-Type": "application/json", // Set Content-Type header
+            },
+          }
         );
         setData(response.data.data);
         console.log(response);

@@ -18,7 +18,12 @@ const Tables = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/priceServices/get`
+          `${process.env.NEXT_PUBLIC_API_URL}/priceServices/get`,
+          {
+            headers: {
+              "Content-Type": "application/json", // Set Content-Type header
+            },
+          }
         );
         setData(response.data.data);
         setIsLoading(false);
@@ -99,7 +104,9 @@ const Tables = () => {
                     <th className="py-4" style={{ width: "10%" }}>
                       ລ/ດ
                     </th>
-                    <th className="py-4" style={{ width: "10%" }}>ເລກ​ທີ</th>
+                    <th className="py-4" style={{ width: "10%" }}>
+                      ເລກ​ທີ
+                    </th>
                     <th className="py-4">​ຫົວ​ຂໍ້</th>
                     <th className="py-4" style={{ width: "15%" }}>
                       ​ລົງ​ວັນ​ທີ
@@ -116,8 +123,43 @@ const Tables = () => {
                         <td className="text-center py-4">
                           {indexOfFirstItem + i + 1}
                         </td>
-                        <td className="py-4 text-center" style={{ width: "10%" }}>{item.no}</td>
-                        <td className="py-4">{item.title}</td>
+                        <td
+                          className="py-4 text-center"
+                          style={{ width: "10%" }}
+                        >
+                          {item.no}
+                        </td>
+                        <td className="py-4">
+                          <a
+                            href="#"
+                            role="button"
+                            data-bs-toggle="modal"
+                            data-bs-target={`#modal-${i}`}
+                          >
+                            {item.title}
+                          </a>
+                          <div
+                            className="modal fade"
+                            id={`modal-${i}`}
+                            tabIndex="-1"
+                            aria-labelledby={`modal-label-${i}`}
+                            aria-hidden="true"
+                          >
+                            <div className="modal-dialog modal-xl">
+                              <div className="modal-content">
+                                <div className="modal-body">
+                                  <iframe
+                                    src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/services/${item.file_url}`}
+                                    type="application/pdf"
+                                    width="100%"
+                                    height="700px"
+                                    title="PDF Document"
+                                  ></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                         <td
                           className="py-4 text-center"
                           style={{ width: "15%" }}
@@ -152,8 +194,12 @@ const Tables = () => {
                       </tr>
                     ))
                   ) : (
-                    <tr style={{ height: '100px'}}>
-                      <td colSpan="5" className="text-center fs-4" style={{ textAlign: 'center', verticalAlign: 'middle' }}>
+                    <tr style={{ height: "100px" }}>
+                      <td
+                        colSpan="5"
+                        className="text-center fs-4"
+                        style={{ textAlign: "center", verticalAlign: "middle" }}
+                      >
                         ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
                       </td>
                     </tr>

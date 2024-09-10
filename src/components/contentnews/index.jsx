@@ -18,7 +18,12 @@ export default function ContentNews() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/news/getById?news_id=${news_id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/news/getById?news_id=${news_id}`,
+          {
+            headers: {
+              "Content-Type": "application/json", // Set Content-Type header
+            },
+          }
         );
         setData(response.data.data);
         console.log(response);
