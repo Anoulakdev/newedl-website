@@ -95,7 +95,7 @@ const menu_data = [
         { link: "/branch", title: "ສາ​ຂາແຂວງ" },
         { link: "/service-center", title: "ສູນ​ບໍ​ລິ​ການ" },
         { link: "/comment", title: "​ສະ​ແດງ​ຄຳຄິດ​ເຫັນຕໍ່ ຟ​ຟ​ລ" },
-        { link: "https://mail.edl.com.la/", title: "EDL mail" },
+        // { link: "https://mail.edl.com.la/", title: "EDL mail" },
       ],
     },
     
