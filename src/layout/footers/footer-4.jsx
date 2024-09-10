@@ -106,7 +106,6 @@ const FooterFour = () => {
                 >
                   <div className="tp-footer__widget footer-widget-4 footer-col-4-1">
                     <div className="tp-footer__logo mb-15">
-                      
                       <span className="text-white fs-4 pt-1">
                         ​ດາວ​ໂຫຼດ EDL APP ໄດ້​ແລ້ວທີ່
                       </span>
@@ -128,9 +127,8 @@ const FooterFour = () => {
                     </div>
 
                     <div className="tp-footer__logo mb-15 mt-30">
-                      
                       <span className="text-white fs-5 pt-1">
-                      ຕິດຕາມຂໍ້ມູນຂ່າວສານຜ່ານຊ່ອງທາງ
+                        ຕິດຕາມຂໍ້ມູນຂ່າວສານຜ່ານຊ່ອງທາງ
                       </span>
                     </div>
 
@@ -214,7 +212,9 @@ const FooterFour = () => {
                         </li>
                         <li>
                           <EmailThree />
-                          <Link href={`mailto:${email}`}>{email}</Link>
+                          <Link href="https://mail.edl.com.la/" target="_blank">
+                            {email}
+                          </Link>
                         </li>
                         <li>
                           <LocationTwo />{" "}
