@@ -74,7 +74,7 @@ const Announcement = () => {
     return data1.filter((item) => {
       const startDate = new Date(item.start_date);
       const endDate = new Date(item.end_date);
-      return currentDate > startDate && currentDate < endDate;
+      return currentDate >= startDate && currentDate < endDate;
     }).length;
   };
 

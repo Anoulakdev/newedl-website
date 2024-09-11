@@ -46,7 +46,7 @@ const footer_content = {
     },
     { name: "ຄວາມ​ຮູ້​ກ່ຽວ​ກັບ​ໄຟ​ຟ້າ", link: "/knowledge" },
     { name: "ແຜນ​ຜັງ​ເວັບ​ໄຊ", link: "/sitemap" },
-    { name: "EDL MAIL", link: "https://mail.edl.com.la/", target: "_blank" },
+    { name: "Email-EDL", link: "https://mail.edl.com.la/", target: "_blank" },
   ],
 };
 const { sub_title, policy_text, phone, email, location, footer_lisks } =
