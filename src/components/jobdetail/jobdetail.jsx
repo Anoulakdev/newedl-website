@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 const CareerDetailsArea = () => {
   const [data, setData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const applyHandler = () => {
     setIsOpen(true);
@@ -13,7 +14,7 @@ const CareerDetailsArea = () => {
 
   const jobsId = router?.query?.jobs_id;
 
-  console.log("Jobs===>", jobsId);
+  // console.log("Jobs===>", jobsId);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,6 +57,7 @@ const CareerDetailsArea = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       // Step 1: Upload the file
@@ -75,7 +77,7 @@ const CareerDetailsArea = () => {
       const filename = uploadResponse.data.data.image;
 
       // Step 2: Update formData with uploaded file's filename
-      const newFormData = { ...formData, cv_file: filename, job: jobsId };
+      const newFormData = { ...formData, cv_file: filename, job: jobsId, job_title: data.title };
 
       console.log("Data sent:", newFormData);
 
@@ -84,7 +86,10 @@ const CareerDetailsArea = () => {
         `${process.env.NEXT_PUBLIC_API_URL}/jobApplies/add`,
         newFormData
       );
-      console.log("Response:", response.data);
+
+      // Step 4: Send email with form data
+      await axios.post("/api/sendEmail", newFormData);
+
       toast.success("ສົ່ງ​ຟອມ​ສຳ​ເລັດ");
       router.push("/jobvacancy");
     } catch (error) {
@@ -107,18 +112,21 @@ const CareerDetailsArea = () => {
                     {data.title}
                   </h4>
                 </div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.description,
-                  }}
-                ></div>
+                <div className="htmljobs">
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: data.description,
+                    }}
+                  ></p>
+                </div>
               </div>
             </div>
             <div className="col-xl-5 col-lg-5 career-details-pin">
-
               <div className="career-details-apply-info-box pb-10">
                 <div className="career-details-profile-box pb-20">
-                  <h3  style={{fontFamily: 'Noto Sans Lao'}}>ປະ​ຫວັດ​ສະ​ໝັກ​ວຽກ</h3>
+                  <h3 style={{ fontFamily: "Noto Sans Lao" }}>
+                    ປະ​ຫວັດ​ສະ​ໝັກ​ວຽກ
+                  </h3>
                   {/* <p>Basic information about you</p> */}
                 </div>
                 <div className="postbox__comment-form">
@@ -205,7 +213,10 @@ const CareerDetailsArea = () => {
                         <div className="postbox__resume mb-30">
                           <label htmlFor="cv">
                             <span>
-                            <h5 style={{fontFamily: 'Noto Sans Lao'}}>​ອັບ​ໂຫລ​ດເປັນ PDF</h5><br/>
+                              <h5 style={{ fontFamily: "Noto Sans Lao" }}>
+                                ​ອັບ​ໂຫລ​ດເປັນ PDF
+                              </h5>
+                              <br />
                               <input
                                 id="cv"
                                 type="file"
@@ -222,8 +233,9 @@ const CareerDetailsArea = () => {
                           <button
                             type="submit"
                             className="submit-btn w-100 fs-5"
+                            disabled={isSubmitting}
                           >
-                            ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ
+                            {isSubmitting ? "ກຳລັງສົ່ງແບບ​ຟອມ​ສະ​ໝັກ..." : "ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ"}
                           </button>
                         </div>
                       </div>
