@@ -77,7 +77,12 @@ const CareerDetailsArea = () => {
       const filename = uploadResponse.data.data.image;
 
       // Step 2: Update formData with uploaded file's filename
-      const newFormData = { ...formData, cv_file: filename, job: jobsId, job_title: data.title };
+      const newFormData = {
+        ...formData,
+        cv_file: filename,
+        job: jobsId,
+        job_title: data.title,
+      };
 
       console.log("Data sent:", newFormData);
 
@@ -119,6 +124,21 @@ const CareerDetailsArea = () => {
                     }}
                   ></p>
                 </div>
+
+                {data.image &&
+                  (data.image.endsWith(".pdf") ? (
+                    <iframe
+                      src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${data.image}`}
+                      width="100%"
+                      height="500px"
+                      title="PDF Document"
+                    ></iframe>
+                  ) : (
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${data.image}`}
+                      alt="job-image"
+                    />
+                  ))}
               </div>
             </div>
             <div className="col-xl-5 col-lg-5 career-details-pin">
@@ -127,7 +147,6 @@ const CareerDetailsArea = () => {
                   <h3 style={{ fontFamily: "Noto Sans Lao" }}>
                     ປະ​ຫວັດ​ສະ​ໝັກ​ວຽກ
                   </h3>
-                  {/* <p>Basic information about you</p> */}
                 </div>
                 <div className="postbox__comment-form">
                   <form onSubmit={handleSubmit} className="box">
@@ -235,7 +254,9 @@ const CareerDetailsArea = () => {
                             className="submit-btn w-100 fs-5"
                             disabled={isSubmitting}
                           >
-                            {isSubmitting ? "ກຳລັງສົ່ງແບບ​ຟອມ​ສະ​ໝັກ..." : "ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ"}
+                            {isSubmitting
+                              ? "ກຳລັງສົ່ງແບບ​ຟອມ​ສະ​ໝັກ..."
+                              : "ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ"}
                           </button>
                         </div>
                       </div>

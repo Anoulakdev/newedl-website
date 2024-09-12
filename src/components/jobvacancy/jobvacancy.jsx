@@ -10,7 +10,7 @@ import moment from "moment";
 
 import Image from "next/image";
 
-import imgjob from "@/public/images/jobvacancy/image82job.png";
+import imgjob from "@/public/images/jobvacancy/jobs.png";
 import edl_logo from "@/public/images/edl_logo.png";
 import NiceSelect from "./nice-select";
 
@@ -57,7 +57,7 @@ const PostboxArea = () => {
           <div className="row">
             <div className="col-xxl-8 col-xl-8 col-lg-8">
               <div id="blog" className="postbox__wrapper pr-20">
-              {filteredData.length ? (
+                {filteredData.length ? (
                   filteredData.map((item, i) => (
                     <div
                       key={i}
@@ -69,12 +69,22 @@ const PostboxArea = () => {
                     >
                       <div className="row g-0">
                         <div className="col-xxl-4 col-xl-4 col-lg-4 col-col-md-4 col-4">
-                          <img
-                            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${item.image}`}
-                            className="rounded-start p-3"
-                            alt="theme-pure"
-                            style={{ height: "100%" }}
-                          />
+                          {item.image &&
+                            (item.image.endsWith(".pdf") ? (
+                              <Image
+                                src={imgjob} // Placeholder image for PDFs
+                                className="rounded-start p-3"
+                                alt="theme-pure"
+                                style={{ height: "100%" }}
+                              />
+                            ) : (
+                              <img
+                                src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${item.image}`}
+                                className="rounded-start p-3"
+                                alt="theme-pure"
+                                style={{ height: "100%" }}
+                              />
+                            ))}
                         </div>
                         <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-8">
                           <div className="card-body">

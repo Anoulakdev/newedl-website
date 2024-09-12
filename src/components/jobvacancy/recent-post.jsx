@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-import imgjob from "@/public/images/jobvacancy/image82job.png";
+import imgjob from "@/public/images/jobvacancy/jobs.png";
 
 const RecentPost = () => {
   const [data, setData] = useState([]);
@@ -47,10 +47,18 @@ const RecentPost = () => {
                   >
                     <div className="rc__post d-flex">
                       <div className="rc__post-thumb mr-20">
-                        <img
-                          src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${item.image}`}
-                          alt="theme-pure"
-                        />
+                        {item.image &&
+                          (item.image.endsWith(".pdf") ? (
+                            <Image
+                              src={imgjob} // Placeholder image for PDFs
+                              alt="theme-pure"
+                            />
+                          ) : (
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${item.image}`}
+                              alt="theme-pure"
+                            />
+                          ))}
                       </div>
                       <div className="rc__post-content">
                         <h3
@@ -73,6 +81,10 @@ const RecentPost = () => {
               </div>
             ))
           : null}
+
+          <div>
+            
+          </div>
       </div>
     </>
   );
