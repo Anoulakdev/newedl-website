@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
+import moment from "moment";
 
 const CareerDetailsArea = () => {
   const [data, setData] = useState([]);
@@ -102,9 +103,15 @@ const CareerDetailsArea = () => {
     }
   };
 
+  const currentDate = moment();
+  const startDate = moment(data.start_date); // assuming you have a start_date field
+  const endDate = moment(data.end_date); // assuming you have an end_date field
+
+  const isDateInRange = currentDate.isBetween(startDate, endDate);
+
   return (
     <>
-      <div className="career-details-area career-border-bottom pt-60 pb-60">
+      <div className="career-details-area career-border-bottom pt-50 pb-50">
         <div className="container">
           <div className="row align-content-start">
             <div className="col-xl-7 col-lg-7">
@@ -141,130 +148,133 @@ const CareerDetailsArea = () => {
                   ))}
               </div>
             </div>
-            <div className="col-xl-5 col-lg-5 career-details-pin">
-              <div className="career-details-apply-info-box pb-10">
-                <div className="career-details-profile-box pb-20">
-                  <h3 style={{ fontFamily: "Noto Sans Lao" }}>
-                    ປະ​ຫວັດ​ສະ​ໝັກ​ວຽກ
-                  </h3>
-                </div>
-                <div className="postbox__comment-form">
-                  <form onSubmit={handleSubmit} className="box">
-                    <div className="row gx-20">
-                      <div className="col-12">
-                        <div className="postbox__comment-input mb-30">
-                          <input
-                            type="text"
-                            name="full_name"
-                            value={formData.full_name}
-                            onChange={handleChange}
-                            className="inputText"
-                            required
-                          />
-                          <span className="floating-label">
-                            ຊື່ ແລະ ນາມ​ສະ​ກຸນ
-                          </span>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="postbox__comment-input mb-30">
-                          <input
-                            type="text"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="inputText"
-                            required
-                          />
-                          <span className="floating-label">ອີ​ເມວ</span>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="postbox__comment-input mb-30">
-                          <input
-                            type="text"
-                            name="phone_number"
-                            value={formData.phone_number}
-                            onChange={handleChange}
-                            className="inputText"
-                            required
-                          />
-                          <span className="floating-label">ເບີ​ໂທ</span>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="postbox__comment-input mb-30">
-                          <input
-                            type="text"
-                            name="address"
-                            value={formData.address}
-                            onChange={handleChange}
-                            className="inputText"
-                            required
-                          />
-                          <span className="floating-label">ທີ່​ຢູ່</span>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="postbox__comment-input mb-30">
-                          <input
-                            type="text"
-                            name="note"
-                            value={formData.note}
-                            onChange={handleChange}
-                            className="inputText"
-                            required
-                          />
-                          <span className="floating-label">
-                            ຫົວ​ຂໍ້​ສະ​ໝັກ​ວຽກ
-                          </span>
-                        </div>
-                      </div>
-                      <div className="col-xxl-12">
-                        <div className="postbox__resume-title-box">
-                          <h5
-                            className="career-details-title-xs pb-15"
-                            style={{ fontFamily: "Noto Sans Lao" }}
-                          >
-                            ອັບ​ໂຫລດ ເອ​ກະ​ສານ​ແນະ​ນຳ​ຕົວ
-                          </h5>
-                        </div>
-                        <div className="postbox__resume mb-30">
-                          <label htmlFor="cv">
-                            <span>
-                              <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                                ​ອັບ​ໂຫລ​ດເປັນ PDF
-                              </h5>
-                              <br />
-                              <input
-                                id="cv"
-                                type="file"
-                                name="cv_file"
-                                onChange={handleFileChange}
-                                required
-                              />
+
+            {isDateInRange && (
+              <div className="col-xl-5 col-lg-5 career-details-pin">
+                <div className="career-details-apply-info-box pb-10">
+                  <div className="career-details-profile-box pb-20">
+                    <h3 style={{ fontFamily: "Noto Sans Lao" }}>
+                      ປະ​ຫວັດ​ສະ​ໝັກ​ວຽກ
+                    </h3>
+                  </div>
+                  <div className="postbox__comment-form">
+                    <form onSubmit={handleSubmit} className="box">
+                      <div className="row gx-20">
+                        <div className="col-12">
+                          <div className="postbox__comment-input mb-30">
+                            <input
+                              type="text"
+                              name="full_name"
+                              value={formData.full_name}
+                              onChange={handleChange}
+                              className="inputText"
+                              required
+                            />
+                            <span className="floating-label">
+                              ຊື່ ແລະ ນາມ​ສະ​ກຸນ
                             </span>
-                          </label>
+                          </div>
+                        </div>
+                        <div className="col-12">
+                          <div className="postbox__comment-input mb-30">
+                            <input
+                              type="text"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              className="inputText"
+                              required
+                            />
+                            <span className="floating-label">ອີ​ເມວ</span>
+                          </div>
+                        </div>
+                        <div className="col-12">
+                          <div className="postbox__comment-input mb-30">
+                            <input
+                              type="text"
+                              name="phone_number"
+                              value={formData.phone_number}
+                              onChange={handleChange}
+                              className="inputText"
+                              required
+                            />
+                            <span className="floating-label">ເບີ​ໂທ</span>
+                          </div>
+                        </div>
+                        <div className="col-12">
+                          <div className="postbox__comment-input mb-30">
+                            <input
+                              type="text"
+                              name="address"
+                              value={formData.address}
+                              onChange={handleChange}
+                              className="inputText"
+                              required
+                            />
+                            <span className="floating-label">ທີ່​ຢູ່</span>
+                          </div>
+                        </div>
+                        <div className="col-12">
+                          <div className="postbox__comment-input mb-30">
+                            <input
+                              type="text"
+                              name="note"
+                              value={formData.note}
+                              onChange={handleChange}
+                              className="inputText"
+                              required
+                            />
+                            <span className="floating-label">
+                              ຫົວ​ຂໍ້​ສະ​ໝັກ​ວຽກ
+                            </span>
+                          </div>
+                        </div>
+                        <div className="col-xxl-12">
+                          <div className="postbox__resume-title-box">
+                            <h5
+                              className="career-details-title-xs pb-15"
+                              style={{ fontFamily: "Noto Sans Lao" }}
+                            >
+                              ອັບ​ໂຫລດ ເອ​ກະ​ສານ​ແນະ​ນຳ​ຕົວ
+                            </h5>
+                          </div>
+                          <div className="postbox__resume mb-30">
+                            <label htmlFor="cv">
+                              <span>
+                                <h5 style={{ fontFamily: "Noto Sans Lao" }}>
+                                  ​ອັບ​ໂຫລ​ດເປັນ PDF
+                                </h5>
+                                <br />
+                                <input
+                                  id="cv"
+                                  type="file"
+                                  name="cv_file"
+                                  onChange={handleFileChange}
+                                  required
+                                />
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="col-xxl-12">
+                          <div className="postbox__btn-box mb-50">
+                            <button
+                              type="submit"
+                              className="submit-btn w-100 fs-5"
+                              disabled={isSubmitting}
+                            >
+                              {isSubmitting
+                                ? "ກຳລັງສົ່ງແບບ​ຟອມ​ສະ​ໝັກ..."
+                                : "ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ"}
+                            </button>
+                          </div>
                         </div>
                       </div>
-                      <div className="col-xxl-12">
-                        <div className="postbox__btn-box mb-50">
-                          <button
-                            type="submit"
-                            className="submit-btn w-100 fs-5"
-                            disabled={isSubmitting}
-                          >
-                            {isSubmitting
-                              ? "ກຳລັງສົ່ງແບບ​ຟອມ​ສະ​ໝັກ..."
-                              : "ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ"}
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

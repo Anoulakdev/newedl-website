@@ -81,10 +81,10 @@ const RecentPost = () => {
               </div>
             ))
           : null}
-
-          <div>
-            
-          </div>
+          
+        <div className="d-flex justify-content-end">
+          <Link href="/jobhistory" type="button" className="btn btn-primary btn-sm me-3 mb-3">ປະ​ຫວັດ​ສະ​ໝັກ​ວຽກ​ທັງ​ໝົດ</Link>
+        </div>
       </div>
     </>
   );
