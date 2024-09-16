@@ -134,14 +134,20 @@ const PostboxArea = () => {
                           {moment(item.end_date).format("DD/MM/YYYY")}
                         </div>
                         <div className="mt-3">
-                          <h5 style={{ fontFamily: "Noto Sans Lao", height: '35px' }}>
+                          <h5
+                            style={{
+                              fontFamily: "Noto Sans Lao",
+                              height: "35px",
+                            }}
+                          >
                             {truncateText(item.title, 39)}
                           </h5>
                           <hr />
                         </div>
 
                         <div
-                          className="text-black" style={{height: '50px'}}
+                          className="text-black"
+                          style={{ height: "50px" }}
                           dangerouslySetInnerHTML={{
                             __html: item.description,
                           }}
@@ -151,7 +157,7 @@ const PostboxArea = () => {
                             className={`text-${
                               moment().isBefore(item.start_date)
                                 ? "warning"
-                                : moment().isSameOrAfter(item.end_date)
+                                : moment().isAfter(item.end_date)
                                 ? "danger"
                                 : "success"
                             } d-flex align-items-center`}
@@ -168,12 +174,15 @@ const PostboxArea = () => {
                             </svg>{" "}
                             {moment().isBefore(item.start_date)
                               ? "ລໍ​ຖ້າ​ເປີດຂາຍ​ຊອງ​ປະ​ມູນ"
-                              : moment().isSameOrAfter(item.end_date)
+                              : moment().isAfter(item.end_date)
                               ? "ປິດ​ຂາຍ​ຊອງ​ປະ​ມູນ"
                               : "ເປີດ​ຂາຍ​ຊອງ​ປະ​ມູນ"}
                           </p>
 
-                          {moment().isBefore(item.end_date) && moment().isSameOrAfter(item.start_date) && (
+                          {moment().isBetween(
+                            item.start_date,
+                            item.end_date
+                          ) && (
                             <button
                               onClick={() => {
                                 const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item.file_url}`;

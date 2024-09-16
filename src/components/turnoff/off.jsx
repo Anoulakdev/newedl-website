@@ -140,7 +140,7 @@ const PostboxArea = () => {
                                 className={`text-${
                                   moment().isBefore(item.noti.start_date)
                                     ? "warning"
-                                    : moment().isSameOrAfter(item.noti.end_date)
+                                    : moment().isAfter(item.noti.end_date)
                                     ? "success"
                                     : "primary"
                                 } d-flex align-items-center text-end`}
@@ -158,7 +158,7 @@ const PostboxArea = () => {
                                 </svg>
                                 {moment().isBefore(item.noti.start_date)
                                   ? "ລໍ​ຖ້າ​ປະ​ຕິ​ບັດ​ວຽກ"
-                                  : moment().isSameOrAfter(item.noti.end_date)
+                                  : moment().isAfter(item.noti.end_date)
                                   ? "​ປະ​ຕິ​ບັດ​ວຽ​ກ​ສຳ​ເລັດ"
                                   : "​ກຳ​ລັງ​ປະ​ຕິ​ບັດ​ວຽກ"}
                               </div>

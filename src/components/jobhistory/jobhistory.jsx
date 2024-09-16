@@ -102,11 +102,11 @@ const Tables = () => {
               <table className="table table-hover">
                 <thead>
                   <tr className="text-center fw-bold fs-5">
-                    <th className="py-4" style={{ width: "10%" }}>
+                    <th className="py-4" style={{ width: "8%" }}>
                       ລ/ດ
                     </th>
                     <th className="py-4">ສະ​ຖາ​ນະ</th>
-                    <th className="py-4">​ຫົວ​ຂໍ້</th>
+                    <th className="py-4">​ຫົວ​ຂໍ້ສະ​ໝັກ​ວຽກ</th>
                     <th className="py-4" style={{ width: "13%" }}>
                       ​​ວັນ​ທີເປີ​ດ
                     </th>
@@ -129,14 +129,14 @@ const Tables = () => {
                           className={`text-${
                             moment().isBefore(item.start_date)
                               ? "warning"
-                              : moment().isSameOrAfter(item.end_date)
+                              : moment().isAfter(item.end_date)
                               ? "danger"
                               : "success"
                           } py-4 text-center`}
                         >
                           {moment().isBefore(item.start_date)
                             ? "ລໍ​ຖ້າ​ເປີດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"
-                            : moment().isSameOrAfter(item.end_date)
+                            : moment().isAfter(item.end_date)
                             ? "ປິດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"
                             : "ເປີດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"}
                         </td>
