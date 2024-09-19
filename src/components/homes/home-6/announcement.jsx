@@ -160,7 +160,10 @@ const Announcement = () => {
                             >
                               {truncateText(item1.title, 4)}
                               <br />
-                              {moment(item1.start_date).format("DD-MM-YYYY")} ຫາ {moment(item1.end_date).format("DD-MM-YYYY")}
+                              {moment(item1.start_date).format(
+                                "DD-MM-YYYY"
+                              )} ຫາ{" "}
+                              {moment(item1.end_date).format("DD-MM-YYYY")}
                             </a>
                             <br />
                             <br />
@@ -218,7 +221,10 @@ const Announcement = () => {
                             >
                               {truncateText(item2.title, 4)}
                               <br />
-                              {moment(item2.start_date).format("DD-MM-YYYY")} ຫາ {moment(item2.end_date).format("DD-MM-YYYY")}
+                              {moment(item2.start_date).format(
+                                "DD-MM-YYYY"
+                              )} ຫາ{" "}
+                              {moment(item2.end_date).format("DD-MM-YYYY")}
                             </a>
                             <br />
                             <br />
@@ -245,6 +251,7 @@ const Announcement = () => {
                     </div>
                   </div>
                 </div>
+                
                 <div className="col-md-12">
                   <div
                     className={`px-5 py-3 tp-payment__bg-color-3 tpfadeLeft p-relative z-index wow`}
@@ -309,8 +316,6 @@ const Announcement = () => {
                                   : "ເປີດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"}
                               </p>
                             </Link>
-                            <br />
-                            <br />
                           </div>
                         ))
                       ) : (
