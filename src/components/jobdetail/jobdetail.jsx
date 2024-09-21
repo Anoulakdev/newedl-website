@@ -249,6 +249,7 @@ const CareerDetailsArea = () => {
                                   id="cv"
                                   type="file"
                                   name="cv_file"
+                                  accept=".pdf"
                                   onChange={handleFileChange}
                                   required
                                 />
