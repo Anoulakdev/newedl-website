@@ -65,7 +65,8 @@ const Portfolio = () => {
     <>
       <div className="portfolio blog-grid-inner mb-30">
         <div className="container">
-          <div className="col-lg-6 col-md-12 col-12 mt-40">
+          <div className="col-lg-6 col-md-12 col-12 mt-50">
+            <h2 className="mb-20" style={{ fontFamily: 'Noto Sans Lao'}}>ກະ​ລຸ​ນາ​ເລືອກ​ສາ​ຂາ​ແຂວງ</h2>
             <select
               id="province-select"
               className="form-select"
