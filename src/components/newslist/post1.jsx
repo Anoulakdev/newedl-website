@@ -15,7 +15,7 @@ const PostboxArea = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
-  const [searchTerm, setSearchTerm] = useState(""); // State to store search input
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,38 +39,46 @@ const PostboxArea = () => {
     fetchData();
   }, []);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-
-  // Filtered data based on the search term
   const filteredData = data.filter((item) =>
     item.news_title_la.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
-  const delta = 2; // Number of pages to show around the current page
-  const startPage = Math.max(1, currentPage - delta);
-  const endPage = Math.min(totalPages, currentPage + delta);
+  const getPageNumbers = () => {
+    const delta = 2;
+    const range = [];
+    const rangeWithDots = [];
 
-  let visiblePages = [];
-  if (totalPages <= 2 * delta + 1) {
-    visiblePages = Array.from({ length: totalPages }, (_, i) => i + 1);
-  } else {
-    if (startPage > 1) {
-      visiblePages.push(1);
-      if (startPage > 2) visiblePages.push("...");
+    for (let i = 1; i <= totalPages; i++) {
+      if (
+        i === 1 ||
+        i === totalPages ||
+        (i >= currentPage - delta && i <= currentPage + delta)
+      ) {
+        range.push(i);
+      }
     }
-    for (let i = startPage; i <= endPage; i++) {
-      visiblePages.push(i);
+
+    let l;
+    for (let i of range) {
+      if (l) {
+        if (i - l === 2) {
+          rangeWithDots.push(l + 1);
+        } else if (i - l !== 1) {
+          rangeWithDots.push("...");
+        }
+      }
+      rangeWithDots.push(i);
+      l = i;
     }
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) visiblePages.push("...");
-      visiblePages.push(totalPages);
-    }
-  }
+
+    return rangeWithDots;
+  };
 
   const handlePageChange = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
@@ -78,10 +86,9 @@ const PostboxArea = () => {
     }
   };
 
-  // Function to handle the search term update
   const handleSearch = (term) => {
     setSearchTerm(term);
-    setCurrentPage(1); // Reset to the first page on new search
+    setCurrentPage(1);
   };
 
   return (
@@ -148,37 +155,48 @@ const PostboxArea = () => {
                       <ul>
                         <li>
                           <Link
-                            href=""
-                            onClick={() => handlePageChange(currentPage - 1)}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handlePageChange(currentPage - 1);
+                            }}
                             aria-disabled={currentPage === 1}
+                            className={currentPage === 1 ? "disabled" : ""}
                           >
                             <i className="far fa-angle-left"></i>
                           </Link>
                         </li>
-                        {visiblePages.map((item, index) =>
-                          item === "..." ? (
-                            <li key={index}>
-                              <span>...</span>
-                            </li>
-                          ) : (
-                            <li key={item}>
+                        {getPageNumbers().map((item, index) => (
+                          <li key={index}>
+                            {item === "..." ? (
+                              <span>{item}</span>
+                            ) : (
                               <Link
-                                href=""
+                                href="#"
                                 className={
                                   currentPage === item ? "current" : ""
                                 }
-                                onClick={() => handlePageChange(item)}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handlePageChange(item);
+                                }}
                               >
                                 {item}
                               </Link>
-                            </li>
-                          )
-                        )}
+                            )}
+                          </li>
+                        ))}
                         <li>
                           <Link
-                            href=""
-                            onClick={() => handlePageChange(currentPage + 1)}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handlePageChange(currentPage + 1);
+                            }}
                             aria-disabled={currentPage === totalPages}
+                            className={
+                              currentPage === totalPages ? "disabled" : ""
+                            }
                           >
                             <i className="far fa-angle-right"></i>
                           </Link>

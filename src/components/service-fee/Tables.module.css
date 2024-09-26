@@ -1,4 +1,4 @@
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .scrollableTable {
         width: 100%;
         overflow-x: auto;

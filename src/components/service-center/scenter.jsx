@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Rolling from "@/public/images/gif/Rolling.gif";
+import imglocation from "@/public/images/map.png";
 
 const Portfolio = () => {
   const [data, setData] = useState([]);
@@ -65,8 +66,10 @@ const Portfolio = () => {
     <>
       <div className="portfolio blog-grid-inner mb-30">
         <div className="container">
-          <div className="col-lg-6 col-md-12 col-12 mt-50">
-            <h2 className="mb-20" style={{ fontFamily: 'Noto Sans Lao'}}>ກະ​ລຸ​ນາ​ເລືອກ​ສາ​ຂາ​ແຂວງ</h2>
+          <div className="col-lg-6 col-md-12 col-12 mt-70 mb-60">
+            <h2 className="mb-20" style={{ fontFamily: "Noto Sans Lao" }}>
+              ກະ​ລຸ​ນາ​ເລືອກ​ສາ​ຂາ​ແຂວງ
+            </h2>
             <select
               id="province-select"
               className="form-select"
@@ -83,11 +86,11 @@ const Portfolio = () => {
           </div>
 
           {!selectedProvince ? null : isLoading ? ( // This part was empty, use 'null' to avoid returning undefined.
-            <div className="text-center pt-50">
+            <div className="text-center">
               <Image src={Rolling} width={100} height={100} alt="Loading" />
             </div>
           ) : data && data.length ? (
-            <div className="row grid blog-grid-inner pt-50">
+            <div className="row grid blog-grid-inner">
               {data.map((item) => (
                 <div
                   key={item.center_id}
@@ -96,16 +99,11 @@ const Portfolio = () => {
                 >
                   <div className="tp-blog-item" style={{ height: "430px" }}>
                     <div className="tp-blog-thumb fix">
-                      <Link
-                        href={`https://maps.google.com/maps?q=${item.latitude},${item.longtitude}`}
-                        target="_blank"
-                      >
-                        <img
-                          src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/centers/${item.center_image}`}
-                          alt={item.center_name || "Center Image"}
-                          style={{ height: "220px" }}
-                        />
-                      </Link>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/centers/${item.center_image}`}
+                        alt={item.center_name}
+                        style={{ height: "220px" }}
+                      />
                     </div>
                     <div className="tp-blog-content">
                       <div className="tp-blog-title-box">
@@ -134,14 +132,24 @@ const Portfolio = () => {
                           </svg>
                           {item.center_tel}
                         </div>
-                        <div className="fs-6">
-                          ແຂວງ {item.province?.province_name}
-                        </div>
-                        <div className="fs-6">
-                          ເມືອງ {item.district?.district_name}
-                        </div>
-                        <div className="fs-6">
-                          ບ້ານ {item.village?.village_name}
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <div className="fs-6">
+                              ແຂວງ {item.province?.province_name}
+                            </div>
+                            <div className="fs-6">
+                              ເມືອງ {item.district?.district_name}
+                            </div>
+                            <div className="fs-6">
+                              ບ້ານ {item.village?.village_name}
+                            </div>
+                          </div>
+                          <Link
+                            href={`https://maps.google.com/maps?q=${item.latitude},${item.longtitude}`}
+                            target="_blank"
+                          >
+                            <Image src={imglocation} alt="theme-pure" />
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -151,7 +159,7 @@ const Portfolio = () => {
             </div>
           ) : (
             <h3
-              className="text-center mt-40 mb-40"
+              className="text-center mt-40 mb-60"
               style={{ fontFamily: "Noto Sans Lao" }}
             >
               ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ

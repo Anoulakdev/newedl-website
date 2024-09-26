@@ -242,7 +242,7 @@ const CareerDetailsArea = () => {
                             <label htmlFor="cv">
                               <span>
                                 <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                                  ​ອັບ​ໂຫລ​ດເປັນ PDF
+                                  ​ອັບ​ໂຫຼ​ດເປັນ PDF
                                 </h5>
                                 <br />
                                 <input

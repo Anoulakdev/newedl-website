@@ -58,7 +58,7 @@ const PostboxArea = () => {
       <div className="postbox__area pb-40 pt-40">
         <div className="container">
           <div className="row">
-            <div className="col-xxl-8 col-xl-8 col-lg-8">
+            <div className="col-xxl-8 col-xl-8 col-lg-12 col-md-12">
               <div id="blog" className="postbox__wrapper pr-20">
                 {filteredData.length ? (
                   filteredData.map((item, i) => {
@@ -77,7 +77,7 @@ const PostboxArea = () => {
                           }}
                         >
                           <div className="row g-0">
-                            <div className="col-xxl-4 col-xl-4 col-lg-4 col-col-md-4 col-4 d-none d-sm-block">
+                            <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-12">
                               {item.image &&
                                 (item.image.endsWith(".pdf") ? (
                                   <Image
@@ -95,7 +95,7 @@ const PostboxArea = () => {
                                   />
                                 ))}
                             </div>
-                            <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                            <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-12">
                               <div className="card-body">
                                 <h5 style={{ fontFamily: "Noto Sans Lao" }}>
                                   {item.title}
@@ -137,7 +137,7 @@ const PostboxArea = () => {
               </div>
             </div>
 
-            <div className="col-xxl-4 col-xl-4 col-lg-4">
+            <div className="col-xxl-4 col-xl-4 col-lg-12 col-md-12">
               <div className="sidebar__wrapper">
                 <Search onSearch={setSearchTerm} />
                 <RecentPost />

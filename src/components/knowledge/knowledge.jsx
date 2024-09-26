@@ -49,28 +49,39 @@ const Portfolio = () => {
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
-  const delta = 2; // Number of pages to show around the current page
-  const startPage = Math.max(1, currentPage - delta);
-  const endPage = Math.min(totalPages, currentPage + delta);
+  const getPageNumbers = () => {
+    const delta = 2;
+    const range = [];
+    const rangeWithDots = [];
 
-  let visiblePages = [];
-  if (totalPages <= 2 * delta + 1) {
-    visiblePages = Array.from({ length: totalPages }, (_, i) => i + 1);
-  } else {
-    if (startPage > 1) {
-      visiblePages.push(1);
-      if (startPage > 2) visiblePages.push("...");
+    for (let i = 1; i <= totalPages; i++) {
+      if (
+        i === 1 ||
+        i === totalPages ||
+        (i >= currentPage - delta && i <= currentPage + delta)
+      ) {
+        range.push(i);
+      }
     }
-    for (let i = startPage; i <= endPage; i++) {
-      visiblePages.push(i);
-    }
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) visiblePages.push("...");
-      visiblePages.push(totalPages);
-    }
-  }
 
-  const handlePageChange = (pageNumber) => {
+    let l;
+    for (let i of range) {
+      if (l) {
+        if (i - l === 2) {
+          rangeWithDots.push(l + 1);
+        } else if (i - l !== 1) {
+          rangeWithDots.push("...");
+        }
+      }
+      rangeWithDots.push(i);
+      l = i;
+    }
+
+    return rangeWithDots;
+  };
+
+  const handlePageChange = (pageNumber, e) => {
+    e.preventDefault();
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
@@ -91,11 +102,12 @@ const Portfolio = () => {
                   <div
                     key={i}
                     data-index={i}
-                    className="col-xl-3 col-lg-3 col-md-3 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
+                    className="col-xl-3 col-lg-4 col-md-6 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
                   >
                     <div
                       className="tp-blog-item wow tpfadeUp"
-                      style={{ height: "500px",
+                      style={{
+                        height: "500px",
                         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.6)",
                         borderRadius: "20px",
                       }}
@@ -153,34 +165,32 @@ const Portfolio = () => {
                 <ul>
                   <li>
                     <Link
-                      href=""
-                      onClick={() => handlePageChange(currentPage - 1)}
+                      href="#"
+                      onClick={(e) => handlePageChange(currentPage - 1, e)}
                       aria-disabled={currentPage === 1}
                     >
                       <i className="far fa-angle-left"></i>
                     </Link>
                   </li>
-                  {visiblePages.map((item, index) =>
-                    item === "..." ? (
-                      <li key={index}>
-                        <span>...</span>
-                      </li>
-                    ) : (
-                      <li key={item}>
+                  {getPageNumbers().map((item, index) => (
+                    <li key={index}>
+                      {item === "..." ? (
+                        <span>{item}</span>
+                      ) : (
                         <Link
-                          href=""
+                          href="#"
                           className={currentPage === item ? "current" : ""}
-                          onClick={() => handlePageChange(item)}
+                          onClick={(e) => handlePageChange(item, e)}
                         >
                           {item}
                         </Link>
-                      </li>
-                    )
-                  )}
+                      )}
+                    </li>
+                  ))}
                   <li>
                     <Link
-                      href=""
-                      onClick={() => handlePageChange(currentPage + 1)}
+                      href="#"
+                      onClick={(e) => handlePageChange(currentPage + 1, e)}
                       aria-disabled={currentPage === totalPages}
                     >
                       <i className="far fa-angle-right"></i>
