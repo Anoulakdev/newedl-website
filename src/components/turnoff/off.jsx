@@ -195,8 +195,8 @@ const PostboxArea = () => {
                                     <Image
                                       src={facebook_logo}
                                       alt=""
-                                      width={35}
-                                      height={35}
+                                      width={34}
+                                      height={34}
                                     />
                                   </Link>
                                   <button
@@ -205,7 +205,7 @@ const PostboxArea = () => {
                                       const filename = `${item.noti.title_head}.pdf`;
                                       downloadFile(url, filename);
                                     }}
-                                    className="btn btn-primary btn-sm"
+                                    className="btn btn-outline-primary btn-sm"
                                   >
                                     ດາວ​ໂຫຼດ​ເອ​ກະ​ສານ
                                   </button>
