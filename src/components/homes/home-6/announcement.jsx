@@ -114,7 +114,13 @@ const Announcement = () => {
                     className={`px-5 py-3 tp-payment__bg-color-3 tpfadeLeft p-relative z-index wow`}
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
-                    style={{ height: "330px" }}
+                    style={{
+                      height: "330px",
+                      backgroundImage: "url('/AUC.png')", // Add your image path here
+                      backgroundSize: "cover", // Ensures the image covers the entire div
+                      backgroundPosition: "center", // Centers the background image
+                      backgroundRepeat: "no-repeat", // Prevents repeating of the image
+                    }}
                   >
                     <div style={{ height: "245px" }}>
                       <div className="d-flex position-relative">
@@ -147,7 +153,7 @@ const Announcement = () => {
 
                       {data1.length ? (
                         data1.slice(0, 3).map((item1, i1) => (
-                          <div key={i1} className="mb-1">
+                          <div key={i1} className="mb-1 fw-bold">
                             <a
                               onClick={(e) => {
                                 e.preventDefault();
@@ -179,7 +185,7 @@ const Announcement = () => {
                       )}
                     </div>
 
-                    <div className="text-center">
+                    <div className="text-end">
                       <Link
                         href="/notice-of-auction"
                         type="button"
@@ -196,7 +202,13 @@ const Announcement = () => {
                     className={`px-5 py-3 tp-payment__bg-color-3 tpfadeRight p-relative z-index wow`}
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
-                    style={{ height: "330px" }}
+                    style={{
+                      height: "330px",
+                      backgroundImage: "url('/ANOUNCEMENT.png')", // Add your image path here
+                      backgroundSize: "cover", // Ensures the image covers the entire div
+                      backgroundPosition: "center", // Centers the background image
+                      backgroundRepeat: "no-repeat", // Prevents repeating of the image
+                    }}
                   >
                     <div style={{ height: "245px" }}>
                       <h3
@@ -208,7 +220,7 @@ const Announcement = () => {
 
                       {data2.length ? (
                         data2.slice(0, 3).map((item2, i2) => (
-                          <div key={i2} className="mb-1">
+                          <div key={i2} className="mb-1 fw-bold">
                             <a
                               onClick={(e) => {
                                 e.preventDefault();
@@ -240,7 +252,7 @@ const Announcement = () => {
                       )}
                     </div>
 
-                    <div className="text-center">
+                    <div className="text-end">
                       <Link
                         href="/service-fee"
                         type="button"
@@ -251,13 +263,19 @@ const Announcement = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="col-md-12">
                   <div
-                    className={`px-5 py-3 tp-payment__bg-color-3 tpfadeLeft p-relative z-index wow`}
+                    className={`px-5 py-3 tp-payment__bg-color-3 tpfadeUp p-relative z-index wow`}
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
-                    style={{ height: "330px" }}
+                    style={{
+                      height: "330px",
+                      backgroundImage: "url('/FIND-JOB.png')", // Add your image path here
+                      backgroundSize: "cover", // Ensures the image covers the entire div
+                      backgroundPosition: "center", // Centers the background image
+                      backgroundRepeat: "no-repeat", // Prevents repeating of the image
+                    }}
                   >
                     <div style={{ height: "245px" }}>
                       <div className="d-flex position-relative">
@@ -290,7 +308,7 @@ const Announcement = () => {
 
                       {data3.length ? (
                         data3.slice(0, 3).map((item3, i3) => (
-                          <div key={i3} className="mb-1">
+                          <div key={i3} className="mb-1 fw-bold">
                             <Link
                               href={{
                                 pathname: "/jobdetail",
@@ -328,7 +346,7 @@ const Announcement = () => {
                       )}
                     </div>
 
-                    <div className="text-center">
+                    <div className="text-end">
                       <Link
                         href="/jobvacancy"
                         type="button"
