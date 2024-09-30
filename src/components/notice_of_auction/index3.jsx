@@ -158,7 +158,7 @@ const PostboxArea = () => {
 
                         <div
                           className="text-black"
-                          style={{ height: "50px" }}
+                          style={{ height: "60px" }}
                           dangerouslySetInnerHTML={{
                             __html: item.description,
                           }}
