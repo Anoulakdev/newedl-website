@@ -66,9 +66,9 @@ const BlogGrid = () => {
 
   return (
     <>
-      <div className="blog-grid-area pt-20 grey-bg-3">
+      <div className="blog-grid-area pt-40 grey-bg-3">
         <div className="container">
-          <div className="row align-items-end tp-blog-four-section-space">
+          <div className="row align-items-end mb-30">
             <div className="col-xl-6 col-lg-6">
               <div className="tp-service-section-four">
                 <h3 className="tp-section-title-4 text-black">ຂ່າວ​ເດັ່ນ</h3>

@@ -24,8 +24,8 @@ const HomeFour = () => {
             
             <Carousel />
             <BrandArea />
-            <Announcement />
             <News />
+            <Announcement />
             {/* <BlogArea /> */}
             {/* <PriceArea /> */}
             {/* <Payment /> */}

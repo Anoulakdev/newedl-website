@@ -48,7 +48,7 @@ const service_data = [
 const ServiceArea = () => {
   return (
     <>
-      <div className="tp-service-2__area p-relative grey-bg-3 pt-80 pb-50">
+      <div className="tp-service-2__area p-relative grey-bg-3 pt-50 pb-50">
         <div className="tp-service-2__shape">
           <Image src={bg_img} alt="theme-pure" />
         </div>

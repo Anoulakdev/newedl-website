@@ -103,7 +103,7 @@ const Announcement = () => {
     <>
       <div
         id="payment-method"
-        className="tp-payment__area pt-30 pb-30 grey-bg-3"
+        className="tp-payment__area pt-50 grey-bg-3"
       >
         <div className="container">
           <div className="row justify-content-center">

@@ -62,7 +62,7 @@ const BrandArea = () => {
                 ))}
               </div>
               <div className="col-xl-2 col-lg-2 text-end mt-2">
-                <Link href="/turnoff" type="button" className="btn btn-light">
+                <Link href="/turnoff" type="button" className="custom-btn">
                   ເບິ່ງ​ເພີ່ມ​ເຕີມ
                 </Link>
               </div>
