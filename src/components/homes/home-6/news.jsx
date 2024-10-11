@@ -5,7 +5,6 @@ import axios from "axios";
 import { EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
 const setting = {
   slidesPerView: 1,
   effect: "fade",
@@ -66,10 +65,10 @@ const BlogGrid = () => {
 
   return (
     <>
-      <div className="blog-grid-area pt-40 grey-bg-3">
+      <div className="blog-grid-area pt-30">
         <div className="container">
-          <div className="row align-items-end mb-30">
-            <div className="col-xl-6 col-lg-6">
+          <div className="row align-items-end">
+            <div className="col-xl-12 col-lg-12">
               <div className="tp-service-section-four">
                 <h3 className="tp-section-title-4 text-black">ຂ່າວ​ເດັ່ນ</h3>
               </div>
@@ -141,10 +140,13 @@ const BlogGrid = () => {
                               }}
                             >
                               <div className="blog-grid-slider-wrapper">
-                                <div className="blog-grid-slider-title-box ">
+                                <div className="blog-grid-slider-title-box">
                                   <h4
-                                    className="blog-grid-slider-title fixed-bottom p-4"
-                                    style={{ fontFamily: "Noto Sans Lao" }}
+                                    className="blog-grid-slider-title fixed-bottom p-3"
+                                    style={{
+                                      fontFamily: "Noto Sans Lao",
+                                      fontSize: "30px",
+                                    }}
                                   >
                                     {item.news_title_la}
                                   </h4>
@@ -156,6 +158,11 @@ const BlogGrid = () => {
                       ))
                     : null}
                 </Swiper>
+              </div>
+              <div className="text-center mt-4">
+                <Link href="/newslist" className="btn btn-outline-primary">
+                  ອ່ານ​ເພີ່ມ​ເຕີມ
+                </Link>
               </div>
             </div>
           </div>

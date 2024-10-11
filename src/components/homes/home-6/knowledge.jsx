@@ -1,112 +1,95 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import axios from "axios";
+import moment from "moment";
+import Rolling from "@/public/images/gif/Rolling.gif";
 
-import know1 from "@/public/images/knowledge/know1.jpg";
-import know2 from "@/public/images/knowledge/know2.jpg";
-import know3 from "@/public/images/knowledge/know3.jpg";
+const truncateText = (text, maxLength) => {
+  if (text == null) return ""; // Return an empty string or some default value
 
-const know_data = [
-  // home 03
-  {
-    id: 1,
-    img: know1,
-    category: "Crm Software",
-    color: "1",
-    date: "28 April, 2023",
-    title: <>ວິ​ທີ​ປະ​ຢັດ​ໄຟ​ຟ້າ ໃນ​ຫ້ອງນອນ</>,
+  if (typeof text !== "string") return "";
 
-    author_name: "Hilary Ouse",
-    job_title: "Founder & CEO Dulalix",
-  },
-  {
-    id: 2,
-    img: know1,
-    category: "Sales Tools",
-    color: "2",
-    date: "28 April, 2023",
-    title: <>ວິ​ທີ​ປະ​ຢັດ​ໄຟ​ຟ້າ ໃນ​ຫ້ອງນອນ</>,
-
-    author_name: "Rudra Ghosh",
-    job_title: "Founder & CEO Dulalix",
-  },
-  {
-    id: 3,
-    img: know3,
-    category: "Sales Management",
-    color: "3",
-    date: "28 April, 2023",
-    title: <>ວິ​ທີ​ປະ​ຢັດ​ໄຟ​ຟ້າ ໃນ​ຫ້ອງຄົວ</>,
-    description: (
-      <>How friends from college went on to build one powerful platform</>
-    ),
-
-    author_name: "Penny Tool",
-    job_title: "Founder & CEO Dulalix",
-  },
-];
-
-const blog_content = {
-  sub_title: "News Feeds",
-  title: "ສາລະໜ້າຮູ້",
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength) + "...";
 };
-const { sub_title, title } = blog_content;
 
-const BlogArea = () => {
+const Portfolio = () => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/confessions/get`,
+          {
+            headers: {
+              "Content-Type": "application/json", // Set Content-Type header
+            },
+          }
+        );
+        setData(response.data.data);
+        setIsLoading(false);
+        console.log(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
-      <div className="tp-blog-area pb-20 grey-bg-3">
+      <div className="portfolio blog-grid-inner mb-30">
         <div className="container">
-          <div className="row align-items-end tp-blog-four-section-space">
-            <div className="col-xl-6 col-lg-6">
-              <div className="tp-blog-four-section-box">
-                <h3 className="tp-section-title-4 text-black">{title}</h3>
-              </div>
-            </div>
-            <div
-              className="col-xl-6 col-lg-6 wow tpfadeRight"
-              data-wow-duration=".9s"
-              data-wow-delay=".5s"
-            >
-              <div className="tp-blog-four-btn text-start text-lg-end">
-                <Link className="tp-btn-yellow-border text-black" href="/confession">
-                  ເບິ່ງ​ເພີ່ມ​ເຕີມ <i className="far fa-angle-right"></i>
-                </Link>
+          <div className="row align-items-end mt-40 mb-10">
+            <div className="col-xl-12 col-lg-12">
+              <div className="tp-service-section-four">
+                <h3 className="tp-section-title-4 text-black">
+                  ຄວາມ​ຮູ້​ກ່ຽວ​ກັບ​ໄຟ​ຟ້າ
+                </h3>
               </div>
             </div>
           </div>
-          <div className="row">
-            {know_data.map((item, i) => (
-              <div
-                key={i}
-                className="col-xl-4 col-lg-4 col-md-4 mb-40 wow tpfadeUp"
-                data-wow-duration=".9s"
-                data-wow-delay=".7s"
-              >
-                <div className="tp-blog-four-item p-relative fix" style={{ boxShadow: '0 2px 6px rgba(0, 0, 0, 0.6)', borderRadius: '30px' }}>
-                  <div className="tp-blog-four-img fix">
-                    
-                      <Image src={item.img} alt="theme-pure" />
-                    
-                  </div>
-                  <div className="tp-blog-four-content-wrapper">
-                    <div className="tp-blog-four-meta">
-                      <span className="child-2 text-black">{item.date}</span>
-                    </div>
-                    <div className="tp-blog-four-info mb-4">
-                      <h4 className="fs-4 text-black" style={{fontFamily: 'Noto Sans Lao'}}>
-                        {item.title}
-                      </h4>
-                    </div>
-                    <div className="btn btn-primary">
-                      <Link className="text-white" href="#">
-                        ອ່ານ​ເພີ່ມ
+          <div className="row grid blog-grid-inner">
+            {data.length
+              ? data.slice(0, 3).map((item, i) => (
+                  <div
+                    key={i}
+                    data-index={i}
+                    className="col-xl-4 col-lg-4 col-md-4 col-12 grid-item cat1 cat4 cat3 cat5 wow tpfadeUp"
+                  >
+                    <div>
+                      <Link
+                        href={{
+                          pathname: "/know_detail",
+                          query: { know_id: item.id },
+                        }}
+                      >
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/confessions/${item.image}`}
+                          alt="theme-pure"
+                          width="100%"
+                          style={{
+                            height:
+                              window.innerWidth <= 767 ? "430px" : "320px",
+                            borderRadius: "20px",
+                            marginBottom: "20px",
+                          }}
+                        />
                       </Link>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                ))
+              : null}
+          </div>
+          <div className="text-center">
+            <Link href="/knowledge" className="btn btn-outline-primary">
+              ອ່ານ​ເພີ່ມ​ເຕີມ
+            </Link>
           </div>
         </div>
       </div>
@@ -114,4 +97,4 @@ const BlogArea = () => {
   );
 };
 
-export default BlogArea;
+export default Portfolio;

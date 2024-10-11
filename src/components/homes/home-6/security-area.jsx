@@ -89,18 +89,7 @@ const security_data = [
 const SecurityArea = () => {
   return (
     <>
-      <div className="tp-security-area fix z-index pt-30 grey-bg-3">
-        {/* <div className="container">
-          <div className="row align-items-end mb-10">
-            <div className="col-xl-6 col-lg-6">
-              <div className="tp-service-section-four">
-                <h3 className="tp-section-title-4 text-black">
-                  ເວັບ​ໄຊ​ຕ່າງ​ໆ
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div> */}
+      <div className="tp-security-area fix z-index pt-30">
         <div className="container-fluid g-0">
           <div
             className="wow tpfadeUp"

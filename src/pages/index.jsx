@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../common/seo";
-import HomeFour from "../components/homes/home-6";
+import HomeFour from "../components/homes/home-6/index2";
 import Wrapper from "../layout/wrapper";
 
 const Home = () => {

@@ -257,7 +257,7 @@ const FooterFour = () => {
             <div className="container">
               <div className="row justify-content-center">
                 <div
-                  className="col-md-6 wow tpfadeUp"
+                  className="col-md-12 text-center wow tpfadeUp"
                   data-wow-duration=".9s"
                   data-wow-delay=".7s"
                 >

@@ -33,7 +33,7 @@ const BrandArea = () => {
 
   return (
     <>
-      <div className="tp-barnd-area tp-barnd-plr z-index-3 fix mt-35 grey-bg-3">
+      <div className="tp-barnd-area tp-barnd-plr z-index-3 fix mt-25">
         <div className="tp-barnd-main-wrapper p-relative mt-15">
           <div className="tp-barnd-shape-1">
             <Image src={shape_1} alt="theme-pure" />
