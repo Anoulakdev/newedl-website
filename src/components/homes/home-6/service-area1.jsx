@@ -52,7 +52,7 @@ const ServiceArea = () => {
         <div className="tp-service-2__shape">
           <Image src={bg_img} alt="theme-pure" />
         </div>
-        <div className="container z-index-5">
+        <div className="container-fluid z-index-5 wow tpfadeUp">
           <div className="row align-items-end mb-10">
             <div className="col-xl-12 col-lg-12">
               <div className="tp-service-section-four">
@@ -60,11 +60,11 @@ const ServiceArea = () => {
               </div>
             </div>
           </div>
-          <div className="row gx-25">
+          <div className="row gx-60">
             {service_data.map((item, i) => (
               <div
                 key={i}
-                className="col-xl-3 col-lg-6 col-md-6 wow tpfadeUp"
+                className="col-xl-3 col-lg-6 col-md-6 mb-30"
                 data-wow-duration=".9s"
                 data-wow-delay=".8s"
               >
@@ -79,8 +79,8 @@ const ServiceArea = () => {
                         <Image src={item.img} alt="theme-pure" style={{width: '120px'}} />
                       </div>
                       <div className="tp-service-2__text">
-                        <h4 className="tp-service-2__title-sm fw-bold" style={{fontFamily: 'Noto Sans Lao', fontSize: '21px'}}>{item.title}</h4>
-                        {item.link?"":<p style={{fontSize: '15px'}}>ກຳ​ລັງ​ພັດ​ທະ​ນາ</p>}
+                        <h4 className="tp-service-2__title-sm fw-bold" style={{fontFamily: 'Noto Sans Lao'}}>{item.title}</h4>
+                        {item.link?"":<p>ກຳ​ລັງ​ພັດ​ທະ​ນາ</p>}
                       </div>
                     </Link>
                   </div>

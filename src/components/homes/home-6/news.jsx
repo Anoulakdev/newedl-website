@@ -66,7 +66,7 @@ const BlogGrid = () => {
   return (
     <>
       <div className="blog-grid-area pt-30">
-        <div className="container">
+        <div className="container-fluid wow tpfadeUp">
           <div className="row align-items-end">
             <div className="col-xl-12 col-lg-12">
               <div className="tp-service-section-four">
@@ -75,7 +75,7 @@ const BlogGrid = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-12 wow tpfadeUp">
+            <div className="col-lg-12">
               <div
                 className="blog-grid-arrow p-relative"
                 style={{
@@ -145,7 +145,6 @@ const BlogGrid = () => {
                                     className="blog-grid-slider-title fixed-bottom p-3"
                                     style={{
                                       fontFamily: "Noto Sans Lao",
-                                      fontSize: "30px",
                                     }}
                                   >
                                     {item.news_title_la}

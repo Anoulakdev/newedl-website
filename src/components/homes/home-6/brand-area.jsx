@@ -33,12 +33,12 @@ const BrandArea = () => {
 
   return (
     <>
-      <div className="tp-barnd-area tp-barnd-plr z-index-3 fix mt-25">
-        <div className="tp-barnd-main-wrapper p-relative mt-15">
+      <div className="container-fluid z-index-3 fix mt-30">
+        <div className="tp-barnd-main-wrapper p-relative">
           <div className="tp-barnd-shape-1">
             <Image src={shape_1} alt="theme-pure" />
           </div>
-          <div className="container">
+          <div className="container-fluid">
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-4">
                 <div className="tp-barnd-left-item d-flex align-items-center">

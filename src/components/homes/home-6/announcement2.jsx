@@ -103,7 +103,7 @@ const Announcement = () => {
     <>
       <div id="payment-method" className="tp-payment__area pt-50">
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row justify-content-start">
             <div className="col-xl-12">
               <div className="row g-4">
                 <div className="col-md-12">
@@ -124,27 +124,26 @@ const Announcement = () => {
                         className="tp-payment__title fw-bold"
                         style={{
                           fontFamily: "Noto Sans Lao",
-                          fontSize: "25px",
                         }}
                       >
                         ແຈ້ງການ​ປະ​ມູນ{" "}
                       </h3>
                       <span
                         className="badge rounded-pill text-bg-danger position-absolute"
-                        style={{ top: "0", left: "133px" }}
+                        style={{ top: "0", left: "160px" }}
                       >
                         {countValidDates1(data1)}
                       </span>
                       <style jsx>{`
-                        @media (max-width: 768px) {
+                        @media (max-width: 767px) {
                           .badge {
-                            left: 135px !important;
+                            left: 129px !important;
                           }
                         }
 
-                        @media (max-width: 992px) and (min-width: 769px) {
+                        @media (max-width: 992px) and (min-width: 768px) {
                           .badge {
-                            left: 135px !important;
+                            left: 109px !important;
                           }
                         }
                       `}</style>
@@ -152,7 +151,7 @@ const Announcement = () => {
 
                     {data1.length ? (
                       data1.slice(0, 3).map((item1, i1) => (
-                        <div key={i1} className="mb-1 fw-bold">
+                        <div key={i1} className="mb-1 fs-5">
                           {moment().isBetween(
                             item1.start_date,
                             item1.end_date
@@ -189,19 +188,19 @@ const Announcement = () => {
                         </div>
                       ))
                     ) : (
-                      <h5
+                      <h4
                         className="text-center mt-20"
                         style={{ fontFamily: "Noto Sans Lao" }}
                       >
                         ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
-                      </h5>
+                      </h4>
                     )}
 
                     <div className="text-end">
                       <Link
                         href="/notice-of-auction"
                         type="button"
-                        className="btn btn-outline-primary btn-sm"
+                        className="btn btn-outline-primary"
                       >
                         ເພີ່ມ​ເຕີມ
                       </Link>
@@ -226,7 +225,6 @@ const Announcement = () => {
                       className="tp-payment__title fw-bold"
                       style={{
                         fontFamily: "Noto Sans Lao",
-                        fontSize: "25px",
                       }}
                     >
                       ແຈ້ງ​ການຕ່າງ​ໆ
@@ -234,7 +232,7 @@ const Announcement = () => {
 
                     {data2.length ? (
                       data2.slice(0, 3).map((item2, i2) => (
-                        <div key={i2} className="mb-1 fw-bold">
+                        <div key={i2} className="mb-1 fs-5">
                           <a
                             onClick={(e) => {
                               e.preventDefault();
@@ -254,19 +252,19 @@ const Announcement = () => {
                         </div>
                       ))
                     ) : (
-                      <h5
+                      <h4
                         className="text-center mt-20"
                         style={{ fontFamily: "Noto Sans Lao" }}
                       >
                         ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
-                      </h5>
+                      </h4>
                     )}
 
                     <div className="text-end">
                       <Link
                         href="/service-fee"
                         type="button"
-                        className="btn btn-outline-primary btn-sm"
+                        className="btn btn-outline-primary"
                       >
                         ເພີ່ມ​ເຕີມ
                       </Link>
@@ -292,27 +290,26 @@ const Announcement = () => {
                         className="tp-payment__title fw-bold"
                         style={{
                           fontFamily: "Noto Sans Lao",
-                          fontSize: "25px",
                         }}
                       >
                         ປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ{" "}
                       </h3>
                       <span
                         className="badge rounded-pill text-bg-danger position-absolute"
-                        style={{ top: "0", left: "159px" }}
+                        style={{ top: "0", left: "191px" }}
                       >
                         {countValidDates3(data3)}
                       </span>
                       <style jsx>{`
-                        @media (max-width: 768px) {
+                        @media (max-width: 767px) {
                           .badge {
-                            left: 161px !important;
+                            left: 155px !important;
                           }
                         }
 
-                        @media (max-width: 992px) and (min-width: 769px) {
+                        @media (max-width: 992px) and (min-width: 768px) {
                           .badge {
-                            left: 162px !important;
+                            left: 129px !important;
                           }
                         }
                       `}</style>
@@ -320,7 +317,7 @@ const Announcement = () => {
 
                     {data3.length ? (
                       data3.slice(0, 3).map((item3, i3) => (
-                        <div key={i3} className="mb-1 fw-bold">
+                        <div key={i3} className="mb-1 fs-5">
                           <Link
                             href={{
                               pathname: "/jobdetail",
@@ -361,7 +358,7 @@ const Announcement = () => {
                       <Link
                         href="/jobvacancy"
                         type="button"
-                        className="btn btn-outline-primary btn-sm"
+                        className="btn btn-outline-primary"
                       >
                         ເພີ່ມ​ເຕີມ
                       </Link>

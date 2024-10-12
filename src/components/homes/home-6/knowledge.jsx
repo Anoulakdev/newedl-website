@@ -44,7 +44,7 @@ const Portfolio = () => {
   return (
     <>
       <div className="portfolio blog-grid-inner mb-30">
-        <div className="container">
+        <div className="container-fluid wow tpfadeUp">
           <div className="row align-items-end mt-40 mb-10">
             <div className="col-xl-12 col-lg-12">
               <div className="tp-service-section-four">
@@ -56,11 +56,11 @@ const Portfolio = () => {
           </div>
           <div className="row grid blog-grid-inner">
             {data.length
-              ? data.slice(0, 3).map((item, i) => (
+              ? data.slice(0, 4).map((item, i) => (
                   <div
                     key={i}
                     data-index={i}
-                    className="col-xl-4 col-lg-4 col-md-4 col-12 grid-item cat1 cat4 cat3 cat5 wow tpfadeUp"
+                    className="col-xl-3 col-lg-6 col-md-6 col-12 grid-item cat1 cat4 cat3 cat5"
                   >
                     <div>
                       <Link
@@ -75,7 +75,7 @@ const Portfolio = () => {
                           width="100%"
                           style={{
                             height:
-                              window.innerWidth <= 767 ? "430px" : "320px",
+                              window.innerWidth <= 767 ? "440px" : "400px",
                             borderRadius: "20px",
                             marginBottom: "20px",
                           }}
