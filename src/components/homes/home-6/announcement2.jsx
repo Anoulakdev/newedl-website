@@ -102,8 +102,8 @@ const Announcement = () => {
   return (
     <>
       <div id="payment-method" className="tp-payment__area pt-50">
-        <div className="container">
-          <div className="row justify-content-start">
+        <div className="container pe-xl-4">
+          <div className="row">
             <div className="col-xl-12">
               <div className="row g-4">
                 <div className="col-md-12">

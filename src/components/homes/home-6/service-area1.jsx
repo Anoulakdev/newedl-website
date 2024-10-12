@@ -52,7 +52,7 @@ const ServiceArea = () => {
         <div className="tp-service-2__shape">
           <Image src={bg_img} alt="theme-pure" />
         </div>
-        <div className="container-fluid z-index-5 wow tpfadeUp">
+        <div className="container z-index-5 wow tpfadeUp">
           <div className="row align-items-end mb-10">
             <div className="col-xl-12 col-lg-12">
               <div className="tp-service-section-four">

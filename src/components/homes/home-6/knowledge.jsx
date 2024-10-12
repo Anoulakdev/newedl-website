@@ -44,7 +44,7 @@ const Portfolio = () => {
   return (
     <>
       <div className="portfolio blog-grid-inner mb-30">
-        <div className="container-fluid wow tpfadeUp">
+        <div className="container wow tpfadeUp">
           <div className="row align-items-end mt-40 mb-10">
             <div className="col-xl-12 col-lg-12">
               <div className="tp-service-section-four">
