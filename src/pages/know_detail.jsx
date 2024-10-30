@@ -6,7 +6,7 @@ import Wrapper from "../layout/wrapper";
 const index = () => {
   return (
     <Wrapper>
-      <SEO pageTitle={"ລາຍ​ລະ​ອຽດ​ສາ​ລະ​ໜ້າ​ຮູ້"} />
+      <SEO pageTitle={"ລາຍ​ລະ​ອຽດ​ຄວາມ​ຮູ້​ກ່ຽວ​ກັບ​ໄຟ​ຟ້າ"} />
       <KnowDetail />
     </Wrapper>
   );

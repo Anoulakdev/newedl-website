@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./Tabs.module.css";
+import styles1 from "../branch_organize/customlink.module.css";
 import Link from "next/link";
 
 import Image from "next/image";
@@ -20,11 +21,41 @@ import img12 from "@/public/images/statistic/12.png";
 import img13 from "@/public/images/statistic/13.png";
 import img14 from "@/public/images/statistic/14.png";
 
+const cardData = [
+  {
+    id: 1,
+    pdfPath: "/images/statistic/statistic2022.pdf",
+    title: "ປຶ້ມສະຖິຕິປະຈຳປິ 2022",
+  },
+  {
+    id: 1,
+    pdfPath: "/images/statistic/statistic2023.pdf",
+    title: "ປຶ້ມສະຖິຕິປະຈຳປິ 2023",
+  },
+];
+
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleClick = (index) => {
     setActiveTab(index);
+  };
+
+  const downloadFile = (url, filename) => {
+    fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobURL = window.URL.createObjectURL(new Blob([blob]));
+        const aTag = document.createElement("a");
+        aTag.href = blobURL;
+        aTag.setAttribute("download", filename);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      })
+      .catch((error) => {
+        console.error("Error downloading file:", error);
+      });
   };
 
   return (
@@ -84,6 +115,14 @@ const Tabs = () => {
                 onClick={() => handleClick(5)}
               >
                 ການນຳ​ເຂົ້າ​-ສົ່ງ​ອອກ​ໄຟ​ຟ້າ​ຈາກ​ຕ່າງ​​ປະ​ເທດ
+              </li>
+              <li
+                className={`${styles.tab} ${
+                  activeTab === 6 ? styles.active : ""
+                } fs-5 text-black`}
+                onClick={() => handleClick(6)}
+              >
+                ປຶ້ມ​ສະ​ຖິ​ຕິ​ປະ​ຈ​ຳ​ປີ
               </li>
             </ul>
           </div>
@@ -180,6 +219,46 @@ const Tabs = () => {
             </div>
             <div>
               <Image src={img14} class="img-fluid" alt={img14} />
+            </div>
+          </div>
+          <div style={{ display: activeTab === 6 ? "block" : "none" }}>
+            <div className="text-center fs-2 text-black fw-bold mb-20">
+              ລາຍ​ການ ​ປຶ້ມ​ສະ​ຖິ​ຕິ​ປະ​ຈຳ​ປີ
+            </div>
+            <div className="text-start row mt-30">
+              <nav>
+                <ul>
+                  {cardData.map((menu_item, i) => (
+                    <div key={i} className={`${styles1.link} fs-5 my-3 pb-10 ps-5`}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        className="bi bi-file-text me-2"
+                        viewBox="0 0 16 16"
+                        stroke="currentColor"
+                        strokeWidth="0.5"
+                      >
+                        <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z" />
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
+                      </svg>
+                      <a
+                        href="#"
+                        className="fs-5"
+                        onClick={(e) => {
+                          e.preventDefault(); // Prevents page reload
+                          const url = `${menu_item.pdfPath}`;
+                          const filename = `${menu_item.title}.pdf`; // Sanitizing the filename
+                          downloadFile(url, filename);
+                        }}
+                      >
+                        {menu_item.title}
+                      </a>
+                    </div>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
