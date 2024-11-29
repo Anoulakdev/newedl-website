@@ -160,7 +160,7 @@ const PostboxArea = () => {
                           className="text-black"
                           style={{ height: "60px" }}
                           dangerouslySetInnerHTML={{
-                            __html: item.description,
+                            __html: truncateText(item.description, 190),
                           }}
                         ></div>
                         <div className="d-flex justify-content-between align-items-center">
