@@ -16,7 +16,7 @@ const Administrator = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <BreadcrumbTwo title={"ໂຄງ​ຮ່າງ​ສະ​ພາ​ບໍ​ລິ​ຫານ"} imgbread={imgbread} />
+            <BreadcrumbTwo title={"ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ"} imgbread={imgbread} />
             <Administrators />
             {/* <Government /> */}
           </main>

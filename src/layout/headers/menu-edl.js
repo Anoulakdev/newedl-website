@@ -16,7 +16,7 @@ const menu_data = [
       link: "",
       active: "",
       sub_menus: [
-        { link: "/administrator", title: "ໂຄງ​ຮ່​າງ​ສະ​ພາ​ບໍ​ລິ​ຫານ" },
+        { link: "/administrator", title: "ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ ລັດ​ວິ​ສາ​ຫະ​ກິດ​ໄຟ​ຟ້າ​ລາວ" },
         { link: "/organization", title: "​ໂຄງ​ຮ່າງ​ຄະ​ນະ​ຜູ້​ບໍ​ລິ​ຫານ" },
         { link: "/branch_organize", title: "​​ໂຄງ​ຮ່າງສາ​ຂາ​ແຂວງ" },
         { link: "/organize", title: "​​ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງລວມ" },
