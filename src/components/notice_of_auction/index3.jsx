@@ -16,7 +16,7 @@ const truncateText = (text, maxLength) => {
 const PostboxArea = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(6);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -163,7 +163,7 @@ const PostboxArea = () => {
                             __html: truncateText(item.description, 190),
                           }}
                         ></div>
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex justify-content-between align-items-center mt-2">
                           <p
                             className={`text-${
                               moment().isBefore(item.start_date)
