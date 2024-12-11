@@ -65,9 +65,9 @@ const Carousel = () => {
   };
 
   const sliderContent = [
-    // {
-    //   imageUrl: "/images/carousel/Cover-celebrate.jpg",
-    // },
+    {
+      imageUrl: "/images/carousel/Cover-celebrate.jpg",
+    },
     {
       imageUrl: "/images/carousel/8.jpg",
     },

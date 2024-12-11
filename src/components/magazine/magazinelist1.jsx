@@ -91,7 +91,7 @@ const Portfolio = () => {
                   <div
                     key={i}
                     data-index={i}
-                    className="col-xl-3 col-lg-4 col-md-6 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
+                    className="col-xl-3 col-lg-4 col-md-6 col-12 mb-30 grid-item cat1 cat4 cat3 cat5 text-center"
                   >
                     <h5
                       className="text-center mb-15"
@@ -99,7 +99,7 @@ const Portfolio = () => {
                     >
                       {item.title}
                     </h5>
-                    <div className="tp-blog-item wow tpfadeUp">
+                    <div className="wow tpfadeUp">
                       <div>
                         <Link
                           href={{
@@ -109,7 +109,7 @@ const Portfolio = () => {
                         >
                           <img
                             src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
-                            alt="theme-pure"
+                            alt="theme-pure" style={{ height: '400px' }}
                           />
                         </Link>
                       </div>
