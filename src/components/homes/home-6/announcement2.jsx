@@ -108,108 +108,6 @@ const Announcement = () => {
               <div className="row g-4">
                 <div className="col-md-12">
                   <div
-                    className={`px-4 py-3 border rounded-4 tpfadeLeft p-relative z-index wow`}
-                    data-wow-duration=".9s"
-                    data-wow-delay=".5s"
-                    // style={{
-                    //   height: "330px",
-                    //   backgroundImage: "url('/AUC.png')", // Add your image path here
-                    //   backgroundSize: "cover", // Ensures the image covers the entire div
-                    //   backgroundPosition: "center", // Centers the background image
-                    //   backgroundRepeat: "no-repeat", // Prevents repeating of the image
-                    // }}
-                  >
-                    <div className="d-flex position-relative">
-                      <h3
-                        className="tp-payment__title fw-bold"
-                        style={{
-                          fontFamily: "Noto Sans Lao",
-                        }}
-                      >
-                        ແຈ້ງການ​ປະ​ມູນ{" "}
-                      </h3>
-                      <span
-                        className="badge rounded-pill text-bg-danger position-absolute"
-                        style={{ top: "0", left: "160px" }}
-                      >
-                        {countValidDates1(data1)}
-                      </span>
-                      <style jsx>{`
-                        @media (max-width: 767px) {
-                          .badge {
-                            left: 129px !important;
-                          }
-                        }
-
-                        @media (max-width: 992px) and (min-width: 768px) {
-                          .badge {
-                            left: 109px !important;
-                          }
-                        }
-                      `}</style>
-                    </div>
-
-                    {data1.length ? (
-                      data1.slice(0, 3).map((item1, i1) => (
-                        <div key={i1} className="mb-1 fs-5">
-                          {moment().isBetween(
-                            item1.start_date,
-                            item1.end_date
-                          ) ? (
-                            <a
-                              onClick={(e) => {
-                                e.preventDefault();
-                                const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item1.file_url}`;
-                                const filename = `${item1.title}.pdf`;
-                                downloadFile(url, filename); // Assuming downloadFile is a defined function
-                              }}
-                              href="#"
-                              className={styles.link}
-                            >
-                              {item1.title}
-                              <br />
-                              {moment(item1.start_date).format(
-                                "DD-MM-YYYY"
-                              )} ຫາ{" "}
-                              {moment(item1.end_date).format("DD-MM-YYYY")}
-                            </a>
-                          ) : (
-                            <div className={styles.link}>
-                              {item1.title}
-                              <br />
-                              {moment(item1.start_date).format(
-                                "DD-MM-YYYY"
-                              )} ຫາ{" "}
-                              {moment(item1.end_date).format("DD-MM-YYYY")}
-                            </div>
-                          )}
-                          <br />
-                          <br />
-                        </div>
-                      ))
-                    ) : (
-                      <h4
-                        className="text-center mt-20"
-                        style={{ fontFamily: "Noto Sans Lao" }}
-                      >
-                        ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
-                      </h4>
-                    )}
-
-                    <div className="text-end">
-                      <Link
-                        href="/notice-of-auction"
-                        type="button"
-                        className="btn btn-outline-primary"
-                      >
-                        ເພີ່ມ​ເຕີມ
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-12">
-                  <div
                     className={`px-4 py-3 border rounded-4 tpfadeRight p-relative z-index wow`}
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
@@ -274,6 +172,107 @@ const Announcement = () => {
 
                 <div className="col-md-12">
                   <div
+                    className={`px-4 py-3 border rounded-4 tpfadeLeft p-relative z-index wow`}
+                    data-wow-duration=".9s"
+                    data-wow-delay=".5s"
+                    // style={{
+                    //   height: "330px",
+                    //   backgroundImage: "url('/AUC.png')", // Add your image path here
+                    //   backgroundSize: "cover", // Ensures the image covers the entire div
+                    //   backgroundPosition: "center", // Centers the background image
+                    //   backgroundRepeat: "no-repeat", // Prevents repeating of the image
+                    // }}
+                  >
+                    <div className="d-flex position-relative">
+                      <h3
+                        className="tp-payment__title fw-bold"
+                        style={{
+                          fontFamily: "Noto Sans Lao",
+                        }}
+                      >
+                        ແຈ້ງການ​ປະ​ມູນ{" "}
+                      </h3>
+                      <span
+                        className="badge rounded-pill text-bg-danger position-absolute"
+                        style={{ top: "0", left: "160px" }}
+                      >
+                        {countValidDates1(data1)}
+                      </span>
+                      <style jsx>{`
+                        @media (max-width: 767px) {
+                          .badge {
+                            left: 129px !important;
+                          }
+                        }
+
+                        @media (max-width: 992px) and (min-width: 768px) {
+                          .badge {
+                            left: 109px !important;
+                          }
+                        }
+                      `}</style>
+                    </div>
+
+                    {data1.length ? (
+                      data1.slice(0, 3).map((item1, i1) =>
+                        moment().isBetween(item1.start_date, item1.end_date) ? (
+                          <div key={i1} className="mb-1 fs-5">
+                            <a
+                              onClick={(e) => {
+                                e.preventDefault();
+                                const url = `${process.env.NEXT_PUBLIC_API_URL_IMG}/pads/${item1.file_url}`;
+                                const filename = `${item1.title}.pdf`;
+                                downloadFile(url, filename); // Assuming downloadFile is a defined function
+                              }}
+                              href="#"
+                              className={styles.link}
+                            >
+                              {item1.title}
+                              <br />
+                              {moment(item1.start_date).format(
+                                "DD-MM-YYYY"
+                              )} ຫາ{" "}
+                              {moment(item1.end_date).format("DD-MM-YYYY")}
+                            </a>
+                            <br />
+                            <br />
+                          </div>
+                        ) : (
+                          // <div className={styles.link}>
+                          //   {item1.title}
+                          //   <br />
+                          //   {moment(item1.start_date).format(
+                          //     "DD-MM-YYYY"
+                          //   )} ຫາ {moment(item1.end_date).format("DD-MM-YYYY")}
+                          // </div>
+                          <div>
+                            <br />
+                          </div>
+                        )
+                      )
+                    ) : (
+                      <h4
+                        className="text-center mt-20"
+                        style={{ fontFamily: "Noto Sans Lao" }}
+                      >
+                        ຍັງ​ບໍ່​ມີ​ຂໍ້​ມູນ
+                      </h4>
+                    )}
+
+                    <div className="text-end">
+                      <Link
+                        href="/notice-of-auction"
+                        type="button"
+                        className="btn btn-outline-primary"
+                      >
+                        ເພີ່ມ​ເຕີມ
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-12">
+                  <div
                     className={`px-4 py-3 border rounded-4 tpfadeUp p-relative z-index wow`}
                     data-wow-duration=".9s"
                     data-wow-delay=".5s"
@@ -316,35 +315,42 @@ const Announcement = () => {
                     </div>
 
                     {data3.length ? (
-                      data3.slice(0, 3).map((item3, i3) => (
-                        <div key={i3} className="mb-1 fs-5">
-                          <Link
-                            href={{
-                              pathname: "/jobdetail",
-                              query: { jobs_id: item3.id },
-                            }}
-                            className={styles.link}
-                          >
-                            {item3.title}
-                            <br />
-                            <p
-                              className={`text-${
-                                moment().isBefore(item3.start_date)
-                                  ? "warning"
-                                  : moment().isAfter(item3.end_date)
-                                  ? "danger"
-                                  : "success"
-                              }`}
+                      data3.slice(0, 3).map((item3, i3) =>
+                        moment().isBetween(item3.start_date, item3.end_date) ? (
+                          <div key={i3} className="mb-1 fs-5">
+                            <Link
+                              href={{
+                                pathname: "/jobdetail",
+                                query: { jobs_id: item3.id },
+                              }}
+                              className={styles.link}
                             >
-                              {moment().isBefore(item3.start_date)
-                                ? "ລໍ​ຖ້າ​ເປີດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"
-                                : moment().isAfter(item3.end_date)
-                                ? "ປິດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"
-                                : "ເປີດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"}
-                            </p>
-                          </Link>
-                        </div>
-                      ))
+                              {item3.title}
+                              <br />
+                              <p
+                                className={`text-${
+                                  moment().isBefore(item3.start_date)
+                                    ? "warning"
+                                    : moment().isAfter(item3.end_date)
+                                    ? "danger"
+                                    : "success"
+                                }`}
+                              >
+                                {moment().isBefore(item3.start_date)
+                                  ? "ລໍ​ຖ້າ​ເປີດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"
+                                  : moment().isAfter(item3.end_date)
+                                  ? "ປິດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"
+                                  : "ເປີດປະ​ກາ​ດ​ຮັບ​ສະ​ໝັກ"}
+                              </p>
+                            </Link>
+                          </div>
+                        ) : (
+                          <div>
+                            <br />
+                            <br />
+                          </div>
+                        )
+                      )
                     ) : (
                       <h4
                         className="text-center mt-30"
