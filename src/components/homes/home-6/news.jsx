@@ -33,6 +33,36 @@ const setting = {
   },
 };
 
+const BlogTitle = ({ title }) => {
+  const [fontSize, setFontSize] = useState("22px");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setFontSize("18px"); // ขนาดสำหรับหน้าจอเล็ก
+      } else {
+        setFontSize("22px"); // ขนาดสำหรับหน้าจอใหญ่
+      }
+    };
+
+    // เรียกฟังก์ชันเมื่อโหลดหน้าและเมื่อปรับขนาดหน้าจอ
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener เมื่อ component ถูกลบ
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <p
+      className="blog-grid-slider-title fixed-bottom lh-sm px-3"
+      style={{ fontFamily: "Noto Sans Lao", fontSize }}
+    >
+      {title}
+    </p>
+  );
+};
+
 const BlogGrid = () => {
   const [data, setData] = useState([]);
   const [isLoop, setIsLoop] = useState(false);
@@ -141,14 +171,16 @@ const BlogGrid = () => {
                             >
                               <div className="blog-grid-slider-wrapper">
                                 <div className="blog-grid-slider-title-box">
-                                  <h4
-                                    className="blog-grid-slider-title fixed-bottom p-3"
-                                    style={{
-                                      fontFamily: "Noto Sans Lao",
-                                    }}
-                                  >
-                                    {item.news_title_la}
-                                  </h4>
+                                  {item.news_title_la.length > 100 ? (
+                                    <BlogTitle title={item.news_title_la} />
+                                  ) : (
+                                    <h5
+                                      className="blog-grid-slider-title fixed-bottom p-3"
+                                      style={{ fontFamily: "Noto Sans Lao" }}
+                                    >
+                                      {item.news_title_la}
+                                    </h5>
+                                  )}
                                 </div>
                               </div>
                             </div>
