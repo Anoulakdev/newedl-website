@@ -7,6 +7,7 @@ import styles from "./customlink.module.css";
 
 const AllBranch = () => {
   const [data, setData] = useState([]);
+  const [paddingTop, setPaddingTop] = useState("pt-80");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +21,7 @@ const AllBranch = () => {
           }
         );
         setData(response.data.data);
-        console.log(response);
+        // console.log(response.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -29,15 +30,32 @@ const AllBranch = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && window.innerWidth < 1200) {
+        setPaddingTop("pt-130");
+      } else {
+        setPaddingTop("pt-80");
+      }
+    };
+
+    handleResize(); // กำหนดค่าเริ่มต้น
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <div className="portfolio blog-grid-inner mb-10">
         <div className="container">
-          <div className="row grid blog-grid-inner pt-50">
+          <div className={`row grid blog-grid-inner ${paddingTop}`}>
             {data.length ? (
               data.map((item, i) => (
                 <div key={i} className="row pb-45">
-                  <div class="col-lg-9 col-md-9 col-12 mx-auto">
+                  <div className="col-lg-11 col-md-9 col-12 mx-auto">
                     <h3 style={{ fontFamily: "Noto Sans Lao" }}>
                       <svg
                         style={{ marginRight: 8 }}
@@ -52,9 +70,10 @@ const AllBranch = () => {
                       </svg>
                       {item.dept_name}
                     </h3>
-                    <ul className="ps-5 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                      {item.branches.map((branch, i) => (
+                    <ul className="ps-5 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover pt-25">
+                      {item.branches.map((branch, j) => (
                         <Link
+                          key={j}
                           href={{
                             pathname: "/branch_detail",
                             query: { branch_id: branch.bra_id },
