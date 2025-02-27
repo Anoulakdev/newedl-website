@@ -5,6 +5,7 @@ import React from "react";
 
 // service img import
 import Mantenance from "@/public/images/services/Mantenance-2.png";
+import Calculator from "@/public/calculator.png";
 import EV from "@/public/images/services/EV_Charger.png";
 import Solar from "@/public/images/services/solar.png";
 import Other from "@/public/images/services/service.png";
@@ -30,10 +31,10 @@ const service_data = [
   {
     id: 3,
 
-    img: Solar,
+    img: Calculator,
     color: "3",
-    title: "Solar Rooftop",
-    link: "",
+    title: "ຄິດ​ໄລ່​ຄ່າ​ໄຟ​ຟ້າ",
+    link: "https://e-service.edl.com.la/electric-calculator",
   },
   {
     id: 4,
