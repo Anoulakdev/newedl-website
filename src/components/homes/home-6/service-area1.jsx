@@ -5,7 +5,7 @@ import React from "react";
 
 // service img import
 import Mantenance from "@/public/images/services/Mantenance-2.png";
-import Calculator from "@/public/calculator.png";
+import Calculator from "@/public/images/services/calculator.png";
 import EV from "@/public/images/services/EV_Charger.png";
 import Solar from "@/public/images/services/solar.png";
 import Other from "@/public/images/services/service.png";
