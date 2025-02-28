@@ -8,7 +8,7 @@ import Mantenance from "@/public/images/services/Mantenance-2.png";
 import Calculator from "@/public/images/services/calculator.png";
 import EV from "@/public/images/services/EV_Charger.png";
 import Solar from "@/public/images/services/solar.png";
-import Other from "@/public/images/services/service.png";
+import Other from "@/public/images/services/otherservicess.png";
 import bg_img from "../../../../public/assets/img/service/sv-bg-2-1.jpg";
 
 const service_data = [
