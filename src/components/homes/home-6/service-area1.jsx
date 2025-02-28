@@ -14,7 +14,6 @@ import bg_img from "../../../../public/assets/img/service/sv-bg-2-1.jpg";
 const service_data = [
   {
     id: 1,
-
     img: Mantenance,
     color: "3",
     title: "ສ້ອມແປງ",
@@ -22,7 +21,6 @@ const service_data = [
   },
   {
     id: 2,
-
     img: EV,
     color: "2",
     title: "EV Charger",
@@ -30,7 +28,6 @@ const service_data = [
   },
   {
     id: 3,
-
     img: Calculator,
     color: "1",
     title: "ຄິດ​ໄລ່​ຄ່າ​ໄຟ​ຟ້າ",
@@ -38,7 +35,6 @@ const service_data = [
   },
   {
     id: 4,
-
     img: Other,
     color: "4",
     title: "ບໍລິການອື່ນໆ",
