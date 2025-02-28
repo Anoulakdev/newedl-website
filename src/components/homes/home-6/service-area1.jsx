@@ -16,7 +16,7 @@ const service_data = [
     id: 1,
 
     img: Mantenance,
-    color: "3",
+    color: "1",
     title: "ສ້ອມແປງ",
     link: "",
   },
@@ -32,7 +32,7 @@ const service_data = [
     id: 3,
 
     img: Calculator,
-    color: "1",
+    color: "3",
     title: "ຄິດ​ໄລ່​ຄ່າ​ໄຟ​ຟ້າ",
     link: "https://e-service.edl.com.la/electric-calculator",
   },
