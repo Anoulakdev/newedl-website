@@ -38,7 +38,7 @@ export default function ContentNews() {
   return (
     <>
       <div className="container pt-120 pb-30">
-        <h1 className="mb-4" style={{ fontFamily: "Noto Sans Lao" }}>
+        <h1 className="mb-4 lh-sm" style={{ fontFamily: "Noto Sans Lao" }}>
           {data.news_title_la}
         </h1>
         <div className="mb-4">
