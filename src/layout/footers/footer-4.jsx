@@ -34,7 +34,7 @@ const footer_content = {
   footer_lisks: [
     { name: "ຂ່າວ​ສານ", link: "/newslist" },
     { name: "ວາ​ລະ​ສານ", link: "/magazine" },
-    { name: "ອັດ​ຕາ​ລາ​ຄາ​ໄຟ", link: "/price" },
+    // { name: "ອັດ​ຕາ​ລາ​ຄາ​ໄຟ", link: "/price" },
     { name: "ນິ​ຕິ​ກຳ", link: "/legislation" },
     { name: "​ແຈ້ງມອດ​ໄຟ", link: "/turnoff" },
     { name: "ຄ່າ​ບໍ​ລິ​ການ", link: "service-fee" },

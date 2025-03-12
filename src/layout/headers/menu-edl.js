@@ -67,7 +67,7 @@ const menu_data = [
       sub_menus: [
         { link: "/legislation", title: "​ນິ​ຕິ​ກຳ" },
         { link: "/service-fee", title: "​ຄ່າ​ບໍ​ລິ​ການ" },
-        { link: "/price", title: "​ອັດ​ຕາ​ລາ​ຄາ​ໄຟ" },
+        // { link: "/price", title: "​ອັດ​ຕາ​ລາ​ຄາ​ໄຟ" },
         { link: "/downloadform", title: "ດາວ​ໂຫຼດ​ແບບ​ຟອມ" },
       ],
     },
