@@ -1,10 +1,11 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Carousel = () => {
+  const [marginTop, setMarginTop] = useState();
   const NextArrow = (props) => {
     const { className, onClick } = props;
     return (
@@ -105,14 +106,33 @@ const Carousel = () => {
     // Add more slides as needed
   ];
 
+  useEffect(() => {
+    const updateMargin = () => {
+      if (window.innerWidth < 576) {
+        setMarginTop(76); // col-sm
+      } else if (window.innerWidth >= 576 && window.innerWidth < 768) {
+        setMarginTop(117); // col-md
+      } else if (window.innerWidth >= 768 && window.innerWidth < 992) {
+        setMarginTop(91); // col-md
+      } else if (window.innerWidth >= 992) {
+        setMarginTop(81); // col-md
+      }
+    };
+
+    updateMargin(); // Set margin on first load
+    window.addEventListener("resize", updateMargin); // Update on resize
+
+    return () => window.removeEventListener("resize", updateMargin);
+  }, []);
+
   return (
     <>
-      <div className="mt-80">
+      <div style={{ marginTop: `${marginTop}px` }}>
         <Slider {...settings}>
           {sliderContent.map((slide, index) => (
             <div key={index}>
               <img
-                className="d-block w-100" 
+                className="d-block w-100"
                 src={slide.imageUrl}
                 alt={`Slide ${index + 1}`}
               />
