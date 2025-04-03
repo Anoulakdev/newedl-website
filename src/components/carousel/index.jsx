@@ -66,21 +66,24 @@ const Carousel = () => {
 
   const sliderContent = [
     {
-      imageUrl: "/images/carousel/Cover-celebrate.jpg",
+      imageUrl: "/images/carousel/rip.jpg",
     },
-    {
-      imageUrl: "/images/carousel/8.jpg",
-    },
-    {
-      imageUrl: "/images/carousel/2.png",
-    },
-    {
-      imageUrl: "/images/carousel/3.jpg",
-    },
+    // {
+    //   imageUrl: "/images/carousel/Cover-celebrate.jpg",
+    // },
+    // {
+    //   imageUrl: "/images/carousel/8.jpg",
+    // },
+    // {
+    //   imageUrl: "/images/carousel/2.png",
+    // },
+    // {
+    //   imageUrl: "/images/carousel/3.jpg",
+    // },
 
-    {
-      imageUrl: "/images/carousel/4.jpg",
-    },
+    // {
+    //   imageUrl: "/images/carousel/4.jpg",
+    // },
 
     // {
     //   imageUrl: "/images/carousel/5.jpg",
