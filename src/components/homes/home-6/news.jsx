@@ -171,7 +171,7 @@ const BlogGrid = () => {
                             >
                               <div className="blog-grid-slider-wrapper">
                                 <div className="blog-grid-slider-title-box">
-                                  {item.news_title_la.length > 100 ? (
+                                  {item.news_title_la.length > 120 ? (
                                     <BlogTitle title={item.news_title_la} />
                                   ) : (
                                     <h5
