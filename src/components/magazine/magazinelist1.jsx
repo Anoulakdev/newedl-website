@@ -76,6 +76,15 @@ const Portfolio = () => {
     }
   };
 
+  const truncateText = (text, maxLength) => {
+    if (text == null) return ""; // Return an empty string or some default value
+
+    if (typeof text !== "string") return "";
+
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
+
   return (
     <>
       {isLoading ? (
@@ -97,21 +106,34 @@ const Portfolio = () => {
                       className="text-center mb-15"
                       style={{ fontFamily: "Noto Sans Lao" }}
                     >
-                      {item.title}
+                      {truncateText(item.title, 50)}
                     </h5>
                     <div className="wow tpfadeUp">
                       <div>
-                        <Link
-                          href={{
-                            pathname: "/magazine_detail",
-                            query: { magazine_id: item.id },
-                          }}
-                        >
-                          <img
-                            src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
-                            alt="theme-pure" style={{ height: '400px' }}
-                          />
-                        </Link>
+                        {item.file_url?.startsWith(
+                          "https://drive.google.com"
+                        ) ? (
+                          <Link href={item.file_url} target="_blank">
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
+                              alt="theme-pure"
+                              style={{ height: "400px" }}
+                            />
+                          </Link>
+                        ) : (
+                          <Link
+                            href={{
+                              pathname: "/magazine_detail",
+                              query: { magazine_id: item.id },
+                            }}
+                          >
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
+                              alt="theme-pure"
+                              style={{ height: "400px" }}
+                            />
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>
