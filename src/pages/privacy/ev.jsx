@@ -17,7 +17,7 @@ function privacy() {
     };
   }, []);
   return (
-    <div className="container py-5" style={{ overflowY: "hidden" }}>
+    <div className="container py-5 lh-base" style={{ overflowY: "hidden" }}>
       <style>
         {`
           p, li {
@@ -56,7 +56,7 @@ function privacy() {
       </p>
 
       <h3>Service Use</h3>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           EDL EV Station is available for personal, non-commercial, and business
           purposes.
@@ -78,7 +78,7 @@ function privacy() {
         </li>
       </ul>
       <h3>Fees and Payments</h3>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>Charging fees will be clearly communicated before initiation.</li>
         <li>
           Payment options include mobile wallets and other approved methods.
@@ -94,7 +94,7 @@ function privacy() {
         EDL EV is provided on an “as is” and “as available” basis. We are not
         liable for:
       </p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>Any interruptions or errors in the App’s functionality.</li>
         <li>
           Damage to your device or loss of data resulting from use of the App.
@@ -117,7 +117,7 @@ function privacy() {
       <h3>Termination</h3>
       <h4>Termination by User</h4>
       <p>You may terminate your use of the App at any time by:</p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>Deactivating your account via the app or web portal, or</li>
         <li>Contacting customer support in writing.</li>
       </ul>
@@ -125,7 +125,7 @@ function privacy() {
 
       <h4>Termination by EDL</h4>
       <p>We may terminate your access if:</p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>You breach the Terms or any law.</li>
         <li>You use the service fraudulently or maliciously.</li>
         <li>You fail to pay or reverse charges.</li>
@@ -159,7 +159,7 @@ function privacy() {
       </p>
 
       <h3>Information We Collect</h3>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           <strong>Personal Info:</strong> Name, Email, Phone, Payment Details.
         </li>
@@ -172,7 +172,7 @@ function privacy() {
         </li>
       </ul>
       <h3>How We Use Your Information</h3>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>To securely process payments.</li>
         <li>To offer and manage EV charging.</li>
         <li>To send receipts and account communications.</li>
@@ -182,7 +182,7 @@ function privacy() {
       </ul>
 
       <h3>Information Sharing</h3>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           <strong>With Service Providers:</strong> For payment, hosting,
           support. Partners are bound to protect your data.
@@ -212,7 +212,7 @@ function privacy() {
       </p>
 
       <h3>Your Rights</h3>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>Access, update, or delete your personal info.</li>
         <li>Opt out of marketing.</li>
         <li>Contact us with any privacy questions.</li>
@@ -225,7 +225,7 @@ function privacy() {
       </p>
 
       <h3>Children’s Privacy</h3>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>Our services are not for users under 13.</li>
         <li>We don’t knowingly collect data from children.</li>
         <li>

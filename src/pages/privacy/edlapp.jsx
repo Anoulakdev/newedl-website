@@ -17,7 +17,7 @@ function privacy() {
     };
   }, []);
   return (
-    <div className="container py-5" style={{ overflowY: "hidden" }}>
+    <div className="container py-5 lh-base" style={{ overflowY: "hidden" }}>
       <style>
         {`
           p, li {
@@ -56,7 +56,7 @@ function privacy() {
       </p>
       <h3>Definitions</h3>
       <p>For the purposes of this Privacy Policy:</p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           <p>
             <strong>Account</strong> means a unique account created for You to
@@ -143,7 +143,7 @@ function privacy() {
         identify You. Personally identifiable information may include, but is
         not limited to:
       </p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           <p>Email address</p>
         </li>
@@ -181,7 +181,7 @@ function privacy() {
         While using Our Application, in order to provide features of Our
         Application, We may collect, with Your prior permission:
       </p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           <p>Information regarding your location</p>
         </li>
@@ -204,7 +204,7 @@ function privacy() {
       </p>
       <h3>Use of Your Personal Data</h3>
       <p>The Company may use Personal Data for the following purposes:</p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           <p>
             <strong>To provide and maintain our Service</strong>, including to
@@ -274,7 +274,7 @@ function privacy() {
         </li>
       </ul>
       <p>We may share Your personal information in the following situations:</p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>
           <strong>With Service Providers:</strong> We may share Your personal
           information with Service Providers to monitor and analyze the use of
@@ -384,7 +384,7 @@ function privacy() {
         The Company may disclose Your Personal Data in the good faith belief
         that such action is necessary to:
       </p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>Comply with a legal obligation</li>
         <li>Protect and defend the rights or property of the Company</li>
         <li>
@@ -450,7 +450,7 @@ function privacy() {
       <p>
         If you have any questions about this Privacy Policy, You can contact us:
       </p>
-      <ul>
+      <ul className="list-[circle] ml-5 pl-15">
         <li>By email: edllao.app@gmail.com</li>
       </ul>
     </div>

@@ -23,6 +23,7 @@ const menu_data = [
         { link: "/about", title: "ວິ​ໄສ​ທັດ ແລະ ພາ​ລະ​ກິດ" },
         { link: "/iso", title: "ມາດ​ຕະ​ຖານ ISO" },
         { link: "/statistic", title: "ສະ​ຖິ​ຕິ" },
+        { link: "/privacy", title: "privacy" },
       ],
     },
     
