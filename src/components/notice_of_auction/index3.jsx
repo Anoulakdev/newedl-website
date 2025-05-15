@@ -160,10 +160,10 @@ const PostboxArea = () => {
                           className="text-black"
                           style={{ height: "60px" }}
                           dangerouslySetInnerHTML={{
-                            __html: truncateText(item.description, 190),
+                            __html: truncateText(item.description, 170),
                           }}
                         ></div>
-                        <div className="d-flex justify-content-between align-items-center mt-2">
+                        <div className="d-flex justify-content-between align-items-center mt-3">
                           <p
                             className={`text-${
                               moment().isBefore(item.start_date)
