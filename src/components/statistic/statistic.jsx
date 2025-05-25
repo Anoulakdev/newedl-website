@@ -6,20 +6,20 @@ import Link from "next/link";
 
 import Image from "next/image";
 
-import img1 from "@/public/images/statistic/1.png";
-import img2 from "@/public/images/statistic/2.png";
-import img3 from "@/public/images/statistic/3.png";
-import img4 from "@/public/images/statistic/4.png";
-import img5 from "@/public/images/statistic/5.png";
-import img6 from "@/public/images/statistic/6.png";
-import img7 from "@/public/images/statistic/7.png";
-import img8 from "@/public/images/statistic/8.png";
+import img1 from "@/public/images/statistic/1-1.png";
+import img2 from "@/public/images/statistic/2-1.png";
+import img3 from "@/public/images/statistic/3-1.png";
+import img4 from "@/public/images/statistic/4-1.png";
+import img5 from "@/public/images/statistic/5-1.png";
+import img6 from "@/public/images/statistic/6-1.png";
+import img7 from "@/public/images/statistic/7-1.png";
+import img8 from "@/public/images/statistic/8-1.png";
 import img9 from "@/public/images/statistic/9.png";
-import img10 from "@/public/images/statistic/10.png";
-import img11 from "@/public/images/statistic/11.png";
-import img12 from "@/public/images/statistic/12.png";
-import img13 from "@/public/images/statistic/13.png";
-import img14 from "@/public/images/statistic/14.png";
+import img10 from "@/public/images/statistic/10-1.png";
+import img11 from "@/public/images/statistic/11-1.png";
+import img12 from "@/public/images/statistic/12-1.png";
+import img13 from "@/public/images/statistic/13-1.png";
+import img14 from "@/public/images/statistic/14-1.png";
 
 const cardData = [
   {
@@ -172,6 +172,12 @@ const Tabs = () => {
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img6} class="img-fluid" alt={img6} />
             </div>
+            {/* <div className="fs-3 text-black fw-bold text-start mt-30 mb-10">
+              ລວງ​ຍາວ​ສາຍ​ສົ່ງ ແລະ ຕາ​ຂ່າຍ​ໄຟ​ຟ້າ
+            </div>
+            <div className="shadow-lg bg-body-tertiary rounded">
+              <Image src={img6} class="img-fluid" alt={img6} />
+            </div> */}
           </div>
           <div style={{ display: activeTab === 3 ? "block" : "none" }}>
             <div className="text-center fs-3 text-black fw-bold mb-30">
