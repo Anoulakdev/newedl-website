@@ -14,12 +14,12 @@ import img5 from "@/public/images/statistic/5-1.png";
 import img6 from "@/public/images/statistic/6-1.png";
 import img7 from "@/public/images/statistic/7-1.png";
 import img8 from "@/public/images/statistic/8-1.png";
-import img9 from "@/public/images/statistic/9.png";
 import img10 from "@/public/images/statistic/10-1.png";
 import img11 from "@/public/images/statistic/11-1.png";
 import img12 from "@/public/images/statistic/12-1.png";
 import img13 from "@/public/images/statistic/13-1.png";
 import img14 from "@/public/images/statistic/14-1.png";
+import img15 from "@/public/images/statistic/15.png";
 
 const cardData = [
   {
@@ -95,6 +95,14 @@ const Tabs = () => {
                 onClick={() => handleClick(3)}
               >
                 Peak Load
+              </li>
+              <li
+                className={`${styles.tab} ${
+                  activeTab === 7 ? styles.active : ""
+                } fs-5 text-black`}
+                onClick={() => handleClick(7)}
+              >
+                ລວງ​ຍາວສາຍ​ສົ່ງ ​ຕາ​ຂ່າຍ
               </li>
             </ul>
           </div>
@@ -172,12 +180,6 @@ const Tabs = () => {
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img6} class="img-fluid" alt={img6} />
             </div>
-            {/* <div className="fs-3 text-black fw-bold text-start mt-30 mb-10">
-              ລວງ​ຍາວ​ສາຍ​ສົ່ງ ແລະ ຕາ​ຂ່າຍ​ໄຟ​ຟ້າ
-            </div>
-            <div className="shadow-lg bg-body-tertiary rounded">
-              <Image src={img6} class="img-fluid" alt={img6} />
-            </div> */}
           </div>
           <div style={{ display: activeTab === 3 ? "block" : "none" }}>
             <div className="text-center fs-3 text-black fw-bold mb-30">
@@ -191,6 +193,14 @@ const Tabs = () => {
             </div>
             <div className="shadow-lg bg-body-tertiary rounded">
               <Image src={img8} class="img-fluid" alt={img8} />
+            </div>
+          </div>
+          <div style={{ display: activeTab === 7 ? "block" : "none" }}>
+            <div className="text-center fs-3 text-black fw-bold mb-30">
+              ລວງ​ຍາວ​ສາຍ​ສົ່ງ ແລະ ຕາ​ຂ່າຍ​ໄຟ​ຟ້າ
+            </div>
+            <div>
+              <Image src={img15} class="img-fluid" alt={img15} />
             </div>
           </div>
           <div style={{ display: activeTab === 4 ? "block" : "none" }}>
@@ -235,7 +245,10 @@ const Tabs = () => {
               <nav>
                 <ul>
                   {cardData.map((menu_item, i) => (
-                    <div key={i} className={`${styles1.link} fs-5 my-3 pb-10 ps-5`}>
+                    <div
+                      key={i}
+                      className={`${styles1.link} fs-5 my-3 pb-10 ps-5`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
