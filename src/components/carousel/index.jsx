@@ -70,7 +70,7 @@ const Carousel = () => {
     //   imageUrl: "/images/carousel/rip.jpg",
     // },
     {
-      imageUrl: "/images/carousel/Cover-celebrate.jpg",
+      imageUrl: "/images/carousel/11.jpg",
     },
     {
       imageUrl: "/images/carousel/8.jpg",
