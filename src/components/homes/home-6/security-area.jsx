@@ -14,7 +14,7 @@ import security_img_6 from "../../../../public/assets/img/security/security-3.pn
 import gover1 from "../../../../public/images/government/image58_1.png";
 import gover2 from "../../../../public/images/government/image59_1.png";
 import gover3 from "../../../../public/images/government/image57_1.png";
-import gover4 from "../../../../public/images/government/image60_1.png";
+import gover4 from "../../../../public/images/government/d70.png";
 
 const setting = {
   speed: 12000,
@@ -60,8 +60,8 @@ const security_data = [
     id: 1,
     color: "4",
     img: gover4,
-    title: <>ກະ​ຊວງພະ​ລັງ​ງານ ແລະ ບໍ່​ແຮ່</>,
-    link: "https://www.mem.gov.la/",
+    title: <>ກະຊວງ​ອຸດ​ສາ​ຫະ​ກຳ ແລະ ການ​ຄ້າ</>,
+    link: "http://www.ned.moic.gov.la",
   },
   {
     id: 2,
