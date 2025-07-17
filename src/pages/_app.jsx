@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
     return () => clearTimeout(loadingTimeout);
   }, []);
 
-  const skipLoadingForPages = ["/edl-app-download"];
+  const skipLoadingForPages = ["/edl-app-download", "/edl-checkin"];
   const shouldSkipLoading = skipLoadingForPages.includes(router.pathname);
 
   return (
