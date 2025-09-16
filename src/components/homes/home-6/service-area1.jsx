@@ -17,7 +17,7 @@ const service_data = [
     id: 1,
     img: Meter,
     color: "3",
-    title: "Smart Meter",
+    title: "EDL Portal",
     link: "https://eportal.edl.com.la:8552",
   },
   {
