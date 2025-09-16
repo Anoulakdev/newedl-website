@@ -10,14 +10,15 @@ import EV from "@/public/images/services/EV_Charger.png";
 import Solar from "@/public/images/services/solar.png";
 import Other from "@/public/images/services/otherservicess.png";
 import bg_img from "../../../../public/assets/img/service/sv-bg-2-1.jpg";
+import Meter from "@/public/images/services/METER_100.png";
 
 const service_data = [
   {
     id: 1,
-    img: Mantenance,
+    img: Meter,
     color: "3",
-    title: "ສ້ອມແປງ",
-    link: "",
+    title: "Smart Meter",
+    link: "https://eportal.edl.com.la:8552",
   },
   {
     id: 2,
@@ -70,14 +71,25 @@ const ServiceArea = () => {
                     <Link
                       href={item.link ? item.link : ""}
                       target={item.link ? "_blank" : undefined}
-                      onClick={item.link ? undefined : (e) => e.preventDefault()}
+                      onClick={
+                        item.link ? undefined : (e) => e.preventDefault()
+                      }
                     >
                       <div className="tp-service-2__icon">
-                        <Image src={item.img} alt="theme-pure" style={{width: '120px'}} />
+                        <Image
+                          src={item.img}
+                          alt="theme-pure"
+                          style={{ width: "120px" }}
+                        />
                       </div>
                       <div className="tp-service-2__text">
-                        <h4 className="tp-service-2__title-sm fw-bold" style={{fontFamily: 'Noto Sans Lao'}}>{item.title}</h4>
-                        {item.link?"":<p>ກຳ​ລັງ​ພັດ​ທະ​ນາ</p>}
+                        <h4
+                          className="tp-service-2__title-sm fw-bold"
+                          style={{ fontFamily: "Noto Sans Lao" }}
+                        >
+                          {item.title}
+                        </h4>
+                        {item.link ? "" : <p>ກຳ​ລັງ​ພັດ​ທະ​ນາ</p>}
                       </div>
                     </Link>
                   </div>
