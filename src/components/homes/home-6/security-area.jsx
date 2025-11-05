@@ -70,13 +70,13 @@ const security_data = [
     title: <>ກະ​ຊວງ​ການ​ເງິນ</>,
     link: "https://www.mof.gov.la",
   },
-  {
-    id: 3,
-    color: "2",
-    img: gover2,
-    title: <>ກະ​ຊວງ​ແຜນ​ການ ແລະ ການ​ລົງ​ທຶນ</>,
-    link: "http://www.investlaos.gov.la/la",
-  },
+  // {
+  //   id: 3,
+  //   color: "2",
+  //   img: gover2,
+  //   title: <>ກະ​ຊວງ​ແຜນ​ການ ແລະ ການ​ລົງ​ທຶນ</>,
+  //   link: "http://www.investlaos.gov.la/la",
+  // },
   {
     id: 4,
     color: "3",
