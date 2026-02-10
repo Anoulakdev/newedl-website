@@ -24,7 +24,7 @@ const menu_data = [
         link: "/organization",
         title: "​ໂຄງ​ຮ່າງ​ສະ​ພາ​ບໍ​ລິ​ຫານ",
       },
-      // { link: "/branch_organize", title: "​​ໂຄງ​ຮ່າງສາ​ຂາ​ແຂວງ" },
+      { link: "/branch_organize", title: "​​ໂຄງ​ຮ່າງສາ​ຂາ​ແຂວງ" },
       { link: "/organize", title: "​​ໂຄງ​ຮ່າງການ​ຈັດ​ຕັ້ງລວມ" },
       { link: "/about", title: "ວິ​ໄສ​ທັດ ແລະ ພາ​ລະ​ກິດ" },
       { link: "/iso", title: "ມາດ​ຕະ​ຖານ ISO" },
