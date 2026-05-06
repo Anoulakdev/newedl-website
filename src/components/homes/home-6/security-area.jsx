@@ -89,7 +89,19 @@ const security_data = [
 const SecurityArea = () => {
   return (
     <>
-      <div className="tp-security-area fix z-index pt-30">
+      <style jsx>{`
+        @media (max-width: 991px) {
+          .mobile-spacing {
+            margin-top: 60px !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .mobile-spacing {
+            margin-top: 80px !important;
+          }
+        }
+      `}</style>
+      <div className="tp-security-area fix z-index pt-30 mobile-spacing">
         <div className="container-fluid g-0">
           <div
             className="wow tpfadeUp"
