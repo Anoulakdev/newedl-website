@@ -102,17 +102,20 @@ const Portfolio = () => {
                   <div
                     key={i}
                     data-index={i}
-                    className="col-xl-3 col-lg-4 col-md-6 col-12 mb-30 grid-item cat1 cat4 cat3 cat5"
+                    className="col-xl-3 col-lg-4 col-md-6 col-12 mb-40 grid-item"
                   >
                     <div
-                      className="tp-blog-item wow tpfadeUp"
+                      className="tp-blog-item bg-white overflow-hidden h-100 d-flex flex-column wow tpfadeUp"
                       style={{
-                        height: "500px",
-                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.6)",
-                        borderRadius: "20px",
+                        boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
+                        borderRadius: "24px",
+                        border: "1px solid rgba(0,0,0,0.05)",
+                        transition: "all 0.3s ease",
                       }}
+                      onMouseOver={(e) => (e.currentTarget.style.transform = "translateY(-8px)")}
+                      onMouseOut={(e) => (e.currentTarget.style.transform = "translateY(0)")}
                     >
-                      <div className="tp-blog-thumb fix">
+                      <div className="tp-blog-thumb fix position-relative w-100" style={{ overflow: "hidden" }}>
                         <Link
                           href={{
                             pathname: "/know_detail",
@@ -121,30 +124,43 @@ const Portfolio = () => {
                         >
                           <img
                             src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/confessions/${item.image}`}
-                            alt="theme-pure"
-                            width="100%"
-                            style={{ height: "330px" }}
+                            alt={item.title || "Knowledge"}
+                            className="w-100"
+                            style={{ height: "330px", transition: "transform 0.5s ease" }}
+                            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
                           />
                         </Link>
                       </div>
-                      <div className="tp-blog-content">
-                        <div className="tp-blog-meta d-flex align-items-center">
-                          <div>
-                            <span>
-                              {moment(item.created_at).format("DD-MM-YYYY")}
-                            </span>
-                          </div>
+                      <div className="tp-blog-content p-3 pb-4 d-flex flex-column flex-grow-1">
+                        <div className="tp-blog-meta mb-2 d-flex align-items-center text-muted" style={{ fontSize: "0.85rem" }}>
+                          <i className="far fa-calendar-alt me-2 text-primary"></i>
+                          <span>{moment(item.created_at).format("DD-MM-YYYY")}</span>
                         </div>
-                        <div className="tp-blog-title-box">
+                        <div className="tp-blog-title-box mt-1">
                           <Link
-                            className="tp-blog-title-sm"
+                            className="fw-bold text-dark text-decoration-none"
                             href={{
                               pathname: "/know_detail",
                               query: { know_id: item.id },
                             }}
-                            style={{ fontFamily: "Noto Sans Lao" }}
+                            style={{ 
+                              fontFamily: "Noto Sans Lao", 
+                              fontSize: "1.05rem", 
+                              lineHeight: "1.4",
+                              transition: "color 0.2s ease"
+                            }}
+                            onMouseOver={(e) => (e.currentTarget.style.color = "#0052D4")}
+                            onMouseOut={(e) => (e.currentTarget.style.color = "")}
                           >
-                            {truncateText(item.title, 44)}
+                            <div style={{
+                              display: "-webkit-box",
+                              WebkitLineClamp: "2",
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden"
+                            }}>
+                              {item.title}
+                            </div>
                           </Link>
                         </div>
                       </div>

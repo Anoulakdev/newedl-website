@@ -49,50 +49,86 @@ const AllBranch = () => {
                   <div
                     key={i}
                     data-index={i}
-                    className="col-xl-4 col-lg-6 col-md-6 mb-30 grid-item cat1 cat4 cat3 cat5"
+                    className="col-xl-4 col-lg-6 col-md-6 mb-40 grid-item"
                   >
                     <div
-                      className="tp-blog-item wow tpfadeUp"
+                      className="tp-blog-item bg-white overflow-hidden h-100 d-flex flex-column wow tpfadeUp"
                       style={{
-                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.6)",
-                        borderRadius: "20px",
+                        boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
+                        borderRadius: "24px",
+                        border: "1px solid rgba(0,0,0,0.05)",
+                        transition: "all 0.3s ease"
                       }}
+                      onMouseOver={e => e.currentTarget.style.transform = 'translateY(-8px)'}
+                      onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
                     >
-                      <div className="tp-blog-thumb fix">
+                      <div className="tp-blog-thumb fix position-relative w-100" style={{ overflow: "hidden" }}>
                         <img
                           src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/branches/${item.bra_image}`}
-                          alt="theme-pure"
-                          style={{ height: "220px" }}
+                          alt={item.bra_name || "Branch"}
+                          className="w-100"
+                          style={{ height: "220px", transition: "transform 0.5s ease" }}
+                          onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                          onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
                         />
                       </div>
 
-                      <div className="tp-blog-content">
-                        <div>
-                          <h5 style={{ fontFamily: "Noto Sans Lao" }}>
-                            {item.bra_name}
-                          </h5>
-                          <p>{truncateText(item.address, 73)}</p>
+                      <div className="tp-blog-content p-4 d-flex flex-column flex-grow-1">
+                        <h5 
+                          className="fw-bold text-dark mb-3" 
+                          style={{ fontFamily: "Noto Sans Lao", lineHeight: "1.4" }}
+                        >
+                          {item.bra_name}
+                        </h5>
+                        
+                        <div className="text-muted mb-3 d-flex align-items-start" style={{ fontSize: "0.95rem", lineHeight: "1.6", fontFamily: "Noto Sans Lao" }}>
+                          <i className="fas fa-map-marker-alt mt-1 me-2 text-danger"></i>
+                          <div
+                            style={{ 
+                              display: "-webkit-box",
+                              WebkitLineClamp: "2",
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden"
+                            }}
+                          >
+                            {item.address}
+                          </div>
+                        </div>
 
-                          <div class="d-flex justify-content-between align-items-center">
-                            <p>
+                        <hr className="mt-auto mb-3 opacity-25" />
+
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div className="text-secondary text-truncate pe-2" style={{ fontSize: "0.95rem" }}>
+                            <div className="mb-1 d-flex align-items-center text-primary fw-medium text-truncate">
                               <svg
-                                width={17}
-                                height={17}
+                                className="me-2 flex-shrink-0"
+                                width={16}
+                                height={16}
+                                fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 512 512"
                               >
                                 <path d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z" />
                               </svg>{" "}
-                              {item.phone_number}
-                            </p>
-                            <Link href={item.location} target="_blank">
-                              <Image src={imglocation} alt="theme-pure" />
-                            </Link>
+                              <span className="text-truncate">{item.phone_number}</span>
+                            </div>
+                            <div className="d-flex align-items-center text-secondary text-truncate">
+                              <i className="fas fa-envelope me-2 text-info flex-shrink-0"></i> 
+                              <span className="text-truncate">{item.email || "ບໍ່ມີອີເມວ"}</span>
+                            </div>
                           </div>
-
-                          <p>
-                            <i className="fas fa-envelope"></i> {item.email}
-                          </p>
+                          
+                          <Link 
+                            href={item.location} 
+                            target="_blank"
+                            className="bg-light rounded-circle shadow-sm d-flex justify-content-center align-items-center flex-shrink-0"
+                            style={{ width: "48px", height: "48px", transition: "all 0.2s ease" }}
+                            onMouseOver={e => { e.currentTarget.style.backgroundColor = "#0052D4"; e.currentTarget.style.transform = "scale(1.1)"; }}
+                            onMouseOut={e => { e.currentTarget.style.backgroundColor = "#f8f9fa"; e.currentTarget.style.transform = "scale(1)"; }}
+                            title="ເບິ່ງແຜນທີ່"
+                          >
+                            <Image src={imglocation} alt="Location" width={22} height={22} />
+                          </Link>
                         </div>
                       </div>
                     </div>

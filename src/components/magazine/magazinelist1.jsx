@@ -100,24 +100,24 @@ const Portfolio = () => {
                   <div
                     key={i}
                     data-index={i}
-                    className="col-xl-3 col-lg-4 col-md-6 col-12 mb-30 grid-item cat1 cat4 cat3 cat5 text-center"
+                    className="col-xl-3 col-lg-4 col-md-6 col-12 mb-40 grid-item text-center"
                   >
-                    <h5
-                      className="text-center mb-15"
-                      style={{ fontFamily: "Noto Sans Lao" }}
+                    <div 
+                      className="wow tpfadeUp h-100 d-flex flex-column align-items-center"
+                      style={{ transition: "all 0.3s ease", cursor: "pointer" }}
+                      onMouseOver={e => e.currentTarget.style.transform = 'translateY(-10px)'}
+                      onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
                     >
-                      {truncateText(item.title, 50)}
-                    </h5>
-                    <div className="wow tpfadeUp">
-                      <div>
-                        {item.file_url?.startsWith(
-                          "https://drive.google.com"
-                        ) ? (
-                          <Link href={item.file_url} target="_blank">
+                      <div className="magazine-image-wrapper shadow-sm rounded-4 overflow-hidden mb-3 w-100" style={{ border: "1px solid rgba(0,0,0,0.05)" }}>
+                        {item.file_url?.startsWith("https://drive.google.com") ? (
+                          <Link href={item.file_url} target="_blank" className="d-block">
                             <img
                               src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
-                              alt="theme-pure"
-                              style={{ height: "400px" }}
+                              alt={item.title || "Magazine"}
+                              className="img-fluid w-100"
+                              style={{ height: "350px", objectFit: "cover", transition: "transform 0.5s ease" }}
+                              onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                              onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
                             />
                           </Link>
                         ) : (
@@ -126,15 +126,31 @@ const Portfolio = () => {
                               pathname: "/magazine_detail",
                               query: { magazine_id: item.id },
                             }}
+                            className="d-block"
                           >
                             <img
                               src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/magazines/${item.image}`}
-                              alt="theme-pure"
-                              style={{ height: "400px" }}
+                              alt={item.title || "Magazine"}
+                              className="img-fluid w-100"
+                              style={{ height: "350px", objectFit: "cover", transition: "transform 0.5s ease" }}
+                              onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                              onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
                             />
                           </Link>
                         )}
                       </div>
+                      <h5
+                        className="text-center mt-2 px-2"
+                        style={{ 
+                          fontFamily: "Noto Sans Lao",
+                          fontSize: "1.1rem",
+                          fontWeight: "600",
+                          color: "#2c3e50",
+                          lineHeight: "1.5"
+                        }}
+                      >
+                        {truncateText(item.title, 50)}
+                      </h5>
                     </div>
                   </div>
                 ))
