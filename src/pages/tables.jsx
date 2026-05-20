@@ -71,10 +71,9 @@ const Tables = () => {
               </thead>
               <tbody>
                 {cardData.map((item, i) => (
-                  <tr className="fs-6">
+                  <tr className="fs-6" key={item.id}>
                     <td
                       className="text-center"
-                      key={i}
                       
                     >
                       {item.id}

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 
-function privacy() {
+export default function Privacy() {
   useEffect(() => {
     document.title = "ev"; // Set the page title
 
@@ -66,7 +66,7 @@ function privacy() {
           You must not misuse, damage, or tamper with the charging stations.
         </li>
         <li>
-          Do not interfere with the functionality of the App or other users'
+          Do not interfere with the functionality of the App or other users&apos;
           experience.
         </li>
         <li>
@@ -252,5 +252,3 @@ function privacy() {
     </div>
   );
 }
-
-export default privacy;

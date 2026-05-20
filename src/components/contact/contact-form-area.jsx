@@ -9,8 +9,8 @@ import Image from 'next/image';
 
 const contact_content  = {
     sub_title: "CONTACT US",
-    tilte: <>We'd love to <br /> hear From  {" "}<span> <SendIcon /> </span> {" "}you.</>,
-    info: <>While we're good with smoke signals, there <br /> are easier ways to get in touch.</> ,
+    tilte: <>We&apos;d love to <br /> hear From  {" "}<span> <SendIcon /> </span> {" "}you.</>,
+    info: <>While we&apos;re good with smoke signals, there <br /> are easier ways to get in touch.</> ,
      
 }
 const {sub_title, tilte, info}  =  contact_content

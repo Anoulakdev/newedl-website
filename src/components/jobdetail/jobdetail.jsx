@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import moment from "moment";
+import { sanitizeHtml } from "../../utils/sanitizeHtml";
 
 const CareerDetailsArea = () => {
   const [data, setData] = useState([]);
@@ -18,20 +20,20 @@ const CareerDetailsArea = () => {
   // console.log("Jobs===>", jobsId);
 
   useEffect(() => {
+    if (!jobsId) return;
     const fetchData = async () => {
       try {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}/jobs/getbyId?id=${jobsId}`
         );
         setData(response.data.data);
-        console.log(response);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching job data:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [jobsId]);
 
   const initialFormData = {
     full_name: "",
@@ -85,10 +87,8 @@ const CareerDetailsArea = () => {
         job_title: data.title,
       };
 
-      console.log("Data sent:", newFormData);
-
       // Step 3: Submit the form data
-      const response = await axios.post(
+      await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/jobApplies/add`,
         newFormData
       );
@@ -99,7 +99,9 @@ const CareerDetailsArea = () => {
       toast.success("ສົ່ງ​ຟອມ​ສຳ​ເລັດ");
       router.push("/jobvacancy");
     } catch (error) {
+      console.error("Error submitting job application:", error);
       toast.error("ສົ່ງ​ຟອມບໍ່​ສຳ​ເລັດ");
+      setIsSubmitting(false);
     }
   };
 
@@ -124,13 +126,13 @@ const CareerDetailsArea = () => {
                     {data.title}
                   </h4>
                 </div>
-                <div className="htmljobs">
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: data.description,
-                    }}
-                  ></p>
-                </div>
+                {/* Security: sanitize HTML from API before rendering to prevent XSS */}
+                <div
+                  className="htmljobs"
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(data.description || ""),
+                  }}
+                />
 
                 {data.image &&
                   (data.image.endsWith(".pdf") ? (
@@ -141,10 +143,14 @@ const CareerDetailsArea = () => {
                       title="PDF Document"
                     ></iframe>
                   ) : (
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${data.image}`}
-                      alt="job-image"
-                    />
+                    <div style={{ position: "relative", width: "100%", minHeight: "300px" }}>
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_API_URL_IMG}/jobs/${data.image}`}
+                        alt={data.title || "job-image"}
+                        fill
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
                   ))}
               </div>
             </div>

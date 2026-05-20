@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
+import Link from 'next/link';
 
 import brand_img_1 from "../../../../public/assets/img/hero/hero-slider-icon-2.jpg";
 import brand_img_2 from "../../../../public/assets/img/hero/hero-slider-icon-3.jpg";
@@ -85,7 +86,7 @@ const BrandArea = () => {
                         <p className='text-white pt-2'>2024-01-19 ຫາ 2024-01-20 | 09:00-13:00 | ບ້ານສາລະຄໍາໃຕ້ ເມືອງຫາດຊາຍຟອງ ນະຄອນຫຼວງ3</p>
                         </div>
                         <div className="col-xl-2 col-lg-2 text-end mt-2">
-                            <a href="/turnoff" type='button' className='btn btn-light'>ເບິ່ງ​ເພີ່ມ​ເຕີມ</a>
+                            <Link href="/turnoff" className='btn btn-light'>ເບິ່ງ​ເພີ່ມ​ເຕີມ</Link>
                         </div>
                      </div>
                   </div>

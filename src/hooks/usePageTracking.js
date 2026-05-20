@@ -7,9 +7,12 @@ const usePageTracking = () => {
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      window.gtag('config', 'G-SMP5VDXS3M', {
-        page_path: url,
-      });
+      // Safety check: ensure gtag is loaded and available before calling
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('config', process.env.NEXT_PUBLIC_GA_ID || 'G-SMP5VDXS3M', {
+          page_path: url,
+        });
+      }
     };
 
     router.events.on('routeChangeComplete', handleRouteChange);

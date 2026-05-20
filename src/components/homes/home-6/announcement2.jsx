@@ -20,42 +20,27 @@ const Announcement = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response1 = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/pads/get`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        setData1(response1.data.data);
-        console.log("Response 1:", response1);
+      const headers = { "Content-Type": "application/json" };
+      const endpoints = [
+        `${process.env.NEXT_PUBLIC_API_URL}/pads/get`,
+        `${process.env.NEXT_PUBLIC_API_URL}/priceServices/get`,
+        `${process.env.NEXT_PUBLIC_API_URL}/jobs/get`,
+      ];
 
-        const response2 = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/priceServices/get`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        setData2(response2.data.data);
-        console.log("Response 2:", response2);
+      // Fetch all 3 APIs in parallel; a failure in one won't block the others
+      const results = await Promise.allSettled(
+        endpoints.map((url) => axios.get(url, { headers }))
+      );
 
-        const response3 = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/jobs/get`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        setData3(response3.data.data);
-        console.log("Response 3:", response3);
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-      }
+      if (results[0].status === "fulfilled") setData1(results[0].value.data.data);
+      if (results[1].status === "fulfilled") setData2(results[1].value.data.data);
+      if (results[2].status === "fulfilled") setData3(results[2].value.data.data);
+
+      results.forEach((result, i) => {
+        if (result.status === "rejected") {
+          console.error(`Error fetching API [${endpoints[i]}]:`, result.reason?.message);
+        }
+      });
     };
 
     fetchData();

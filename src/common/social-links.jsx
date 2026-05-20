@@ -46,7 +46,7 @@ const copy_right_text = {
   copy_right: (
     <>
       Copyright@ 2024 <span className="text-warning">Electricite Du Laos,</span>{" "}
-      All Right Reserved <span className="text-danger ms-5">version 2.0.1</span>
+      All Right Reserved <span className="text-danger ms-5">version 2.1.0</span>
     </>
   ),
 };

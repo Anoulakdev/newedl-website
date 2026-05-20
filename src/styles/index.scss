@@ -1,9 +1,6 @@
- 
-@import "node_modules/react-modal-video/scss/modal-video.scss";
-@import "slick-carousel/slick/slick.css"; 
-@import "~bootstrap/scss/bootstrap";
+@use "bootstrap/scss/bootstrap";
 @import "swiper/css/bundle";
-@import "/public/assets/scss/main.scss";
+@import "../../public/assets/scss/main.scss";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap');
 
 

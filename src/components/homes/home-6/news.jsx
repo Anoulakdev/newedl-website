@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { EffectFade, Navigation } from "swiper";
+import { EffectFade, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const setting = {
@@ -83,7 +83,6 @@ const BlogGrid = () => {
           }
         );
         setData(response.data.data);
-        setIsLoading(false);
         console.log(response);
       } catch (error) {
         console.error("Error fetching data:", error);

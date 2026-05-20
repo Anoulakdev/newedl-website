@@ -16,8 +16,8 @@ import  payment_img_2 from "../../../../public/assets/img/payment/get-paid.png" 
 
 
 const payment_content = {
-    title: <>You'll love our <br /> powerful payments.</>,
-    sub_title: <>We've got all your payments covered</>,
+    title: <>You&apos;ll love our <br /> powerful payments.</>,
+    sub_title: <>We&apos;ve got all your payments covered</>,
     box_1: [
         {
             id: 1, 

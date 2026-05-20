@@ -30,7 +30,7 @@ const office_data = [
         cls:"",
         img: img_3,
         location: "Egypt",
-        address: <>Av. Cordoba 1309, 3'A, City of <br /> Buenos Aires, Egypt</>,
+        address: <>Av. Cordoba 1309, 3&apos;A, City of <br /> Buenos Aires, Egypt</>,
     },
 ]
 

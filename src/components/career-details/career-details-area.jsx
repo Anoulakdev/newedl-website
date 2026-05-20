@@ -14,7 +14,7 @@ const career_content ={
             cls: "mb-45",
             title: "Job Responsibilities",
             description: <>There are many variations of passages of Lorem Ipsum available, but the majority have
-            suffered alteration in some form, by injected humour, or randomised words which don't
+            suffered alteration in some form, by injected humour, or randomised words which don&apos;t
             look even slightly believable. If you are going to use a passage
             of Lorem Ipsum,anything embarrassing hidden.</>, 
         },
@@ -24,7 +24,7 @@ const career_content ={
             title: "Job Requirements",
             description: <>There are many variations of passages of Lorem Ipsum available, but the
             majority have suffered alteration in some form, by injected humour, or randomised words
-            which don't look even slightly believable. If you are going to use a passage
+            which don&apos;t look even slightly believable. If you are going to use a passage
             of Lorem Ipsum,anything embarrassing hidden.</>,
             experiences: [
                 <>5+ years experience in backend engineering, <br />
@@ -56,7 +56,7 @@ const career_content ={
             title: "Job Requirements",
             description: <>There are many variations of passages of Lorem Ipsum available, but the
             majority have suffered alteration in some form, by injected humour, or randomised words
-            which don't look even slightly believable. If you are going to use a passage
+            which don&apos;t look even slightly believable. If you are going to use a passage
             of Lorem Ipsum,anything embarrassing hidden.</>,
             experiences: [
                 <>Experience building software and systems that balance <br /> simplicity,

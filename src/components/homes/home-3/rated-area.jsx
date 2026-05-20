@@ -15,17 +15,17 @@ const rated_content ={
         author : [
         {
             id: 1,
-            title: <>"the interface is excellent"</>,
+            title: <>&quot;the interface is excellent&quot;</>,
             img: author_img_1,
         },
         {
             id: 2,
-            title: <>"improvements in every release"</>,
+            title: <>&quot;improvements in every release&quot;</>,
             img: author_img_2,
         },
         {
             id: 3,
-            title: <>"improvements in every release"</>,
+            title: <>&quot;improvements in every release&quot;</>,
             img: author_img_3,
         },
         ],
