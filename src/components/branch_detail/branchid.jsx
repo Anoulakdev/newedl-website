@@ -22,7 +22,7 @@ export default function Branch() {
             headers: {
               "Content-Type": "application/json", // Set Content-Type header
             },
-          }
+          },
         );
         setData(response.data.data);
         console.log(response);
@@ -52,7 +52,12 @@ export default function Branch() {
           alt="left"
           width={150}
         />
-        <div className="fs-1 text-black fw-bold setfontbranch" style={{ fontFamily: "Noto Sans Lao" }}>{data.bra_name}</div>
+        <div
+          className="fs-1 text-black fw-bold setfontbranch"
+          style={{ fontFamily: "Noto Sans Lao" }}
+        >
+          {data.bra_name}
+        </div>
         <Image
           className="ms-2 img-responsive-right"
           src={imgright}
