@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: "/images/edl_logo.png",
+      destination: "/images/edl_logo.svg",
       permanent: false,
     },
   };
@@ -15,7 +15,7 @@ export default function Uploads() {
 
   useEffect(() => {
     // Fallback client-side redirect if server-side redirect is bypassed
-    router.replace("/images/edl_logo.png");
+    router.replace("/images/edl_logo.svg");
   }, [router]);
 
   return null;
