@@ -18,7 +18,7 @@ const HomeFour = () => {
         <div id="smooth-content">
           <main className="fix">
             <Carousel />
-            <BrandArea />
+            {/* <BrandArea /> */}
             <LayoutAll />
             {/* <News />
             <Announcement />

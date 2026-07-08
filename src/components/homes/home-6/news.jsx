@@ -80,7 +80,7 @@ const BlogGrid = () => {
             headers: {
               "Content-Type": "application/json", // Set Content-Type header
             },
-          }
+          },
         );
         setData(response.data.data);
         console.log(response);
@@ -94,7 +94,7 @@ const BlogGrid = () => {
 
   return (
     <>
-      <div className="blog-grid-area pt-30">
+      <div className="blog-grid-area pt-50">
         <div className="container wow tpfadeUp">
           <div className="row align-items-end">
             <div className="col-xl-12 col-lg-12">

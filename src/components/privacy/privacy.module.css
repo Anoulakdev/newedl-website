@@ -1,0 +1,190 @@
+/* CSS Module for Privacy Component */
+
+.privacyContainer {
+  font-family: 'Noto Sans Lao', sans-serif;
+  margin-top: 50px;
+  margin-bottom: 90px;
+  color: #333333;
+}
+
+/* Header Styles */
+.headerSection {
+  margin-bottom: 45px;
+  text-align: left;
+}
+
+.title {
+  font-family: 'Noto Sans Lao', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #0c2340; /* Deep EDL dark blue */
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981, #3b82f6); /* Emerald to Blue representing safety/privacy */
+  border-radius: 2px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin-top: 15px;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* Card Grid Styles */
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card Style */
+.privacyCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.privacyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.privacyCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.15);
+  text-decoration: none;
+}
+
+.privacyCard:hover::before {
+  opacity: 1;
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.iconContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #ecfdf5; /* Light soft emerald */
+  color: #10b981; /* Emerald/green representing security */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.privacyCard:hover .iconContainer {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.securityBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardBody {
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0c2340;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  font-family: 'Noto Sans Lao', sans-serif;
+  transition: color 0.25s ease;
+}
+
+.privacyCard:hover .cardTitle {
+  color: #10b981;
+}
+
+.cardDescription {
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  font-family: 'Noto Sans Lao', sans-serif;
+  margin: 0;
+}
+
+/* Card Footer */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 18px;
+  margin-top: auto;
+}
+
+.readMoreText {
+  color: #10b981;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.25s ease;
+}
+
+.privacyCard:hover .readMoreText {
+  gap: 10px;
+}
+
+.arrowIcon {
+  transition: transform 0.25s ease;
+}
+
+.privacyCard:hover .arrowIcon {
+  transform: translateX(2px);
+}

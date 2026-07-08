@@ -1,0 +1,265 @@
+/* CSS Module for Legislation (Tables) Component */
+
+.legislationSection {
+  font-family: 'Noto Sans Lao', sans-serif;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+/* Header Styles */
+.headerSection {
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .headerSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  font-family: 'Noto Sans Lao', sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #0c2340;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #0056b3, #00bfff);
+  border-radius: 2px;
+}
+
+/* Search Bar Styling */
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 16px 10px 42px;
+  font-size: 0.9rem;
+  font-family: 'Noto Sans Lao', sans-serif;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #0056b3;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+/* Table Card Wrapper */
+.tableContainer {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* Modern Table Styles */
+.modernTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.modernTable th {
+  background-color: #f8fafc;
+  color: #0c2340;
+  font-weight: 700;
+  padding: 18px 24px;
+  font-size: 0.95rem;
+  border-bottom: 2px solid #edf2f7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modernTable td {
+  padding: 16px 24px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #edf2f7;
+  color: #334155;
+  vertical-align: middle;
+  transition: background-color 0.2s ease;
+}
+
+.modernTable tbody tr:hover td {
+  background-color: #f8fafc;
+}
+
+.modernTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Specific Columns Styles */
+.colIndex {
+  text-align: center;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.colNo {
+  text-align: center;
+  font-weight: 600;
+  color: #0056b3;
+}
+
+.colTitle a {
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.colTitle a:hover {
+  color: #0056b3;
+}
+
+.colDate {
+  text-align: center;
+  color: #64748b;
+}
+
+.colAction {
+  text-align: center;
+}
+
+/* Modern Action Button */
+.downloadBtn {
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  outline: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.downloadBtn:hover {
+  background: #e6f0fa;
+  color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.15);
+}
+
+.downloadBtn:active {
+  transform: translateY(0);
+}
+
+/* Pagination Styles */
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.paginationList {
+  display: inline-flex;
+  list-style: none;
+  padding: 4px;
+  background-color: #f1f5f9;
+  border-radius: 100px;
+  gap: 2px;
+}
+
+.pageItem {
+  display: block;
+}
+
+.pageLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 50%;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.pageLink:hover:not(.activePage):not(.disabledLink) {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.activePage {
+  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+}
+
+.disabledLink {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.emptyStateTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* Modal Enhancements */
+.pdfFrame {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
