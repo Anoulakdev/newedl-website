@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
-import usePageTracking from "../hooks/usePageTracking";
 import "@/src/styles/index.scss";
 import Image from "next/image";
 import Spinner from "@/public/EDL_Logo.gif";
@@ -14,9 +13,26 @@ if (typeof window !== "undefined") {
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  usePageTracking();
 
   useEffect(() => {
+    // Clean up old Google Analytics cookies to prevent WAF decryption errors
+    if (typeof document !== "undefined") {
+      const cookiesToDelete = ["_ga", "_ga_SMP5VDXS3M"];
+      const domains = [
+        window.location.hostname,
+        ".edl.com.la",
+        "edl.com.la",
+        ".www.edl.com.la",
+        "www.edl.com.la",
+      ];
+
+      cookiesToDelete.forEach((cookieName) => {
+        domains.forEach((domain) => {
+          document.cookie = `${cookieName}=; Path=/; Domain=${domain}; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
+        });
+      });
+    }
+
     // Simulate a loading delay (you can replace this with actual logic)
     const loadingTimeout = setTimeout(() => {
       setLoading(false);
