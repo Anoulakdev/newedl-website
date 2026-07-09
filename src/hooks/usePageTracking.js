@@ -11,6 +11,7 @@ const usePageTracking = () => {
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         window.gtag('config', process.env.NEXT_PUBLIC_GA_ID || 'G-SMP5VDXS3M', {
           page_path: url,
+          client_storage: 'none',
         });
       }
     };

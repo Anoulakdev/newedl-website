@@ -26,6 +26,7 @@ export default function Document() {
             gtag('js', new Date());
             gtag('config', '${gaId}', {
               page_path: window.location.pathname,
+              client_storage: 'none',
             });
           `,
           }}
