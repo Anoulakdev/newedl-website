@@ -66,15 +66,15 @@ const Carousel = () => {
   };
 
   const sliderContent = [
+    {
+      imageUrl: "/images/carousel/2026-1.jpg",
+    },
+    {
+      imageUrl: "/images/carousel/2026-2.jpg",
+    },
     // {
-    //   imageUrl: "/images/carousel/64-2025.png",
+    //   imageUrl: "/images/carousel/8.jpg",
     // },
-    {
-      imageUrl: "/images/carousel/11.jpg",
-    },
-    {
-      imageUrl: "/images/carousel/8.jpg",
-    },
     {
       imageUrl: "/images/carousel/2.png",
     },
