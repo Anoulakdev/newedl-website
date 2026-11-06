@@ -14,7 +14,7 @@ import security_img_6 from "../../../../public/assets/img/security/security-3.pn
 import gover1 from "../../../../public/images/government/image58_1.png";
 import gover2 from "../../../../public/images/government/image59_1.png";
 import gover3 from "../../../../public/images/government/image57_1.png";
-import gover4 from "../../../../public/images/government/d70.png";
+import gover4 from "../../../../public/images/government/d71.png";
 
 const setting = {
   speed: 12000,

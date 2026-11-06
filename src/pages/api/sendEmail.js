@@ -135,11 +135,24 @@ export default async function handler(req, res) {
         <p><strong>​ເບີ​ໂທ:</strong> ${escapeHtml(cleanPhone)}</p>
         <p><strong>​ທີ່​ຢູ່:</strong> ${escapeHtml(cleanAddress)}</p>
         <p><strong>​ຫົວ​ຂໍ້​ສະ​ໝັກ​ວຽກ:</strong> ${escapeHtml(cleanNote)}</p>
+        <p><strong>​ເອ​ກະ​ສານ CV:</strong> <a href="${filePath}" target="_blank">ດາວໂຫຼດໄຟລ໌ CV (${escapeHtml(cleanCvFile)})</a></p>
       `,
       attachments: [attachment],
     };
 
-    await transporter.sendMail(mailOptions);
+    try {
+      await transporter.sendMail(mailOptions);
+    } catch (mailErr) {
+      console.warn(
+        "Sending email with attachment failed (possibly exceeding email size limit). Retrying without attachment:",
+        mailErr
+      );
+      // Fallback: send email without attachment so HR still receives the data and direct CV download link
+      await transporter.sendMail({
+        ...mailOptions,
+        attachments: [],
+      });
+    }
     res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
     // Log without exposing details to the client

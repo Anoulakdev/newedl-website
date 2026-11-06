@@ -10,6 +10,7 @@ const CareerDetailsArea = () => {
   const [data, setData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const router = useRouter();
   const applyHandler = () => {
     setIsOpen(true);
@@ -61,9 +62,10 @@ const CareerDetailsArea = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setUploadProgress(0);
 
     try {
-      // Step 1: Upload the file
+      // Step 1: Upload the file (allow unlimited size)
       const fileData = new FormData();
       fileData.append("file", formData.cv_file);
 
@@ -73,6 +75,17 @@ const CareerDetailsArea = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+          },
+          maxContentLength: Infinity,
+          maxBodyLength: Infinity,
+          timeout: 0,
+          onUploadProgress: (progressEvent) => {
+            if (progressEvent.total) {
+              const percent = Math.round(
+                (progressEvent.loaded * 100) / progressEvent.total
+              );
+              setUploadProgress(percent);
+            }
           },
         }
       );
@@ -93,8 +106,12 @@ const CareerDetailsArea = () => {
         newFormData
       );
 
-      // Step 4: Send email with form data
-      await axios.post("/api/sendEmail", newFormData);
+      // Step 4: Send email with form data (non-blocking if notification fails)
+      try {
+        await axios.post("/api/sendEmail", newFormData);
+      } catch (emailError) {
+        console.error("Error sending email notification:", emailError);
+      }
 
       toast.success("ສົ່ງ​ຟອມ​ສຳ​ເລັດ");
       router.push("/jobvacancy");
@@ -102,6 +119,7 @@ const CareerDetailsArea = () => {
       console.error("Error submitting job application:", error);
       toast.error("ສົ່ງ​ຟອມບໍ່​ສຳ​ເລັດ");
       setIsSubmitting(false);
+      setUploadProgress(0);
     }
   };
 
@@ -261,6 +279,15 @@ const CareerDetailsArea = () => {
                                 />
                               </span>
                             </label>
+                            {formData.cv_file && (
+                              <div
+                                className="mt-2 text-primary"
+                                style={{ fontFamily: "Noto Sans Lao", fontSize: "14px" }}
+                              >
+                                ໄຟລ໌ທີ່ເລືອກ: {formData.cv_file.name} (
+                                {(formData.cv_file.size / (1024 * 1024)).toFixed(2)} MB)
+                              </div>
+                            )}
                           </div>
                         </div>
                         <div className="col-xxl-12">
@@ -271,7 +298,9 @@ const CareerDetailsArea = () => {
                               disabled={isSubmitting}
                             >
                               {isSubmitting
-                                ? "ກຳລັງສົ່ງແບບ​ຟອມ​ສະ​ໝັກ..."
+                                ? uploadProgress > 0 && uploadProgress < 100
+                                  ? `ກຳລັງອັບໂຫຼດໄຟລ໌ (${uploadProgress}%)...`
+                                  : "ກຳລັງສົ່ງແບບ​ຟອມ​ສະ​ໝັກ..."
                                 : "ສົ່ງແບບ​ຟອມ​ສະ​ໝັກ"}
                             </button>
                           </div>
